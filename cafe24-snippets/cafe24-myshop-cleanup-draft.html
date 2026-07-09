@@ -1,0 +1,730 @@
+<!--@layout(/layout/basic/layout.html)-->
+<!--@css(/_wg/css/myshop.css)-->
+<!-- NOTE: 기존 Cafe24 마이쇼핑 원본 파일이 없는 상태에서 작성한 페르패키지 적용 초안입니다. 운영 적용 전 기존 스킨의 module, 변수, 링크를 대조한 뒤 병합하세요. -->
+
+<style>
+  .per-myshop {
+    --per-navy: #2A408C;
+    --per-navy-dark: #18295f;
+    --per-text: #1f2937;
+    --per-muted: #64748b;
+    --per-line: #e2e8f0;
+    --per-bg: #f6f8fc;
+    --per-soft: #eef3ff;
+    --per-white: #fff;
+    box-sizing: border-box;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 42px 20px 70px;
+    color: var(--per-text);
+    font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: linear-gradient(180deg, #fff 0%, var(--per-bg) 100%);
+  }
+
+  .per-myshop *,
+  .per-myshop *::before,
+  .per-myshop *::after {
+    box-sizing: border-box;
+  }
+
+  .per-myshop a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .per-myshop a:focus-visible {
+    outline: 3px solid rgba(42, 64, 140, 0.24);
+    outline-offset: 3px;
+    border-radius: 12px;
+  }
+
+  .per-myshop__mobile-action {
+    display: none;
+    margin-bottom: 18px;
+  }
+
+  .per-myshop__back {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--per-line);
+    border-radius: 999px;
+    color: var(--per-muted);
+    background: var(--per-white);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .per-myshop__hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+    gap: 22px;
+    align-items: stretch;
+    margin-bottom: 24px;
+  }
+
+  .per-myshop__hero-main,
+  .per-myshop__member-card,
+  .per-myshop__section,
+  .per-myshop__notice {
+    border: 1px solid rgba(42, 64, 140, 0.12);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 16px 36px rgba(15, 23, 42, 0.07);
+  }
+
+  .per-myshop__hero-main {
+    padding: 34px;
+    background:
+      radial-gradient(circle at top right, rgba(42, 64, 140, 0.12), transparent 34%),
+      linear-gradient(135deg, #fff 0%, #f7f9ff 100%);
+  }
+
+  .per-myshop__eyebrow {
+    margin: 0 0 10px;
+    color: var(--per-navy);
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .per-myshop h1,
+  .per-myshop h2,
+  .per-myshop h3,
+  .per-myshop p {
+    margin-top: 0;
+  }
+
+  .per-myshop h1 {
+    margin-bottom: 12px;
+    color: var(--per-navy-dark);
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.16;
+    letter-spacing: 0;
+  }
+
+  .per-myshop__lead {
+    max-width: 660px;
+    margin-bottom: 20px;
+    color: #475569;
+    font-size: 16px;
+    line-height: 1.75;
+  }
+
+  .per-myshop__hero-actions,
+  .per-myshop__button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .per-myshop__button,
+  .per-myshop__link-card {
+    transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease, transform 0.18s ease;
+  }
+
+  .per-myshop__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 18px;
+    border: 1px solid var(--per-navy);
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 800;
+  }
+
+  .per-myshop__button--primary {
+    color: #fff;
+    background: var(--per-navy);
+  }
+
+  .per-myshop__button--ghost {
+    color: var(--per-navy);
+    background: #fff;
+  }
+
+  .per-myshop__button:hover {
+    transform: translateY(-1px);
+  }
+
+  .per-myshop__member-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+    padding: 26px;
+  }
+
+  .per-myshop__member-top {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+  }
+
+  .per-myshop__grade {
+    display: grid;
+    place-items: center;
+    flex: 0 0 56px;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border: 1px solid var(--per-line);
+    border-radius: 18px;
+    background: var(--per-soft);
+  }
+
+  .per-myshop__grade img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .per-myshop__member-name {
+    margin-bottom: 4px;
+    color: var(--per-navy-dark);
+    font-size: 20px;
+    font-weight: 850;
+    line-height: 1.35;
+  }
+
+  .per-myshop__member-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--per-muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .per-myshop__member-note {
+    margin: 18px 0 0;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .per-myshop__section {
+    margin-top: 22px;
+    padding: 26px;
+  }
+
+  .per-myshop__section-head {
+    display: flex;
+    gap: 14px;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 18px;
+  }
+
+  .per-myshop__section h2 {
+    margin-bottom: 6px;
+    color: var(--per-navy-dark);
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .per-myshop__section-desc {
+    margin: 0;
+    color: var(--per-muted);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .per-myshop__quick-grid,
+  .per-myshop__bankbook-grid,
+  .per-myshop__menu-grid,
+  .per-myshop__inquiry-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .per-myshop__quick-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .per-myshop__bankbook-grid {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .per-myshop__menu-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .per-myshop__inquiry-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .per-myshop__link-card,
+  .per-myshop__stat-card,
+  .per-myshop__order-card,
+  .per-myshop__inquiry-card {
+    display: flex;
+    min-width: 0;
+    border: 1px solid var(--per-line);
+    border-radius: 18px;
+    background: #fff;
+  }
+
+  .per-myshop__link-card {
+    flex-direction: column;
+    min-height: 118px;
+    padding: 18px;
+  }
+
+  .per-myshop__link-card:hover {
+    border-color: rgba(42, 64, 140, 0.35);
+    background: #f8fbff;
+    color: var(--per-navy);
+    transform: translateY(-2px);
+  }
+
+  .per-myshop__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    color: var(--per-navy);
+    background: var(--per-soft);
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .per-myshop__link-title {
+    color: var(--per-navy-dark);
+    font-size: 15px;
+    font-weight: 850;
+    line-height: 1.35;
+  }
+
+  .per-myshop__link-desc {
+    margin-top: 7px;
+    color: var(--per-muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .per-myshop__order-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .per-myshop__order-card {
+    align-items: center;
+    justify-content: space-between;
+    min-height: 96px;
+    padding: 18px;
+  }
+
+  .per-myshop__order-label,
+  .per-myshop__stat-label {
+    color: var(--per-muted);
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .per-myshop__order-count,
+  .per-myshop__stat-value {
+    color: var(--per-navy-dark);
+    font-size: 23px;
+    font-weight: 900;
+    line-height: 1.2;
+    word-break: break-all;
+  }
+
+  .per-myshop__order-count span,
+  .per-myshop__stat-value span {
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .per-myshop__order-sub {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 12px;
+  }
+
+  .per-myshop__order-sub a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 0 14px;
+    border: 1px solid var(--per-line);
+    border-radius: 14px;
+    color: var(--per-muted);
+    background: #fff;
+    font-size: 13px;
+    font-weight: 800;
+  }
+
+  .per-myshop__order-sub strong {
+    color: var(--per-navy);
+    font-size: 16px;
+  }
+
+  .per-myshop__notice {
+    margin-top: 14px;
+    padding: 15px 18px;
+    color: #475569;
+    font-size: 13px;
+    line-height: 1.65;
+    box-shadow: none;
+    background: #f8fafc;
+  }
+
+  .per-myshop__stat-card {
+    flex-direction: column;
+    gap: 8px;
+    min-height: 92px;
+    padding: 15px;
+  }
+
+  .per-myshop__stat-value {
+    font-size: 17px;
+  }
+
+  .per-myshop__stat-card--emphasis {
+    border-color: rgba(42, 64, 140, 0.22);
+    background: #f8fbff;
+  }
+
+  .per-myshop__menu-grid .per-myshop__link-card {
+    min-height: 104px;
+  }
+
+  .per-myshop__menu-sub {
+    display: block;
+    margin-top: 5px;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 700;
+  }
+
+  .per-myshop__utility-low {
+    opacity: 0.72;
+  }
+
+  .per-myshop__inquiry-card {
+    flex-direction: column;
+    gap: 8px;
+    min-height: 110px;
+    padding: 18px;
+  }
+
+  .per-myshop__inquiry-card strong {
+    color: var(--per-navy-dark);
+    font-size: 16px;
+  }
+
+  .per-myshop__inquiry-card p {
+    margin: 0;
+    color: var(--per-muted);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 960px) {
+    .per-myshop {
+      padding: 30px 16px 58px;
+    }
+
+    .per-myshop__hero {
+      grid-template-columns: 1fr;
+    }
+
+    .per-myshop__quick-grid,
+    .per-myshop__bankbook-grid,
+    .per-myshop__menu-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .per-myshop__order-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 520px) {
+    .per-myshop {
+      padding: 22px 14px 48px;
+    }
+
+    .per-myshop__mobile-action {
+      display: block;
+    }
+
+    .per-myshop__hero-main,
+    .per-myshop__member-card,
+    .per-myshop__section {
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .per-myshop__hero-main {
+      padding-top: 24px;
+    }
+
+    .per-myshop__hero-actions,
+    .per-myshop__button-row {
+      flex-direction: column;
+    }
+
+    .per-myshop__button {
+      width: 100%;
+    }
+
+    .per-myshop__quick-grid,
+    .per-myshop__bankbook-grid,
+    .per-myshop__menu-grid,
+    .per-myshop__inquiry-grid,
+    .per-myshop__order-grid,
+    .per-myshop__order-sub {
+      grid-template-columns: 1fr;
+    }
+
+    .per-myshop__section-head {
+      display: block;
+    }
+  }
+</style>
+
+<div module="Layout_MobileAction" class="per-myshop__mobile-action">
+  <a href="#none" class="per-myshop__back" aria-label="이전 화면으로 이동">이전 화면</a>
+</div>
+
+<main class="myshopMain per-myshop" id="per-myshop">
+  <section class="per-myshop__hero" aria-labelledby="per-myshop-title">
+    <div class="per-myshop__hero-main">
+      <p class="per-myshop__eyebrow">MYPAGE</p>
+      <h1 id="per-myshop-title">나의 패키지 관리</h1>
+      <p class="per-myshop__lead">
+        주문 내역과 상담 문의, 관심 있는 패키지 정보를 한곳에서 확인하세요.
+        제작 진행 상황은 담당자 확인 후 별도로 안내될 수 있습니다.
+      </p>
+      <div class="per-myshop__hero-actions">
+        <a class="per-myshop__button per-myshop__button--primary" href="/myshop/order/list.html">주문조회</a>
+        <a class="per-myshop__button per-myshop__button--ghost" href="/order/basket.html">장바구니 확인</a>
+        <a class="per-myshop__button per-myshop__button--ghost" href="/board/consult/list.html">1:1 맞춤상담</a>
+      </div>
+    </div>
+
+    <div module="myshop_asyncbenefit" class="per-myshop__member-card">
+      <div class="per-myshop__member-top">
+        <span class="per-myshop__grade" aria-hidden="true">
+          <img src="{$group_image}" alt="" onerror="this.style.display='none';" />
+        </span>
+        <div>
+          <p class="per-myshop__member-name">{$member_name}님</p>
+          <span class="per-myshop__member-group">{$group_icon} {$group_name}</span>
+        </div>
+      </div>
+      <p class="per-myshop__member-note">
+        페르패키지 이용 현황입니다. 패키지 제작 문의와 주문 관련 정보는 각 메뉴에서 확인할 수 있습니다.
+      </p>
+    </div>
+  </section>
+
+  <section class="per-myshop__section" aria-labelledby="per-myshop-quick-title">
+    <div class="per-myshop__section-head">
+      <div>
+        <h2 id="per-myshop-quick-title">자주 찾는 메뉴</h2>
+        <p class="per-myshop__section-desc">주문, 회원정보, 배송지, 상담 메뉴를 빠르게 확인하세요.</p>
+      </div>
+    </div>
+
+    <div class="per-myshop__quick-grid">
+      <a class="per-myshop__link-card" href="/myshop/order/list.html">
+        <span class="per-myshop__icon" aria-hidden="true">01</span>
+        <span class="per-myshop__link-title">주문조회</span>
+        <span class="per-myshop__link-desc">주문 내역과 배송 정보를 확인합니다.</span>
+      </a>
+      <a class="per-myshop__link-card" href="/order/basket.html">
+        <span class="per-myshop__icon" aria-hidden="true">02</span>
+        <span class="per-myshop__link-title">장바구니</span>
+        <span class="per-myshop__link-desc">관심 있는 패키지를 다시 확인합니다.</span>
+      </a>
+      <a class="per-myshop__link-card" href="/member/modify.html">
+        <span class="per-myshop__icon" aria-hidden="true">03</span>
+        <span class="per-myshop__link-title">회원정보</span>
+        <span class="per-myshop__link-desc">연락처와 기본 회원 정보를 관리합니다.</span>
+      </a>
+      <a class="per-myshop__link-card" href="/myshop/addr/list.html">
+        <span class="per-myshop__icon" aria-hidden="true">04</span>
+        <span class="per-myshop__link-title">배송 주소록</span>
+        <span class="per-myshop__link-desc">납품 및 배송 주소를 관리합니다.</span>
+      </a>
+      <a class="per-myshop__link-card" href="/board/consult/list.html">
+        <span class="per-myshop__icon" aria-hidden="true">05</span>
+        <span class="per-myshop__link-title">1:1 맞춤상담</span>
+        <span class="per-myshop__link-desc">상담 문의 내역을 확인합니다.</span>
+      </a>
+      <a class="per-myshop__link-card" href="/board/inquiry/list.html">
+        <span class="per-myshop__icon" aria-hidden="true">06</span>
+        <span class="per-myshop__link-title">대량구매 문의 관리</span>
+        <span class="per-myshop__link-desc">B2B 제작 문의를 확인합니다.</span>
+      </a>
+    </div>
+  </section>
+
+  <section module="myshop_orderstate" class="per-myshop__section" aria-labelledby="per-myshop-order-title">
+    <div class="per-myshop__section-head">
+      <div>
+        <h2 id="per-myshop-order-title">주문처리 현황</h2>
+        <p class="per-myshop__section-desc">최근 3개월 기준 주문 처리 상태입니다.</p>
+      </div>
+      <a class="per-myshop__button per-myshop__button--ghost" href="/myshop/order/list.html">전체 주문조회</a>
+    </div>
+
+    <div class="per-myshop__order-grid">
+      <a class="per-myshop__order-card" href="{$shppiedBeforeUrl}">
+        <span class="per-myshop__order-label">입금전</span>
+        <strong class="per-myshop__order-count">{$shppiedBeforeCount}<span>건</span></strong>
+      </a>
+      <a class="per-myshop__order-card" href="{$shppiedStandbyUrl}">
+        <span class="per-myshop__order-label">배송준비중</span>
+        <strong class="per-myshop__order-count">{$shppiedStandbyCount}<span>건</span></strong>
+      </a>
+      <a class="per-myshop__order-card" href="{$shppiedBeginUrl}">
+        <span class="per-myshop__order-label">배송중</span>
+        <strong class="per-myshop__order-count">{$shppiedBeginCount}<span>건</span></strong>
+      </a>
+      <a class="per-myshop__order-card" href="{$shppiedComplateUrl}">
+        <span class="per-myshop__order-label">배송완료</span>
+        <strong class="per-myshop__order-count">{$shppiedComplateCount}<span>건</span></strong>
+      </a>
+    </div>
+
+    <div class="per-myshop__order-sub" aria-label="취소 교환 반품 현황">
+      <a href="{$orderCancelUrl}">취소 <strong>{$orderCancelCount}</strong></a>
+      <a href="{$orderExchangeUrl}">교환 <strong>{$orderExchangeCount}</strong></a>
+      <a href="{$orderReturnUrl}">반품 <strong>{$orderReturnCount}</strong></a>
+    </div>
+
+    <p class="per-myshop__notice">
+      패키지 제작 건은 상담 및 제작 일정에 따라 실제 진행 단계가 별도 안내될 수 있습니다.
+    </p>
+  </section>
+
+  <section module="myshop_asyncbankbook" class="per-myshop__section" aria-labelledby="per-myshop-bankbook-title">
+    <div class="per-myshop__section-head">
+      <div>
+        <h2 id="per-myshop-bankbook-title">나의 쇼핑정보</h2>
+        <p class="per-myshop__section-desc">적립금, 쿠폰, 주문 정보를 간단히 확인할 수 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="per-myshop__bankbook-grid">
+      <a class="per-myshop__stat-card" href="/myshop/mileage/historyList.html">
+        <span class="per-myshop__stat-label">총 적립금</span>
+        <strong class="per-myshop__stat-value">{$total_mileage}</strong>
+      </a>
+      <a class="per-myshop__stat-card" href="/myshop/mileage/historyList.html">
+        <span class="per-myshop__stat-label">사용 적립금</span>
+        <strong class="per-myshop__stat-value">{$used_mileage}</strong>
+      </a>
+      <a class="per-myshop__stat-card" href="/myshop/mileage/historyList.html">
+        <span class="per-myshop__stat-label">가용 적립금</span>
+        <strong class="per-myshop__stat-value">{$avail_mileage}</strong>
+      </a>
+      <a class="per-myshop__stat-card per-myshop__utility-low" href="/myshop/deposits/historyList.html">
+        <span class="per-myshop__stat-label">예치금</span>
+        <strong class="per-myshop__stat-value">{$total_deposit}</strong>
+      </a>
+      <a class="per-myshop__stat-card" href="/myshop/coupon/coupon.html">
+        <span class="per-myshop__stat-label">쿠폰</span>
+        <strong class="per-myshop__stat-value">{$coupon_cnt}</strong>
+      </a>
+      <a class="per-myshop__stat-card per-myshop__stat-card--emphasis" href="/myshop/order/list.html">
+        <span class="per-myshop__stat-label">총주문</span>
+        <strong class="per-myshop__stat-value">{$total_order_price} / {$total_order_count}</strong>
+      </a>
+    </div>
+  </section>
+
+  <section module="Myshop_InquiryDash" class="per-myshop__section" aria-labelledby="per-myshop-inquiry-title">
+    <div class="per-myshop__section-head">
+      <div>
+        <h2 id="per-myshop-inquiry-title">상담 및 문의 관리</h2>
+        <p class="per-myshop__section-desc">제작 상담, 상품 문의, 대량구매 문의를 확인하세요.</p>
+      </div>
+    </div>
+
+    <div class="per-myshop__inquiry-grid">
+      <a class="per-myshop__inquiry-card" href="/board/consult/list.html">
+        <strong>1:1 맞춤상담</strong>
+        <p>패키지 사양, 수량, 인쇄 여부와 관련된 상담 내역을 확인합니다.</p>
+      </a>
+      <a class="per-myshop__inquiry-card" href="/board/inquiry/list.html">
+        <strong>대량구매 문의 관리</strong>
+        <p>B2B 제작 문의와 대량 제작 상담 내역을 확인합니다.</p>
+      </a>
+    </div>
+  </section>
+
+  <section module="myshop_main" class="per-myshop__section" aria-labelledby="per-myshop-menu-title">
+    <div class="per-myshop__section-head">
+      <div>
+        <h2 id="per-myshop-menu-title">전체 메뉴</h2>
+        <p class="per-myshop__section-desc">필요한 메뉴를 선택해 자세한 내용을 확인하세요.</p>
+      </div>
+    </div>
+
+    <div class="per-myshop__menu-grid">
+      <a class="per-myshop__link-card" href="/myshop/order/list.html">
+        <span class="per-myshop__link-title">주문조회</span>
+        <span class="per-myshop__menu-sub">Order history</span>
+      </a>
+      <a class="per-myshop__link-card" href="/member/modify.html">
+        <span class="per-myshop__link-title">회원정보</span>
+        <span class="per-myshop__menu-sub">Profile</span>
+      </a>
+      <a class="per-myshop__link-card" href="/myshop/addr/list.html">
+        <span class="per-myshop__link-title">배송 주소록 관리</span>
+        <span class="per-myshop__menu-sub">Address book</span>
+      </a>
+      <a class="per-myshop__link-card" href="/order/basket.html">
+        <span class="per-myshop__link-title">장바구니</span>
+        <span class="per-myshop__menu-sub">Cart</span>
+      </a>
+      <a class="per-myshop__link-card" href="/myshop/wish_list.html">
+        <span class="per-myshop__link-title">관심상품</span>
+        <span class="per-myshop__menu-sub">{$wish_count}</span>
+      </a>
+      <a class="per-myshop__link-card" href="/product/recent_view_product.html">
+        <span class="per-myshop__link-title">최근 본 상품</span>
+        <span class="per-myshop__menu-sub">Recent products</span>
+      </a>
+      <a class="per-myshop__link-card" href="/myshop/coupon/coupon.html">
+        <span class="per-myshop__link-title">쿠폰</span>
+        <span class="per-myshop__menu-sub">{$coupon_count}</span>
+      </a>
+      <a class="per-myshop__link-card" href="/myshop/mileage/historyList.html">
+        <span class="per-myshop__link-title">적립금</span>
+        <span class="per-myshop__menu-sub">Mileage</span>
+      </a>
+      <a class="per-myshop__link-card per-myshop__utility-low" href="/myshop/deposits/historyList.html">
+        <span class="per-myshop__link-title">예치금</span>
+        <span class="per-myshop__menu-sub">Deposit</span>
+      </a>
+      <a class="per-myshop__link-card per-myshop__utility-low" href="/board/product/list.html?board_no=6">
+        <span class="per-myshop__link-title">게시물관리</span>
+        <span class="per-myshop__menu-sub">Board</span>
+      </a>
+      <a class="per-myshop__link-card per-myshop__utility-low" href="/myshop/regular_delivery.html">
+        <span class="per-myshop__link-title">정기배송 관리</span>
+        <span class="per-myshop__menu-sub">Regular delivery</span>
+      </a>
+      <a class="per-myshop__link-card per-myshop__utility-low" href="/myshop/likeit/product.html">
+        <span class="per-myshop__link-title">좋아요</span>
+        <span class="per-myshop__menu-sub">Like it</span>
+      </a>
+    </div>
+  </section>
+</main>

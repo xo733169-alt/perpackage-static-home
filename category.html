@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>페르패키지 카테고리 상품목록</title>
+  <meta name="description" content="페르패키지 카테고리별 패키지 상품을 확인하고 상담으로 이어갈 수 있는 상품 목록 페이지입니다.">
+  <link rel="icon" type="image/png" href="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/icons/new/icon-all-products.png">
+  <link rel="stylesheet" href="perpackage-main-renewal.css">
+  <script src="perpackage-category.js" defer></script>
+  <script src="perpackage-common.js" defer></script>
+</head>
+<body>
+  <div class="pp-page pp-shop-page pp-category-page">
+    <header class="pp-shop-header" data-category-header>
+      <div class="pp-shop-utility" aria-label="상단 유틸 메뉴">
+        <div class="pp-shop-shell pp-shop-utility__inner">
+          <nav class="pp-shop-utility__left" aria-label="브랜드 메뉴">
+            <a href="index.html">페르패키지</a>
+            <a href="guide-production.html">제작가이드</a>
+            <a href="faq.html">이용안내 FAQ</a>
+          </nav>
+          <nav class="pp-shop-utility__right" aria-label="회원 및 고객 메뉴">
+            <a href="https://peerl.cafe24.com/member/login.html">로그인</a>
+            <a href="support.html#support-member">회원가입</a>
+            <a href="support.html">고객센터</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="pp-shop-main-header">
+        <div class="pp-shop-shell pp-shop-main-header__inner">
+          <a class="pp-shop-logo" href="index.html" aria-label="페르패키지 홈">
+            <span class="pp-shop-logo__mark">페르패키지</span>
+            <span class="pp-shop-logo__sub">PEERL PACKAGE</span>
+          </a>
+
+          <form class="pp-shop-search" action="category.html" role="search" aria-label="패키지 상품 검색">
+            <label class="pp-sr-only" for="category-package-search">패키지 검색어</label>
+            <select aria-label="검색 타입 선택">
+              <option>상품명</option>
+              <option>용도</option>
+              <option>재질</option>
+            </select>
+            <input id="category-package-search" name="search" type="search" aria-label="패키지 검색어" placeholder="원하는 패키지나 용도를 검색해보세요.">
+            <button type="submit" aria-label="상품 검색">
+              <span class="pp-line-icon pp-line-icon--search" aria-hidden="true"></span>
+            </button>
+          </form>
+
+          <div class="pp-shop-mobile-actions" aria-label="모바일 빠른 메뉴">
+            <button type="button" aria-label="검색 열기" aria-expanded="false" data-category-mobile-search-toggle>
+              <span class="pp-line-icon pp-line-icon--search" aria-hidden="true"></span>
+            </button>
+            <a href="index.html#quote" aria-label="견적문의">
+              <img class="pp-icon-image pp-icon-image--quote" src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/icons/new/icon-quote.png" alt="" aria-hidden="true" decoding="async">
+            </a>
+            <a href="category.html?category=box" aria-label="전체상품">
+              <img class="pp-icon-image pp-icon-image--cart" src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/icons/new/icon-all-products.png" alt="" aria-hidden="true" decoding="async">
+            </a>
+          </div>
+        </div>
+
+        <div class="pp-shop-shell pp-shop-mobile-search" data-category-mobile-search>
+          <form class="pp-shop-search pp-shop-search--mobile" action="category.html" role="search" aria-label="모바일 패키지 상품 검색">
+            <label class="pp-sr-only" for="category-mobile-package-search">패키지 검색어</label>
+            <select aria-label="검색 타입 선택">
+              <option>상품명</option>
+              <option>용도</option>
+              <option>재질</option>
+            </select>
+            <input id="category-mobile-package-search" name="search" type="search" aria-label="패키지 검색어" placeholder="패키지나 용도를 검색해보세요.">
+            <button type="submit" aria-label="상품 검색">
+              <span class="pp-line-icon pp-line-icon--search" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <nav class="pp-shop-category-nav" aria-label="주요 상품 카테고리">
+        <div class="pp-shop-shell pp-shop-category-nav__scroller">
+          <a href="category.html?category=box">패키지</a>
+          <a href="category.html?category=rigid-box">싸바리박스</a>
+          <a href="category.html?category=shopping-bag">쇼핑백</a>
+          <a href="category.html?category=business-card">명함</a>
+          <a href="category.html?category=envelope-sleeve">봉투</a>
+          <a href="category.html?category=dust-bag">더스트백</a>
+          <a href="category.html?category=accessories">부자재</a>
+          <a href="category.html?category=cafe-supplies">카페용품</a>
+          <a href="category.html?category=design-request">디자인의뢰</a>
+          <a href="guide-production.html">제작가이드</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="pp-category-main">
+      <section class="pp-category-hero" aria-label="카테고리 소개">
+        <div class="pp-shop-shell pp-category-hero__inner">
+          <div class="pp-category-hero__copy">
+            <p class="pp-category-hero__eyebrow">CATEGORY</p>
+            <h1 data-category-title>기성 단상자</h1>
+            <p data-category-description>화장품, 굿즈, 소형 제품 포장에 사용하기 좋은 기본 종이박스입니다.</p>
+            <div class="pp-category-hero__notice" data-category-notice>
+              사이즈, 수량, 인쇄 여부에 따라 상담 후 금액이 달라질 수 있습니다.
+            </div>
+          </div>
+          <div class="pp-category-hero__image" data-category-hero-image-holder data-fallback-label="카테고리 이미지 준비중">
+            <img data-category-hero-image src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-ready-package.jpg" alt="기성 단상자 대표 이미지" decoding="async">
+          </div>
+        </div>
+      </section>
+
+      <section class="pp-category-hero-slider" data-category-hero-slider aria-label="카테고리 상단 비주얼" hidden></section>
+
+      <section class="pp-category-content" aria-label="카테고리 상품 목록">
+        <div class="pp-shop-shell">
+          <nav class="pp-category-tabs" aria-label="카테고리 이동" data-category-tabs></nav>
+
+          <div class="pp-category-tags" aria-label="카테고리 주요 태그" data-category-tags></div>
+
+          <div class="pp-category-product-sections" data-category-product-sections></div>
+
+          <section class="pp-category-feature-panel" data-category-feature-cards aria-label="카테고리 특징 안내"></section>
+
+          <section class="pp-category-link-panel" data-category-link-cards aria-label="제작 전 확인 링크"></section>
+
+          <div class="pp-category-filter-entry">
+            <div>
+              <strong>상세 조건으로 더 좁혀볼까요?</strong>
+              <span>검색어, 용도, 재질, 인쇄 가능 여부는 기존 필터로 그대로 확인할 수 있습니다.</span>
+            </div>
+            <button type="button" data-category-filter-jump aria-expanded="false">상세 필터 보기</button>
+          </div>
+
+          <div class="pp-category-toolbar" aria-label="상품 목록 필터와 정렬">
+            <div>
+              <strong data-category-count>상품 0개</strong>
+              <span>상담이 필요한 상품은 견적문의로 연결됩니다.</span>
+            </div>
+            <div class="pp-category-toolbar__controls">
+              <label>
+                <span class="pp-sr-only">상품 조건</span>
+                <select aria-label="상품 조건 선택">
+                  <option>전체 상품</option>
+                  <option>소량 상담</option>
+                  <option>로고 인쇄 상담</option>
+                  <option>재고 확인 필요</option>
+                </select>
+              </label>
+              <label>
+                <span class="pp-sr-only">정렬</span>
+                <select aria-label="상품 정렬 선택">
+                  <option>추천순</option>
+                  <option>상담 많은 순</option>
+                  <option>소량 문의순</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="pp-category-product-grid" data-category-products></div>
+        </div>
+      </section>
+
+      <section class="pp-category-quote" id="category-quote" aria-label="카테고리 견적문의 안내">
+        <div class="pp-shop-shell pp-category-quote__inner">
+          <div>
+            <p class="pp-category-quote__eyebrow">견적문의</p>
+            <h2>원하는 상품을 찾았다면 사양을 남겨주세요</h2>
+            <p>패키지 종류, 사이즈, 수량, 인쇄 여부를 알려주시면 확인 후 상담을 도와드립니다.</p>
+          </div>
+          <a href="index.html#quote" aria-label="페르패키지 견적문의 폼으로 이동">견적문의 남기기</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="pp-footer" id="support">
+      <div class="pp-container pp-footer__grid">
+        <div class="pp-footer__brand">
+          <span class="pp-footer__logo"><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/brand/perpackage-wordmark.png" alt="페르패키지"></span>
+          <p>브랜드에 맞는 포장 구조와 제작 방식을 함께 정리하는 맞춤 패키지 제작 파트너입니다.</p>
+        </div>
+
+        <div class="pp-footer__info">
+          <h2>회사 정보</h2>
+          <p><strong>회사명</strong> 페르패키지</p>
+          <p><strong>주요 서비스</strong> 패키지 제작, 샘플 상담, 로고 인쇄, 맞춤 제작 안내</p>
+          <p><strong>문의 안내</strong> 패키지 종류, 사이즈, 수량을 알려주시면 제작 방향을 안내드립니다.</p>
+        </div>
+
+        <nav class="pp-footer__menu" aria-label="푸터 메뉴">
+          <h2>메뉴</h2>
+          <a href="index.html">홈</a>
+          <a href="category.html?category=box">상품목록</a>
+          <a href="guide-production.html">제작가이드</a>
+          <a href="faq.html">이용안내 FAQ</a>
+          <a href="support.html">고객센터</a>
+          <a href="https://peerl.cafe24.com/board/product/list.html?board_no=6">상품 Q&amp;A</a>
+          <a href="https://peerl.cafe24.com/_wg/import/agreement.html">이용약관</a>
+          <a href="https://peerl.cafe24.com/member/privacy.html">개인정보처리방침</a>
+          <a href="index.html#portfolio">제작사례</a>
+          <a href="index.html#quote">견적문의</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

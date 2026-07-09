@@ -1,0 +1,415 @@
+<!--
+  Cafe24 상품상세 인쇄파일 첨부 안내 개선 스니펫
+
+  적용 위치:
+  1. 상품 옵션 테이블 안의 <tr module="product_fileoption">
+  2. 선택된 옵션/상품 목록 안의 <tr module="product_fileoption">
+
+  주의:
+  - module="product_fileoption" 삭제 금지
+  - {$file_option_name}, {$form.file_option}, {$file_option_limit} 삭제/이름 변경 금지
+  - {$action_buy}, {$action_basket}, 옵션선택/수량/구매 모듈 수정 금지
+  - Cafe24 기본 파일첨부 input을 숨기거나 다른 DOM으로 이동하지 말 것
+  - DataTransfer, drag/drop, input.files 직접 조작 금지
+-->
+
+<!-- product_fileoption 교체 예시: 두 위치 모두 동일하게 적용 -->
+<tr module="product_fileoption" class="per-printshop-file-row">
+    <th scope="row">{$file_option_name}</th>
+    <td class="fileInfo per-printshop-file-cell">
+        <div class="per-printshop-upload-box" data-per-upload-box>
+            <div class="per-printshop-upload-head">
+                <span class="per-printshop-upload-kicker">PRINT FILE</span>
+                <strong>인쇄파일 업로드</strong>
+                <p>주문에 필요한 인쇄파일을 준비 상태에 맞게 첨부하거나 전달해주세요.</p>
+            </div>
+
+            <div class="per-printshop-upload-tabs" role="list" aria-label="파일 전달 방법">
+                <button type="button" class="per-printshop-upload-tab is-active" data-per-upload-tab="file" role="listitem">
+                    <span>파일첨부</span>
+                    <em>10MB 이하</em>
+                </button>
+                <button type="button" class="per-printshop-upload-tab" data-per-upload-tab="design" role="listitem">
+                    <span>디자인의뢰</span>
+                    <em>상담 필요</em>
+                </button>
+                <button type="button" class="per-printshop-upload-tab" data-per-upload-tab="large" role="listitem">
+                    <span>대용량 전달</span>
+                    <em>메일 안내</em>
+                </button>
+            </div>
+
+            <div class="per-printshop-upload-panels">
+                <section class="per-printshop-upload-panel is-active" data-per-upload-panel="file" aria-label="파일첨부 안내">
+                    <div class="per-printshop-panel-title">
+                        <span aria-hidden="true">01</span>
+                        <strong>10MB 이하 파일은 아래 파일 선택으로 첨부해주세요.</strong>
+                    </div>
+                    <div class="per-printshop-native-file">
+                        {$form.file_option}
+                    </div>
+                    <ul class="infoDesc per-file-option-guide">
+                        <li>AI, PDF, ZIP, DXF 파일 업로드를 권장합니다.</li>
+                        <li>파일은 최대 5개까지 {$file_option_limit}M 이하로 개별 업로드 가능합니다.</li>
+                        <li>선택한 파일은 주문 완료 후 Cafe24 관리자 주문상세에서 확인합니다.</li>
+                        <li>여러 파일은 ZIP으로 압축해 첨부해주세요.</li>
+                    </ul>
+                </section>
+
+                <section class="per-printshop-upload-panel" data-per-upload-panel="design" aria-label="디자인의뢰 안내" hidden>
+                    <div class="per-printshop-panel-title">
+                        <span aria-hidden="true">02</span>
+                        <strong>디자인 파일이 아직 없으신가요?</strong>
+                    </div>
+                    <p class="per-printshop-panel-copy">
+                        로고, 문구, 참고 이미지가 있다면 상담 후 디자인 작업 가능 여부를 안내드립니다.
+                        패키지 구조, 인쇄 사양, 작업 범위에 따라 디자인 가능 범위가 달라질 수 있습니다.
+                    </p>
+                    <a class="per-printshop-action-link" href="/board/product/write.html?board_no=6">
+                        디자인 상담 문의하기
+                    </a>
+                </section>
+
+                <section class="per-printshop-upload-panel" data-per-upload-panel="large" aria-label="대용량 파일 전달 안내" hidden>
+                    <div class="per-printshop-panel-title">
+                        <span aria-hidden="true">03</span>
+                        <strong>10MB를 초과하는 파일은 별도 전달이 필요합니다.</strong>
+                    </div>
+                    <p class="per-printshop-panel-copy">
+                        대용량 AI, PDF, ZIP, 이미지 원본 파일은 주문번호와 함께 메일로 보내주세요.
+                        추후 대용량 업로드 페이지가 추가될 예정입니다.
+                    </p>
+                    <a class="per-printshop-action-link" href="mailto:peerlpackage@peerl.co.kr?subject=%ED%8E%98%EB%A5%B4%ED%8C%A8%ED%82%A4%EC%A7%80%20%EB%8C%80%EC%9A%A9%EB%9F%89%20%EC%9D%B8%EC%87%84%ED%8C%8C%EC%9D%BC%20%EC%A0%84%EB%8B%AC">
+                        메일로 대용량 파일 보내기
+                    </a>
+                    <p class="per-printshop-mail-note">peerlpackage@peerl.co.kr</p>
+                </section>
+            </div>
+
+            <div class="per-printshop-check">
+                <button type="button" class="per-printshop-check-button" data-per-upload-check-toggle aria-expanded="false">
+                    업로드 전 확인사항 보기
+                </button>
+                <div class="per-printshop-check-panel" data-per-upload-check-panel hidden>
+                    <strong>업로드 전 확인사항</strong>
+                    <ol>
+                        <li>최종 인쇄파일은 AI, PDF, ZIP 형식을 권장합니다.</li>
+                        <li>폰트는 아웃라인 처리해주세요.</li>
+                        <li>링크 이미지는 포함하거나 임베드해주세요.</li>
+                        <li>칼선, 접지선, 디자인 레이어는 구분해주세요.</li>
+                        <li>여러 파일은 ZIP으로 압축해주세요.</li>
+                        <li>10MB 초과 파일은 주문번호와 함께 메일로 보내주세요.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </td>
+</tr>
+
+<!-- 상품상세 CSS 또는 해당 HTML 하단 style 영역에 추가 -->
+<style>
+    .xans-product-detail .infoArea td.fileInfo.per-printshop-file-cell,
+    td.fileInfo.per-printshop-file-cell {
+        display: table-cell !important;
+        width: auto !important;
+        vertical-align: top;
+    }
+
+    .per-printshop-upload-box {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 640px;
+        padding: 16px;
+        border: 1px solid #d9e2f2;
+        border-radius: 12px;
+        background: #f7faff;
+        color: #1f2a44;
+        font-family: inherit;
+    }
+
+    .per-printshop-upload-box * {
+        box-sizing: border-box;
+    }
+
+    .per-printshop-upload-head {
+        display: grid;
+        gap: 5px;
+    }
+
+    .per-printshop-upload-kicker {
+        color: #2A408C;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+    }
+
+    .per-printshop-upload-head strong {
+        color: #14213d;
+        font-size: 17px;
+        line-height: 1.35;
+    }
+
+    .per-printshop-upload-head p {
+        margin: 0;
+        color: #526070;
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .per-printshop-upload-tabs {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        margin-top: 14px;
+    }
+
+    .per-printshop-upload-tab {
+        min-width: 0;
+        min-height: 54px;
+        padding: 9px 8px;
+        border: 1px solid #d9e2f2;
+        border-radius: 10px;
+        background: #fff;
+        color: #2f3b4c;
+        font: inherit;
+        text-align: left;
+        cursor: pointer;
+        transition: border-color .18s ease, background .18s ease, color .18s ease;
+    }
+
+    .per-printshop-upload-tab span,
+    .per-printshop-upload-tab em {
+        display: block;
+        overflow-wrap: anywhere;
+    }
+
+    .per-printshop-upload-tab span {
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.3;
+    }
+
+    .per-printshop-upload-tab em {
+        margin-top: 3px;
+        color: #6d7784;
+        font-size: 11px;
+        font-style: normal;
+        line-height: 1.3;
+    }
+
+    .per-printshop-upload-tab.is-active {
+        border-color: #2A408C;
+        background: #2A408C;
+        color: #fff;
+    }
+
+    .per-printshop-upload-tab.is-active em {
+        color: rgba(255,255,255,.82);
+    }
+
+    .per-printshop-upload-panels {
+        margin-top: 12px;
+    }
+
+    .per-printshop-upload-panel {
+        padding: 14px;
+        border: 1px solid #e3e9f4;
+        border-radius: 10px;
+        background: #fff;
+    }
+
+    .per-printshop-panel-title {
+        display: flex;
+        gap: 9px;
+        align-items: flex-start;
+        color: #14213d;
+        font-size: 14px;
+        line-height: 1.45;
+    }
+
+    .per-printshop-panel-title span {
+        display: inline-flex;
+        flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
+        min-width: 28px;
+        height: 24px;
+        border-radius: 999px;
+        background: #eef3ff;
+        color: #2A408C;
+        font-size: 11px;
+        font-weight: 900;
+    }
+
+    .per-printshop-panel-title strong {
+        font-weight: 800;
+    }
+
+    .per-printshop-native-file {
+        margin-top: 12px;
+    }
+
+    .per-file-option-guide {
+        margin: 12px 0 0;
+        padding: 0;
+        color: #3b4654;
+        font-size: 13px;
+        line-height: 1.65;
+        list-style: none;
+    }
+
+    .per-file-option-guide li {
+        position: relative;
+        margin: 4px 0;
+        padding-left: 12px;
+    }
+
+    .per-file-option-guide li::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: .72em;
+        width: 4px;
+        height: 4px;
+        border-radius: 999px;
+        background: #2A408C;
+    }
+
+    .per-printshop-panel-copy {
+        margin: 10px 0 0;
+        color: #526070;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .per-printshop-action-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 38px;
+        margin-top: 12px;
+        padding: 9px 14px;
+        border-radius: 9px;
+        background: #2A408C;
+        color: #fff !important;
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 1.3;
+        text-decoration: none !important;
+    }
+
+    .per-printshop-mail-note {
+        margin: 8px 0 0;
+        color: #2A408C;
+        font-size: 12px;
+        font-weight: 800;
+        overflow-wrap: anywhere;
+    }
+
+    .per-printshop-check {
+        margin-top: 12px;
+    }
+
+    .per-printshop-check-button {
+        width: 100%;
+        min-height: 40px;
+        padding: 10px 12px;
+        border: 1px solid #ccd8ea;
+        border-radius: 9px;
+        background: #fff;
+        color: #2A408C;
+        font: inherit;
+        font-size: 13px;
+        font-weight: 800;
+        text-align: left;
+        cursor: pointer;
+    }
+
+    .per-printshop-check-panel {
+        margin-top: 8px;
+        padding: 12px;
+        border: 1px solid #d9e2f2;
+        border-radius: 9px;
+        background: #fff;
+        color: #3b4654;
+        font-size: 13px;
+        line-height: 1.65;
+    }
+
+    .per-printshop-check-panel strong {
+        display: block;
+        margin-bottom: 6px;
+        color: #14213d;
+        font-weight: 900;
+    }
+
+    .per-printshop-check-panel ol {
+        margin: 0;
+        padding-left: 18px;
+    }
+
+    .per-printshop-check-panel li {
+        margin: 3px 0;
+    }
+
+    @media (max-width: 640px) {
+        .per-printshop-upload-box {
+            padding: 13px;
+            border-radius: 10px;
+        }
+
+        .per-printshop-upload-tabs {
+            grid-template-columns: 1fr;
+        }
+
+        .per-printshop-upload-tab {
+            min-height: 48px;
+        }
+
+        .per-printshop-upload-panel {
+            padding: 12px;
+        }
+
+        .per-printshop-action-link {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- 상품상세 하단 또는 공통 JS 영역에 추가 -->
+<script>
+    (function () {
+        var boxes = document.querySelectorAll("[data-per-upload-box]");
+
+        boxes.forEach(function (box) {
+            var tabs = box.querySelectorAll("[data-per-upload-tab]");
+            var panels = box.querySelectorAll("[data-per-upload-panel]");
+            var checkButton = box.querySelector("[data-per-upload-check-toggle]");
+            var checkPanel = box.querySelector("[data-per-upload-check-panel]");
+
+            tabs.forEach(function (tab) {
+                tab.addEventListener("click", function () {
+                    var target = tab.getAttribute("data-per-upload-tab");
+
+                    tabs.forEach(function (item) {
+                        item.classList.toggle("is-active", item === tab);
+                    });
+
+                    panels.forEach(function (panel) {
+                        var isTarget = panel.getAttribute("data-per-upload-panel") === target;
+                        panel.classList.toggle("is-active", isTarget);
+                        panel.hidden = !isTarget;
+                    });
+                });
+            });
+
+            if (checkButton && checkPanel) {
+                checkButton.addEventListener("click", function () {
+                    var isOpen = checkButton.getAttribute("aria-expanded") === "true";
+                    checkButton.setAttribute("aria-expanded", String(!isOpen));
+                    checkPanel.hidden = isOpen;
+                });
+            }
+        });
+    })();
+</script>

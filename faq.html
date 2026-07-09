@@ -1,0 +1,1317 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>자주 묻는 질문 | 페르패키지</title>
+  <meta name="description" content="패키지 제작, 견적 문의, 디자인 파일, 소량 제작, 납기, 배송 관련 자주 묻는 질문을 정리한 페르패키지 FAQ 페이지입니다.">
+  <script src="perpackage-common.js" defer></script>
+  <link rel="icon" type="image/png" href="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/icons/new/icon-all-products.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "견적 문의 전에 무엇을 준비해야 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "제작 품목, 수량, 대략적인 사이즈, 인쇄 여부, 디자인 파일 유무, 희망 납기일을 알려주시면 상담이 빠릅니다. 정해지지 않은 항목은 미정으로 남겨도 됩니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "패키지 제작이 처음인데 문의해도 되나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "가능합니다. 패키지 형태나 종이 종류를 정확히 몰라도 제품 사진, 예상 수량, 원하는 분위기를 알려주시면 제작 방향부터 함께 확인해드립니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "샘플 먼저 제작할 수 있나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "사양에 따라 샘플 제작이 가능합니다. 샘플은 구조, 사이즈, 조립 방식, 제품 고정 여부를 확인하는 데 도움이 됩니다."
+        }
+      }
+    ]
+  }
+  </script>
+  <style>
+    body {
+      margin: 0;
+    }
+
+    .pp-faq-sitebar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid #d9e0ef;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 28px rgba(17, 31, 79, 0.06);
+    }
+
+    .pp-faq-sitebar__inner {
+      display: flex;
+      width: min(1180px, calc(100% - 40px));
+      min-height: 64px;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .pp-faq-sitebar__brand {
+      display: inline-grid;
+      flex: 0 0 auto;
+      gap: 1px;
+      color: #17265c;
+      font-weight: 900;
+      line-height: 1.18;
+      text-decoration: none;
+    }
+
+    .pp-faq-sitebar__brand small {
+      color: #667085;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    .pp-faq-sitebar__links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      min-width: 0;
+      gap: 8px;
+    }
+
+    .pp-faq-sitebar__links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      color: #30384f;
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .pp-faq-sitebar__links a:hover,
+    .pp-faq-sitebar__links a:focus-visible {
+      background: #eef4ff;
+      color: #2A408C;
+    }
+
+    .pp-faq-sitebar__links a[aria-current="page"] {
+      background: #2A408C;
+      color: #ffffff;
+    }
+
+    .pp-faq-sitebar__links a:hover {
+      transform: translateY(-1px);
+    }
+
+    .pp-faq-footer {
+      position: relative;
+      overflow: hidden;
+      padding: 58px 0;
+      background: linear-gradient(135deg, #061d3d 0%, #082958 100%);
+      color: #ffffff;
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .pp-faq-footer::before {
+      content: "";
+      position: absolute;
+      inset: -42% auto auto 52%;
+      width: 520px;
+      height: 520px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      pointer-events: none;
+    }
+
+    .pp-faq-footer__inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      grid-template-columns: 1.05fr 1.45fr 0.72fr;
+      gap: 46px;
+      align-items: start;
+    }
+
+    .pp-faq-footer__brand {
+      display: grid;
+      gap: 16px;
+    }
+
+    .pp-faq-footer__logo {
+      display: inline-grid;
+      width: fit-content;
+      min-width: 164px;
+      padding: 11px 13px;
+      border-radius: 8px;
+      background: #ffffff;
+      color: #17265c;
+      font-size: 19px;
+      font-weight: 950;
+      line-height: 1.12;
+      text-decoration: none;
+    }
+
+    .pp-faq-footer__logo small {
+      margin-top: 2px;
+      color: #667085;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+    }
+
+    .pp-faq-footer h2 {
+      margin: 0 0 14px;
+      color: #ffffff;
+      font-size: 16px;
+      line-height: 1.28;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .pp-faq-footer p,
+    .pp-faq-footer__menu a {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.74);
+      font-size: 14px;
+      line-height: 1.72;
+      font-weight: 500;
+    }
+
+    .pp-faq-footer__info p + p {
+      margin-top: 8px;
+    }
+
+    .pp-faq-footer__info strong {
+      color: #ffffff;
+      font-weight: 900;
+    }
+
+    .pp-faq-footer__menu {
+      display: grid;
+      align-content: start;
+      gap: 9px;
+    }
+
+    .pp-faq-footer__menu a {
+      text-decoration: none;
+      transition: color 180ms ease, transform 180ms ease;
+    }
+
+    .pp-faq-footer__menu a:hover,
+    .pp-faq-footer__menu a:focus-visible {
+      color: #ffffff;
+      transform: translateX(2px);
+    }
+
+    #pp-faq-page {
+      --pp-faq-navy: #2A408C;
+      --pp-faq-navy-dark: #17265c;
+      --pp-faq-ink: #151b2d;
+      --pp-faq-muted: #667085;
+      --pp-faq-line: #d9e0ef;
+      --pp-faq-soft: #f4f7fc;
+      --pp-faq-soft-blue: #eef4ff;
+      --pp-faq-white: #ffffff;
+      --pp-faq-radius: 22px;
+      --pp-faq-shadow: 0 18px 48px rgba(27, 46, 97, 0.12);
+      color: var(--pp-faq-ink);
+      background:
+        radial-gradient(circle at top left, rgba(42, 64, 140, 0.08), transparent 30%),
+        linear-gradient(180deg, #ffffff 0%, #f6f8fc 56%, #ffffff 100%);
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      letter-spacing: 0;
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    #pp-faq-page * {
+      box-sizing: border-box;
+    }
+
+    #pp-faq-page a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    #pp-faq-page button,
+    #pp-faq-page input {
+      font: inherit;
+    }
+
+    #pp-faq-page button {
+      cursor: pointer;
+    }
+
+    #pp-faq-page button:focus-visible,
+    #pp-faq-page a:focus-visible,
+    #pp-faq-page input:focus-visible {
+      outline: 3px solid rgba(42, 64, 140, 0.32);
+      outline-offset: 3px;
+    }
+
+    #pp-faq-page .pp-faq-shell {
+      width: min(1180px, calc(100% - 40px));
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    #pp-faq-page .pp-faq-hero {
+      padding: 74px 0 34px;
+    }
+
+    #pp-faq-page .pp-faq-hero__grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    #pp-faq-page .pp-faq-hero__grid > * {
+      min-width: 0;
+    }
+
+    #pp-faq-page .pp-faq-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      color: var(--pp-faq-navy);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+    }
+
+    #pp-faq-page .pp-faq-eyebrow::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pp-faq-navy);
+      content: "";
+    }
+
+    #pp-faq-page .pp-faq-hero h1 {
+      margin: 0;
+      color: var(--pp-faq-navy-dark);
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1.12;
+      font-weight: 800;
+    }
+
+    #pp-faq-page .pp-faq-hero__lead {
+      max-width: 680px;
+      margin: 20px 0 0;
+      color: #30384f;
+      font-size: clamp(16px, 2vw, 19px);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    #pp-faq-page .pp-faq-hero__notice {
+      display: inline-flex;
+      max-width: 720px;
+      margin-top: 22px;
+      padding: 12px 16px;
+      border: 1px solid rgba(42, 64, 140, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.76);
+      color: #33406a;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 28px rgba(27, 46, 97, 0.07);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    #pp-faq-page .pp-faq-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    #pp-faq-page .pp-faq-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 13px 20px;
+      border: 1px solid var(--pp-faq-navy);
+      border-radius: 999px;
+      background: var(--pp-faq-navy);
+      color: var(--pp-faq-white);
+      font-weight: 800;
+      transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+      white-space: nowrap;
+    }
+
+    #pp-faq-page .pp-faq-btn:hover {
+      background: var(--pp-faq-navy-dark);
+      border-color: var(--pp-faq-navy-dark);
+      transform: translateY(-2px);
+    }
+
+    #pp-faq-page .pp-faq-btn--ghost {
+      background: var(--pp-faq-white);
+      color: var(--pp-faq-navy);
+    }
+
+    #pp-faq-page .pp-faq-hero__card {
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
+      padding: 28px;
+      border: 1px solid rgba(42, 64, 140, 0.14);
+      border-radius: var(--pp-faq-radius);
+      background: linear-gradient(145deg, #ffffff, #eef4ff);
+      box-shadow: var(--pp-faq-shadow);
+      min-width: 0;
+    }
+
+    #pp-faq-page .pp-faq-hero__card::after {
+      position: absolute;
+      right: -70px;
+      bottom: -100px;
+      width: 260px;
+      height: 260px;
+      border: 38px solid rgba(42, 64, 140, 0.08);
+      border-radius: 46px;
+      transform: rotate(12deg);
+      content: "";
+    }
+
+    #pp-faq-page .pp-faq-hero__card strong {
+      display: block;
+      max-width: 320px;
+      color: var(--pp-faq-navy-dark);
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 800;
+    }
+
+    #pp-faq-page .pp-faq-hero__card ul {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: 12px;
+      margin: 28px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #pp-faq-page .pp-faq-hero__card li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: #34405c;
+      font-weight: 700;
+    }
+
+    #pp-faq-page .pp-faq-hero__card li::before {
+      flex: 0 0 auto;
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: var(--pp-faq-navy);
+      color: #fff;
+      font-size: 13px;
+      line-height: 20px;
+      text-align: center;
+      content: "✓";
+    }
+
+    #pp-faq-page .pp-faq-tools {
+      padding: 10px 0 34px;
+    }
+
+    #pp-faq-page .pp-faq-search {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      padding: 14px 18px;
+      border: 1px solid var(--pp-faq-line);
+      border-radius: 18px;
+      background: var(--pp-faq-white);
+      box-shadow: 0 14px 36px rgba(27, 46, 97, 0.08);
+    }
+
+    #pp-faq-page .pp-faq-search__icon {
+      flex: 0 0 auto;
+      color: var(--pp-faq-navy);
+      font-weight: 900;
+    }
+
+    #pp-faq-page .pp-faq-search input {
+      width: 100%;
+      min-height: 38px;
+      border: 0;
+      background: transparent;
+      color: var(--pp-faq-ink);
+      font-size: 16px;
+    }
+
+    #pp-faq-page .pp-faq-search input::placeholder {
+      color: #8b95aa;
+    }
+
+    #pp-faq-page .pp-faq-search input:focus {
+      outline: none;
+    }
+
+    #pp-faq-page .pp-faq-clear {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: var(--pp-faq-navy);
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    #pp-faq-page .pp-faq-clear.is-visible {
+      display: inline-flex;
+    }
+
+    #pp-faq-page .pp-faq-categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    #pp-faq-page .pp-faq-category {
+      min-height: 38px;
+      padding: 8px 14px;
+      border: 1px solid var(--pp-faq-line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.84);
+      color: #34405c;
+      font-weight: 800;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+    }
+
+    #pp-faq-page .pp-faq-category[aria-pressed="true"] {
+      border-color: var(--pp-faq-navy);
+      background: var(--pp-faq-navy);
+      color: #fff;
+    }
+
+    #pp-faq-page .pp-faq-section {
+      padding: 34px 0;
+    }
+
+    #pp-faq-page .pp-faq-section__head {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+    }
+
+    #pp-faq-page .pp-faq-section h2 {
+      margin: 0;
+      color: var(--pp-faq-navy-dark);
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.2;
+      font-weight: 800;
+    }
+
+    #pp-faq-page .pp-faq-section__head p,
+    #pp-faq-page .pp-faq-count {
+      margin: 0;
+      color: var(--pp-faq-muted);
+      font-size: 15px;
+    }
+
+    #pp-faq-page .pp-faq-top-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    #pp-faq-page .pp-faq-top-card {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 18px;
+      border: 1px solid rgba(42, 64, 140, 0.14);
+      border-radius: 18px;
+      background: var(--pp-faq-white);
+      box-shadow: 0 12px 32px rgba(27, 46, 97, 0.07);
+    }
+
+    #pp-faq-page .pp-faq-top-card span {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: var(--pp-faq-soft-blue);
+      color: var(--pp-faq-navy);
+      font-weight: 900;
+      line-height: 34px;
+      text-align: center;
+    }
+
+    #pp-faq-page .pp-faq-top-card button {
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--pp-faq-ink);
+      font-weight: 800;
+      text-align: left;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+
+    #pp-faq-page .pp-faq-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    #pp-faq-page .pp-faq-item {
+      overflow: hidden;
+      border: 1px solid var(--pp-faq-line);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 12px 30px rgba(27, 46, 97, 0.06);
+    }
+
+    #pp-faq-page .pp-faq-item__button {
+      display: grid;
+      width: 100%;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 14px;
+      align-items: center;
+      padding: 20px 22px;
+      border: 0;
+      background: transparent;
+      color: var(--pp-faq-ink);
+      text-align: left;
+    }
+
+    #pp-faq-page .pp-faq-item__question {
+      display: grid;
+      gap: 8px;
+    }
+
+    #pp-faq-page .pp-faq-item__question strong {
+      font-size: 17px;
+      line-height: 1.42;
+      font-weight: 800;
+      word-break: keep-all;
+    }
+
+    #pp-faq-page .pp-faq-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: var(--pp-faq-soft-blue);
+      color: var(--pp-faq-navy);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    #pp-faq-page .pp-faq-toggle {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--pp-faq-soft);
+    }
+
+    #pp-faq-page .pp-faq-toggle::before,
+    #pp-faq-page .pp-faq-toggle::after {
+      position: absolute;
+      inset: 50% auto auto 50%;
+      width: 14px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--pp-faq-navy);
+      transform: translate(-50%, -50%);
+      content: "";
+    }
+
+    #pp-faq-page .pp-faq-toggle::after {
+      transform: translate(-50%, -50%) rotate(90deg);
+      transition: transform 160ms ease;
+    }
+
+    #pp-faq-page .pp-faq-item__button[aria-expanded="true"] .pp-faq-toggle::after {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    #pp-faq-page .pp-faq-item__panel {
+      padding: 0 22px 22px;
+    }
+
+    #pp-faq-page .pp-faq-item__answer {
+      padding-top: 2px;
+      border-top: 1px solid #edf1f7;
+      color: #374156;
+      word-break: keep-all;
+    }
+
+    #pp-faq-page .pp-faq-item__answer p {
+      margin: 16px 0 0;
+    }
+
+    #pp-faq-page .pp-faq-item__hint {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: #f7f9fd;
+      color: #4b5873;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #pp-faq-page .pp-faq-item__hint a {
+      color: var(--pp-faq-navy);
+      font-weight: 900;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    #pp-faq-page .pp-faq-empty {
+      display: none;
+      padding: 30px;
+      border: 1px dashed rgba(42, 64, 140, 0.28);
+      border-radius: 18px;
+      background: #fff;
+      color: var(--pp-faq-muted);
+      text-align: center;
+    }
+
+    #pp-faq-page .pp-faq-empty.is-visible {
+      display: block;
+    }
+
+    #pp-faq-page .pp-faq-empty strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--pp-faq-navy-dark);
+      font-size: 20px;
+    }
+
+    #pp-faq-page .pp-faq-bottom {
+      padding: 34px 0 72px;
+    }
+
+    #pp-faq-page .pp-faq-bottom__box {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: center;
+      padding: 30px;
+      border-radius: 24px;
+      background: var(--pp-faq-navy);
+      color: #fff;
+      box-shadow: var(--pp-faq-shadow);
+    }
+
+    #pp-faq-page .pp-faq-bottom h2 {
+      margin: 0;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.22;
+    }
+
+    #pp-faq-page .pp-faq-bottom p {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      word-break: keep-all;
+    }
+
+    #pp-faq-page .pp-faq-bottom__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    #pp-faq-page .pp-faq-bottom .pp-faq-btn {
+      border-color: #fff;
+      background: #fff;
+      color: var(--pp-faq-navy);
+    }
+
+    #pp-faq-page .pp-faq-bottom .pp-faq-btn--ghost {
+      background: transparent;
+      color: #fff;
+    }
+
+    #pp-faq-page .pp-faq-channel-message {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #pp-faq-page .pp-faq-channel-message.is-visible {
+      display: block;
+    }
+
+    @media (max-width: 900px) {
+      #pp-faq-page .pp-faq-hero__grid,
+      #pp-faq-page .pp-faq-bottom__box {
+        grid-template-columns: 1fr;
+      }
+
+      #pp-faq-page .pp-faq-bottom__actions {
+        justify-content: flex-start;
+      }
+
+      #pp-faq-page .pp-faq-top-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pp-faq-footer__inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      #pp-faq-page .pp-faq-shell {
+        width: 100%;
+        max-width: calc(100vw - 24px);
+      }
+
+      #pp-faq-page .pp-faq-hero {
+        padding-top: 46px;
+      }
+
+      #pp-faq-page .pp-faq-hero h1 {
+        font-size: 36px;
+      }
+
+      #pp-faq-page .pp-faq-hero__lead {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      #pp-faq-page .pp-faq-hero__card {
+        min-height: auto;
+        padding: 24px 18px;
+      }
+
+      #pp-faq-page .pp-faq-hero__card::after {
+        right: -120px;
+        opacity: 0.45;
+      }
+
+      #pp-faq-page .pp-faq-hero__card strong {
+        max-width: none;
+        font-size: 22px;
+        line-height: 1.32;
+      }
+
+      #pp-faq-page .pp-faq-hero__notice {
+        display: flex;
+        width: 100%;
+        border-radius: 16px;
+      }
+
+      #pp-faq-page .pp-faq-hero__lead,
+      #pp-faq-page .pp-faq-hero__notice,
+      #pp-faq-page .pp-faq-hero__card strong,
+      #pp-faq-page .pp-faq-item__question strong,
+      #pp-faq-page .pp-faq-item__answer {
+        max-width: 100%;
+        word-break: break-word;
+        overflow-wrap: anywhere;
+      }
+
+      #pp-faq-page .pp-faq-search {
+        align-items: flex-start;
+        min-width: 0;
+      }
+
+      #pp-faq-page .pp-faq-search input {
+        min-width: 0;
+      }
+
+      #pp-faq-page .pp-faq-categories {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 6px;
+        scrollbar-width: thin;
+      }
+
+      #pp-faq-page .pp-faq-category {
+        flex: 0 0 auto;
+      }
+
+      #pp-faq-page .pp-faq-section__head {
+        display: block;
+      }
+
+      #pp-faq-page .pp-faq-count {
+        display: block;
+        margin-top: 8px;
+      }
+
+      #pp-faq-page .pp-faq-item__button {
+        padding: 18px 16px;
+      }
+
+      #pp-faq-page .pp-faq-item__panel {
+        padding: 0 16px 18px;
+      }
+
+      #pp-faq-page .pp-faq-bottom__box {
+        padding: 24px 18px;
+      }
+
+      #pp-faq-page .pp-faq-btn {
+        width: 100%;
+      }
+
+      .pp-faq-sitebar__inner {
+        width: calc(100% - 24px);
+        min-height: 58px;
+        padding: 10px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .pp-faq-sitebar__links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 4px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+        scrollbar-width: thin;
+      }
+
+      .pp-faq-sitebar__links a {
+        flex: 0 0 auto;
+        padding: 7px 9px;
+        font-size: 12px;
+      }
+
+      .pp-faq-footer {
+        padding: 42px 0 calc(42px + env(safe-area-inset-bottom));
+      }
+
+      .pp-faq-footer__inner {
+        width: calc(100% - 24px);
+        grid-template-columns: 1fr;
+        gap: 26px;
+      }
+
+      .pp-faq-footer__menu {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #pp-faq-page *,
+      #pp-faq-page *::before,
+      #pp-faq-page *::after {
+        transition: none !important;
+        scroll-behavior: auto !important;
+      }
+
+      .pp-faq-sitebar__links a,
+      .pp-faq-footer__menu a {
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body style="margin:0;background:#f6f8fc;">
+  <header class="pp-faq-sitebar" aria-label="페르패키지 FAQ 상단 메뉴">
+    <div class="pp-faq-sitebar__inner">
+      <a class="pp-faq-sitebar__brand" href="index.html" aria-label="페르패키지 홈으로 이동">
+        <span>페르패키지</span>
+        <small>PEERL PACKAGE</small>
+      </a>
+      <nav class="pp-faq-sitebar__links" aria-label="FAQ 관련 이동">
+        <a href="index.html">홈</a>
+        <a href="category.html?category=box">상품목록</a>
+        <a href="guide-production.html">제작가이드</a>
+        <a href="guide-design.html">디자인가이드</a>
+        <a href="guide-caution.html">제작주의사항</a>
+        <a href="faq.html" aria-current="page">이용안내 FAQ</a>
+        <a href="support.html">고객센터</a>
+        <a href="https://peerl.cafe24.com/board/product/list.html?board_no=6">상품 Q&amp;A</a>
+        <a href="index.html#quote">견적문의</a>
+      </nav>
+    </div>
+  </header>
+  <section id="pp-faq-page" aria-label="페르패키지 자주 묻는 질문">
+    <div class="pp-faq-hero">
+      <div class="pp-faq-shell pp-faq-hero__grid">
+        <div>
+          <p class="pp-faq-eyebrow">PERPACKAGE FAQ</p>
+          <h1>자주 묻는 질문</h1>
+          <p class="pp-faq-hero__lead">패키지 제작이 처음이어도 괜찮습니다. 자주 묻는 내용을 확인하고 필요한 정보를 준비해보세요.</p>
+          <p class="pp-faq-hero__notice">최종 견적과 납기는 사양과 파일 확인 후 안내됩니다.</p>
+          <div class="pp-faq-hero__actions" aria-label="FAQ 주요 이동">
+            <a class="pp-faq-btn" href="index.html#quote" data-pp-faq-inquiry>견적 문의하기</a>
+            <button class="pp-faq-btn pp-faq-btn--ghost" type="button" data-pp-faq-channel>채널톡 상담하기</button>
+          </div>
+        </div>
+        <aside class="pp-faq-hero__card" aria-label="문의 전 준비하면 좋은 내용">
+          <strong>상담 전 이것만 정리해주세요.</strong>
+          <ul>
+            <li>제품 사진 또는 참고 이미지</li>
+            <li>대략적인 수량과 희망 일정</li>
+            <li>사이즈, 인쇄 여부, 디자인 파일 유무</li>
+            <li>원하는 패키지 분위기와 사용 목적</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+
+    <div class="pp-faq-tools">
+      <div class="pp-faq-shell">
+        <label class="pp-faq-search">
+          <span class="pp-faq-search__icon" aria-hidden="true">⌕</span>
+          <input type="search" data-pp-faq-search aria-label="FAQ 검색" placeholder="궁금한 내용을 검색해보세요.">
+          <button class="pp-faq-clear" type="button" data-pp-faq-clear aria-label="검색어 초기화">초기화</button>
+        </label>
+        <div class="pp-faq-categories" data-pp-faq-categories aria-label="FAQ 카테고리"></div>
+      </div>
+    </div>
+
+    <section class="pp-faq-section" aria-label="많이 묻는 질문">
+      <div class="pp-faq-shell">
+        <div class="pp-faq-section__head">
+          <div>
+            <p class="pp-faq-eyebrow">TOP QUESTIONS</p>
+            <h2>많이 묻는 질문</h2>
+          </div>
+          <p>처음 문의할 때 가장 자주 확인하는 내용입니다.</p>
+        </div>
+        <div class="pp-faq-top-grid" data-pp-faq-top></div>
+      </div>
+    </section>
+
+    <section class="pp-faq-section" aria-label="FAQ 목록">
+      <div class="pp-faq-shell">
+        <div class="pp-faq-section__head">
+          <div>
+            <p class="pp-faq-eyebrow">FAQ LIST</p>
+            <h2>카테고리별 FAQ</h2>
+          </div>
+          <p class="pp-faq-count" data-pp-faq-count>전체 질문 0개</p>
+        </div>
+        <div class="pp-faq-list" data-pp-faq-list></div>
+        <div class="pp-faq-empty" data-pp-faq-empty>
+          <strong>찾는 질문이 없습니다.</strong>
+          <p>찾는 질문이 없다면 제품 사진이나 참고 이미지를 보내 상담으로 확인해보세요.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="pp-faq-bottom" aria-label="FAQ 하단 상담 안내">
+      <div class="pp-faq-shell">
+        <div class="pp-faq-bottom__box">
+          <div>
+            <h2>원하는 답을 찾지 못하셨나요?</h2>
+            <p>패키지 제작은 제품 크기, 수량, 인쇄, 후가공에 따라 조건이 달라질 수 있습니다. 제품 사진이나 참고 이미지를 보내주시면 필요한 항목을 확인해 안내드립니다.</p>
+            <p class="pp-faq-channel-message" data-pp-faq-channel-message>채널톡 연결 정보가 아직 설정되지 않았습니다. 견적 문의 버튼을 이용하거나 PP_FAQ_CONFIG의 채널 링크를 설정해주세요.</p>
+          </div>
+          <div class="pp-faq-bottom__actions">
+            <button class="pp-faq-btn pp-faq-btn--ghost" type="button" data-pp-faq-channel>제품 사진으로 상담하기</button>
+            <a class="pp-faq-btn" href="index.html#quote" data-pp-faq-inquiry>견적 문의하기</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <footer class="pp-faq-footer" aria-label="페르패키지 FAQ 하단 정보">
+    <div class="pp-faq-footer__inner">
+      <div class="pp-faq-footer__brand">
+        <a class="pp-faq-footer__logo" href="index.html" aria-label="페르패키지 홈으로 이동">
+          페르패키지
+          <small>PEERL PACKAGE</small>
+        </a>
+        <p>브랜드에 맞는 포장 구조와 제작 방식을 함께 정리하는 맞춤 패키지 제작 파트너입니다.</p>
+      </div>
+      <div class="pp-faq-footer__info">
+        <h2>고객센터 안내</h2>
+        <p><strong>회사명</strong> 페르패키지</p>
+        <p><strong>주요 서비스</strong> 패키지 제작, 샘플 상담, 로고 인쇄, 맞춤 제작 안내</p>
+        <p><strong>문의 안내</strong> 패키지 종류, 사이즈, 수량을 알려주시면 제작 방향을 안내드립니다.</p>
+      </div>
+      <nav class="pp-faq-footer__menu" aria-label="FAQ 하단 바로가기">
+        <a href="index.html#company">회사소개</a>
+        <a href="category.html?category=box">상품목록</a>
+        <a href="guide-production.html">제작가이드</a>
+        <a href="guide-design.html">디자인가이드</a>
+        <a href="guide-caution.html">제작주의사항</a>
+        <a href="faq.html" aria-current="page">이용안내 FAQ</a>
+        <a href="support.html">고객센터</a>
+        <a href="https://peerl.cafe24.com/board/product/list.html?board_no=6">상품 Q&amp;A</a>
+        <a href="https://peerl.cafe24.com/_wg/import/agreement.html">이용약관</a>
+        <a href="index.html#quote">견적문의</a>
+        <a href="https://peerl.cafe24.com/member/privacy.html">개인정보처리방침</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var PP_FAQ_CONFIG = window.PP_FAQ_CONFIG || {
+        inquiryUrl: "index.html#quote",
+        // TODO: 실제 ChannelTalk URL 또는 운영 ChannelIO 스크립트가 확정되면 반영
+        channelTalkUrl: "",
+        channelTalkMode: "channelio"
+      };
+
+      var categories = [
+        "전체",
+        "처음 시작",
+        "견적 문의",
+        "디자인 파일",
+        "제작 기간/샘플",
+        "소량 제작",
+        "박스 제작",
+        "쇼핑백",
+        "싸바리·봉투·트레이",
+        "배송/결제",
+        "제작 주의사항"
+      ];
+
+      var faqItems = [
+        { id: "faq-001", category: "처음 시작", top: true, question: "패키지 제작이 처음인데 문의해도 되나요?", answer: "가능합니다. 패키지 형태나 종이 종류를 정확히 몰라도 괜찮습니다. 제품 사진, 대략적인 수량, 원하는 분위기만 알려주셔도 제작 가능한 방향부터 함께 확인해드립니다.", keywords: ["처음", "초보", "문의", "제작"] },
+        { id: "faq-002", category: "처음 시작", top: true, question: "제품 사진만 있어도 상담이 가능한가요?", answer: "가능합니다. 정확한 도면이나 칼선이 없어도 제품 사진, 기존 패키지 사진, 참고 이미지가 있으면 제작 방향을 확인하는 데 도움이 됩니다. 최종 견적은 사이즈와 사양 확인 후 안내됩니다.", keywords: ["사진", "참고 이미지", "상담"] },
+        { id: "faq-003", category: "처음 시작", question: "어떤 패키지가 맞는지 몰라도 문의할 수 있나요?", answer: "가능합니다. 담을 제품, 사용 목적, 수량, 원하는 분위기를 알려주시면 단상자, 쇼핑백, 싸바리박스, 봉투 등 적합한 구조를 함께 검토할 수 있습니다.", keywords: ["추천", "패키지 종류", "구조"] },
+        { id: "faq-004", category: "견적 문의", top: true, question: "견적 문의 전에 무엇을 준비해야 하나요?", answer: "제작 품목, 수량, 대략적인 사이즈, 인쇄 여부, 디자인 파일 유무, 희망 납기일을 알려주시면 좋습니다. 정해지지 않은 항목은 미정으로 남겨도 됩니다.", keywords: ["견적", "준비", "수량", "사이즈"] },
+        { id: "faq-005", category: "견적 문의", top: true, question: "사이즈는 어떻게 알려드리면 되나요?", answer: "가로 × 세로 × 높이 기준으로 알려주시면 됩니다. 정확한 실측이 어렵다면 대략적인 제품 사이즈나 제품 사진을 먼저 보내주셔도 됩니다.", keywords: ["사이즈", "가로", "세로", "높이"] },
+        { id: "faq-006", category: "견적 문의", top: true, question: "견적은 바로 정해지나요?", answer: "문의 직후 안내되는 금액은 참고 범위일 수 있습니다. 최종 견적은 제품 사양, 수량, 사이즈, 인쇄, 후가공, 납기 조건을 확인한 뒤 안내됩니다.", keywords: ["견적", "금액", "최종"] },
+        { id: "faq-007", category: "견적 문의", question: "수량이 아직 정해지지 않아도 문의할 수 있나요?", answer: "가능합니다. 예상 수량이나 희망 수량대를 알려주시면 상담 방향을 잡는 데 도움이 됩니다. 수량에 따라 제작 가능 여부와 단가가 달라질 수 있습니다.", keywords: ["수량", "미정", "예상"] },
+        { id: "faq-008", category: "디자인 파일", top: true, question: "디자인 파일이 없어도 문의할 수 있나요?", answer: "가능합니다. 디자인 파일이 없어도 제작 상담은 가능합니다. 다만 실제 제작 단계에서는 로고 파일, 인쇄 데이터, 칼선 파일 등이 필요할 수 있어 상담 후 준비 방향을 안내드립니다.", keywords: ["디자인", "파일", "로고"] },
+        { id: "faq-009", category: "디자인 파일", question: "어떤 파일 형식으로 보내야 하나요?", answer: "가능하면 AI, PDF 형식의 인쇄용 파일이 좋습니다. 이미지 파일만 있는 경우에도 먼저 보내주시면 해상도와 칼선 여부를 확인해드립니다.", keywords: ["AI", "PDF", "파일 형식", "해상도"] },
+        { id: "faq-010", category: "디자인 파일", top: true, question: "칼선이 없어도 제작 가능한가요?", answer: "칼선이 없어도 먼저 문의할 수 있습니다. 제작하려는 박스 구조와 사이즈를 확인한 뒤 칼선 제작이 필요한지 안내드립니다.", keywords: ["칼선", "도면", "제작"] },
+        { id: "faq-011", category: "디자인 파일", question: "로고 파일만 있어도 되나요?", answer: "로고 파일만 있는 경우에도 상담은 가능합니다. 전체 패키지 디자인이 필요한 경우에는 별도 디자인 작업이 필요할 수 있습니다.", keywords: ["로고", "디자인 의뢰"] },
+        { id: "faq-012", category: "제작 기간/샘플", top: true, question: "제작 기간은 얼마나 걸리나요?", answer: "제작 기간은 제품 종류, 수량, 인쇄, 후가공, 샘플 여부에 따라 달라집니다. 일반적으로 디자인 파일과 사양이 정리된 뒤 일정을 안내드립니다.", keywords: ["제작 기간", "납기", "일정"] },
+        { id: "faq-013", category: "제작 기간/샘플", question: "급한 일정도 가능한가요?", answer: "희망 납품일을 알려주시면 가능 여부를 확인해드립니다. 다만 인쇄, 후가공, 건조, 조립 공정에 따라 긴급 제작이 어려운 경우도 있습니다.", keywords: ["급한", "납품", "긴급"] },
+        { id: "faq-014", category: "제작 기간/샘플", top: true, question: "샘플 먼저 제작할 수 있나요?", answer: "사양에 따라 샘플 제작이 가능합니다. 샘플은 구조, 사이즈, 조립 방식, 제품 고정 여부를 확인하는 데 도움이 됩니다.", keywords: ["샘플", "테스트", "확인"] },
+        { id: "faq-015", category: "소량 제작", top: true, question: "소량 제작도 가능한가요?", answer: "품목과 사양에 따라 소량 제작이 가능합니다. 다만 인쇄, 목형, 후가공처럼 공정 세팅이 필요한 작업은 소량일수록 개당 단가가 높아질 수 있습니다.", keywords: ["소량", "소량 제작", "단가"] },
+        { id: "faq-016", category: "소량 제작", question: "1개만 제작할 수 있나요?", answer: "제품 구조와 목적에 따라 샘플 형태로 검토할 수 있습니다. 실제 인쇄와 후가공이 들어가는 본 제작과는 비용과 결과가 다를 수 있습니다.", keywords: ["1개", "한 개", "샘플"] },
+        { id: "faq-017", category: "소량 제작", question: "졸업작품이나 전시용 소량 제작도 가능한가요?", answer: "가능합니다. 필요한 수량, 일정, 제품 사진 또는 도안을 보내주시면 제작 가능한 방향을 확인해드립니다.", keywords: ["졸업작품", "전시", "소량"] },
+        { id: "faq-018", category: "박스 제작", question: "어떤 박스 형태를 제작할 수 있나요?", answer: "단상자, 골판지박스, 자동바닥형, 상하 분리형, 슬리브형 등 다양한 구조를 상담할 수 있습니다. 정확한 구조를 모르면 참고 이미지를 보내주셔도 됩니다.", keywords: ["박스", "단상자", "골판지", "구조"] },
+        { id: "faq-019", category: "박스 제작", question: "박스 종이를 잘 몰라도 되나요?", answer: "괜찮습니다. 담을 제품의 무게, 사용 목적, 원하는 분위기에 따라 적합한 종이와 두께를 함께 검토합니다.", keywords: ["종이", "재질", "두께"] },
+        { id: "faq-020", category: "박스 제작", question: "제품을 넣었을 때 사이즈가 맞는지 확인해주나요?", answer: "제품 실측 정보가 있으면 더 정확하게 확인할 수 있습니다. 내부 트레이나 맞춤 구조는 실측 오차가 중요하므로 샘플 확인을 권장할 수 있습니다.", keywords: ["제품", "실측", "트레이"] },
+        { id: "faq-021", category: "쇼핑백", question: "쇼핑백 제작 시 무엇을 알려드려야 하나요?", answer: "수량, 사이즈, 종이 재질, 끈 종류, 인쇄 여부, 희망 납기를 알려주시면 좋습니다. 모르는 항목은 상담 후 결정해도 됩니다.", keywords: ["쇼핑백", "끈", "종이"] },
+        { id: "faq-022", category: "쇼핑백", question: "쇼핑백 종이나 끈 종류를 몰라도 되나요?", answer: "괜찮습니다. 종이 두께, 면끈, PP끈, 리본 등은 제품 무게와 원하는 분위기에 따라 함께 확인할 수 있습니다.", keywords: ["쇼핑백", "끈", "면끈"] },
+        { id: "faq-023", category: "쇼핑백", question: "무거운 제품을 담는 쇼핑백도 제작 가능한가요?", answer: "제품 무게에 따라 종이 두께, 바닥 보강, 끈 사양을 함께 검토해야 합니다. 담을 제품 정보를 알려주시면 확인해드립니다.", keywords: ["무게", "보강", "쇼핑백"] },
+        { id: "faq-024", category: "싸바리·봉투·트레이", question: "싸바리박스는 제작 기간이 더 오래 걸리나요?", answer: "싸바리박스는 일반 단상자보다 수작업과 조립 공정이 많아 제작 기간이 더 걸릴 수 있습니다. 구조, 수량, 마감, 샘플 여부에 따라 일정이 달라집니다.", keywords: ["싸바리", "고급 박스", "제작 기간"] },
+        { id: "faq-025", category: "싸바리·봉투·트레이", question: "봉투도 제작 가능한가요?", answer: "종이 봉투, 접착 봉투, 삽입형 봉투 등은 사용 목적에 따라 검토할 수 있습니다. 참고 이미지가 있으면 상담이 더 쉽습니다.", keywords: ["봉투", "종이 봉투"] },
+        { id: "faq-026", category: "싸바리·봉투·트레이", question: "제품을 고정하는 트레이나 인서트도 제작 가능한가요?", answer: "가능합니다. 담을 제품 사진, 실측 사이즈, 고정 방식, 수량을 알려주시면 종이, 골판지, PET 등 가능한 방향을 확인합니다.", keywords: ["트레이", "인서트", "고정"] },
+        { id: "faq-027", category: "배송/결제", question: "배송은 어떻게 진행되나요?", answer: "제품 크기와 수량에 따라 택배, 화물, 퀵, 방문 수령 등으로 안내될 수 있습니다. 배송 방식은 제품 부피와 납품 일정에 따라 상담 시 확인합니다.", keywords: ["배송", "택배", "화물", "수령"] },
+        { id: "faq-028", category: "배송/결제", question: "세금계산서 발행이 가능한가요?", answer: "사업자 정보 확인 후 세금계산서 발행이 가능합니다. 진행 시 필요한 사업자등록증, 이메일, 결제 관련 정보는 상담 과정에서 안내드립니다.", keywords: ["세금계산서", "사업자", "결제"] },
+        { id: "faq-029", category: "배송/결제", question: "방문 상담이나 방문 수령도 가능한가요?", answer: "상황에 따라 별도 확인이 필요합니다. 방문이 필요한 경우 상담 시 일정과 가능 여부를 함께 확인합니다.", keywords: ["방문", "상담", "수령"] },
+        { id: "faq-030", category: "제작 주의사항", question: "인쇄 색상이 화면과 다를 수 있나요?", answer: "모니터 화면과 실제 인쇄물의 색상은 다르게 보일 수 있습니다. 종이 재질, 인쇄 방식, 코팅 여부에 따라서도 색감 차이가 발생할 수 있습니다.", keywords: ["인쇄 색상", "색감", "모니터"] },
+        { id: "faq-031", category: "제작 주의사항", question: "제작 후 사이즈 오차가 있을 수 있나요?", answer: "인쇄, 재단, 접착, 조립 공정에서 미세한 오차가 발생할 수 있습니다. 제품에 정확히 맞아야 하는 경우 실측과 샘플 확인이 중요합니다.", keywords: ["오차", "사이즈", "재단"] },
+        { id: "faq-032", category: "제작 주의사항", question: "상담 후 바로 제작에 들어가나요?", answer: "아닙니다. 제작은 견적, 사양, 디자인 파일, 일정, 결제 조건 등이 확인된 뒤 진행됩니다.", keywords: ["상담", "진행", "제작"] }
+      ];
+
+      var root = document.getElementById("pp-faq-page");
+      if (!root) return;
+
+      var categoryMount = root.querySelector("[data-pp-faq-categories]");
+      var topMount = root.querySelector("[data-pp-faq-top]");
+      var listMount = root.querySelector("[data-pp-faq-list]");
+      var searchInput = root.querySelector("[data-pp-faq-search]");
+      var clearButton = root.querySelector("[data-pp-faq-clear]");
+      var emptyNode = root.querySelector("[data-pp-faq-empty]");
+      var countNode = root.querySelector("[data-pp-faq-count]");
+      var channelMessage = root.querySelector("[data-pp-faq-channel-message]");
+      var activeCategory = "전체";
+      var searchTerm = "";
+
+      function escapeHtml(value) {
+        return String(value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#039;");
+      }
+
+      function normalize(value) {
+        return String(value || "").trim().toLocaleLowerCase("ko-KR");
+      }
+
+      function getSearchText(item) {
+        return normalize([item.category, item.question, item.answer, item.keywords.join(" ")].join(" "));
+      }
+
+      function isVisible(item) {
+        var categoryMatch = activeCategory === "전체" || item.category === activeCategory;
+        var searchMatch = !searchTerm || getSearchText(item).indexOf(normalize(searchTerm)) > -1;
+        return categoryMatch && searchMatch;
+      }
+
+      function renderCategories() {
+        categoryMount.innerHTML = categories.map(function (category) {
+          return '<button class="pp-faq-category" type="button" data-pp-faq-category="' + escapeHtml(category) + '" aria-pressed="' + String(category === activeCategory) + '">' + escapeHtml(category) + '</button>';
+        }).join("");
+      }
+
+      function renderTopQuestions() {
+        var topItems = faqItems.filter(function (item) { return item.top; }).slice(0, 10);
+        topMount.innerHTML = topItems.map(function (item, index) {
+          return '<article class="pp-faq-top-card">' +
+            '<span>' + String(index + 1).padStart(2, "0") + '</span>' +
+            '<button type="button" data-pp-faq-jump="' + escapeHtml(item.id) + '">' + escapeHtml(item.question) + '</button>' +
+          '</article>';
+        }).join("");
+      }
+
+      function renderList() {
+        var items = faqItems.filter(isVisible);
+        listMount.innerHTML = items.map(function (item, index) {
+          var panelId = item.id + "-panel";
+          var isOpen = index === 0;
+          return '<article class="pp-faq-item" id="' + escapeHtml(item.id) + '" data-pp-faq-item>' +
+            '<button class="pp-faq-item__button" type="button" aria-expanded="' + String(isOpen) + '" aria-controls="' + escapeHtml(panelId) + '">' +
+              '<span class="pp-faq-item__question">' +
+                '<span class="pp-faq-badge">' + escapeHtml(item.category) + '</span>' +
+                '<strong>' + escapeHtml(item.question) + '</strong>' +
+              '</span>' +
+              '<span class="pp-faq-toggle" aria-hidden="true"></span>' +
+            '</button>' +
+            '<div class="pp-faq-item__panel" id="' + escapeHtml(panelId) + '"' + (isOpen ? "" : " hidden") + '>' +
+              '<div class="pp-faq-item__answer">' +
+                '<p>' + escapeHtml(item.answer) + '</p>' +
+                '<div class="pp-faq-item__hint">추가 확인이 필요하면 <a href="' + escapeHtml(PP_FAQ_CONFIG.inquiryUrl) + '" data-pp-faq-inquiry>견적 문의</a>로 제품 정보와 함께 남겨주세요.</div>' +
+              '</div>' +
+            '</div>' +
+          '</article>';
+        }).join("");
+
+        emptyNode.classList.toggle("is-visible", items.length === 0);
+        countNode.textContent = (activeCategory === "전체" ? "전체" : activeCategory) + " 질문 " + items.length + "개";
+        clearButton.classList.toggle("is-visible", Boolean(searchTerm));
+      }
+
+      function renderAll() {
+        renderCategories();
+        renderTopQuestions();
+        renderList();
+      }
+
+      function openItem(item) {
+        var button = item.querySelector(".pp-faq-item__button");
+        var panel = item.querySelector(".pp-faq-item__panel");
+        if (!button || !panel) return;
+        button.setAttribute("aria-expanded", "true");
+        panel.hidden = false;
+      }
+
+      function closeItem(item) {
+        var button = item.querySelector(".pp-faq-item__button");
+        var panel = item.querySelector(".pp-faq-item__panel");
+        if (!button || !panel) return;
+        button.setAttribute("aria-expanded", "false");
+        panel.hidden = true;
+      }
+
+      root.addEventListener("click", function (event) {
+        var categoryButton = event.target.closest("[data-pp-faq-category]");
+        if (categoryButton) {
+          activeCategory = categoryButton.getAttribute("data-pp-faq-category") || "전체";
+          renderAll();
+          return;
+        }
+
+        var itemButton = event.target.closest(".pp-faq-item__button");
+        if (itemButton) {
+          var item = itemButton.closest("[data-pp-faq-item]");
+          var expanded = itemButton.getAttribute("aria-expanded") === "true";
+          if (expanded) closeItem(item);
+          else openItem(item);
+          return;
+        }
+
+        var jumpButton = event.target.closest("[data-pp-faq-jump]");
+        if (jumpButton) {
+          var id = jumpButton.getAttribute("data-pp-faq-jump");
+          activeCategory = "전체";
+          searchTerm = "";
+          if (searchInput) searchInput.value = "";
+          renderAll();
+          var target = root.querySelector("#" + id);
+          if (target) {
+            openItem(target);
+            target.scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+          return;
+        }
+
+        var clear = event.target.closest("[data-pp-faq-clear]");
+        if (clear) {
+          searchTerm = "";
+          if (searchInput) searchInput.value = "";
+          renderList();
+          if (searchInput) searchInput.focus();
+          return;
+        }
+
+        var channel = event.target.closest("[data-pp-faq-channel]");
+        if (channel) {
+          if (PP_FAQ_CONFIG.channelTalkMode === "channelio" && typeof window.ChannelIO === "function") {
+            window.ChannelIO("showMessenger");
+            return;
+          }
+          if (PP_FAQ_CONFIG.channelTalkUrl) {
+            window.open(PP_FAQ_CONFIG.channelTalkUrl, "_blank", "noopener,noreferrer");
+            return;
+          }
+          if (channelMessage) channelMessage.classList.add("is-visible");
+        }
+      });
+
+      if (searchInput) {
+        searchInput.addEventListener("input", function () {
+          searchTerm = searchInput.value;
+          renderList();
+        });
+      }
+
+      root.querySelectorAll("[data-pp-faq-inquiry]").forEach(function (link) {
+        link.setAttribute("href", PP_FAQ_CONFIG.inquiryUrl);
+      });
+
+      renderAll();
+    }());
+  </script>
+</body>
+</html>

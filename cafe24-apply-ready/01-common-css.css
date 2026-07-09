@@ -1,0 +1,238 @@
+/*
+ * 적용 위치: Cafe24 스마트디자인 공통 CSS 또는 별도 업로드 CSS 파일
+ * 원본 백업: 적용 전 현재 스킨 CSS 백업 필요
+ * 파일 성격: 페르패키지 Cafe24 스니펫용 공통 CSS
+ * 주의사항: 전역 reset이 아니라 .pp-cafe24 중심 scoped 스타일입니다.
+ */
+
+.pp-cafe24 {
+  --pp-cafe24-navy: #2A408C;
+  --pp-cafe24-navy-dark: #071D49;
+  --pp-cafe24-ink: #172033;
+  --pp-cafe24-muted: #667085;
+  --pp-cafe24-line: #dbe5ef;
+  --pp-cafe24-soft: #f4f7fb;
+  --pp-cafe24-card: #ffffff;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding: 44px 20px 64px;
+  color: var(--pp-cafe24-ink);
+  font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.65;
+}
+
+.pp-cafe24 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pp-cafe24 img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.pp-cafe24-section {
+  margin-top: 48px;
+}
+
+.pp-cafe24-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+  align-items: center;
+  gap: 34px;
+  padding: clamp(30px, 4vw, 56px);
+  border: 1px solid rgba(42, 64, 140, .12);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(42, 64, 140, .13), transparent 30%),
+    linear-gradient(135deg, #f6f9fc 0%, #ffffff 56%, #eef4fb 100%);
+  box-shadow: 0 24px 68px rgba(10, 50, 102, .1);
+}
+
+.pp-cafe24-eyebrow {
+  display: inline-flex;
+  margin: 0 0 12px;
+  color: var(--pp-cafe24-navy);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pp-cafe24 h1,
+.pp-cafe24 h2,
+.pp-cafe24 h3 {
+  margin: 0;
+  color: var(--pp-cafe24-navy-dark);
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.pp-cafe24 h1 {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.12;
+}
+
+.pp-cafe24 h2 {
+  font-size: clamp(24px, 3vw, 36px);
+  line-height: 1.22;
+}
+
+.pp-cafe24 h3 {
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.pp-cafe24 p {
+  margin: 12px 0 0;
+  color: var(--pp-cafe24-muted);
+  font-size: 15px;
+  word-break: keep-all;
+}
+
+.pp-cafe24-actions,
+.pp-cafe24-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.pp-cafe24-button,
+.pp-cafe24-link-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid rgba(42, 64, 140, .18);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--pp-cafe24-navy);
+  font-size: 14px;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.pp-cafe24-button--primary {
+  border-color: var(--pp-cafe24-navy);
+  background: var(--pp-cafe24-navy);
+  color: #ffffff;
+  box-shadow: 0 16px 34px rgba(42, 64, 140, .22);
+}
+
+.pp-cafe24-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.pp-cafe24-card-grid--four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pp-cafe24-card {
+  display: grid;
+  align-content: start;
+  min-height: 160px;
+  padding: 22px;
+  border: 1px solid var(--pp-cafe24-line);
+  border-radius: 20px;
+  background: var(--pp-cafe24-card);
+  box-shadow: 0 18px 44px rgba(10, 50, 102, .07);
+}
+
+.pp-cafe24-card strong {
+  color: var(--pp-cafe24-navy-dark);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.35;
+  word-break: keep-all;
+}
+
+.pp-cafe24-card span {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background: #edf3fb;
+  color: var(--pp-cafe24-navy);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.pp-cafe24-flow {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.pp-cafe24-flow li {
+  display: grid;
+  gap: 8px;
+  padding: 18px 14px;
+  border: 1px solid var(--pp-cafe24-line);
+  border-radius: 18px;
+  background: #ffffff;
+  list-style: none;
+}
+
+.pp-cafe24-flow b {
+  color: var(--pp-cafe24-navy);
+  font-size: 13px;
+}
+
+.pp-cafe24-note {
+  margin-top: 22px;
+  padding: 15px 18px;
+  border: 1px solid rgba(42, 64, 140, .16);
+  border-radius: 16px;
+  background: #f6f9fd;
+  color: #344054;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.pp-cafe24-quickbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+@media (max-width: 860px) {
+  .pp-cafe24 {
+    padding: 28px 16px 48px;
+  }
+
+  .pp-cafe24-hero {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 26px 20px;
+    border-radius: 22px;
+  }
+
+  .pp-cafe24-card-grid,
+  .pp-cafe24-card-grid--four {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pp-cafe24-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .pp-cafe24 h1 {
+    font-size: 32px;
+  }
+
+  .pp-cafe24-card-grid,
+  .pp-cafe24-card-grid--four,
+  .pp-cafe24-flow {
+    grid-template-columns: 1fr;
+  }
+}
