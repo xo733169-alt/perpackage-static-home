@@ -3,180 +3,54 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>페르패키지 메인 배너 및 실사 아이콘 비교</title>
+  <title>Perpackage banner and icon preview</title>
   <style>
-    :root { --navy:#183f83; --ink:#0b2347; --muted:#64748b; --line:#dce5ef; --page:#f4f7fa; --white:#fff; }
+    :root { --navy:#183f83; --ink:#0b2347; --muted:#667893; --line:#e1e8f0; }
     * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; }
-    body { margin:0; background:var(--page); color:var(--ink); font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-    button { font:inherit; }
-    a { color:inherit; text-decoration:none; }
-    .pp-shell { width:min(1320px,calc(100% - 48px)); margin:0 auto; }
-    .pp-top { height:34px; border-bottom:1px solid var(--line); background:#f3f5f8; }
-    .pp-top .pp-shell { display:flex; align-items:center; justify-content:space-between; height:100%; color:#60728d; font-size:12px; }
-    .pp-social,.pp-utility { display:flex; gap:10px; }
-    .pp-social span { display:grid; width:19px; height:19px; place-items:center; border:1px solid #dbe2ea; border-radius:50%; background:#fff; font-size:10px; font-weight:700; }
-    .pp-header { border-bottom:1px solid var(--line); background:#fff; }
-    .pp-mainhead { display:grid; grid-template-columns:185px minmax(360px,650px) 1fr; align-items:center; gap:34px; min-height:104px; }
-    .pp-logo { color:var(--navy); font-size:27px; font-weight:800; }
-    .pp-logo small { display:block; margin-top:2px; font-size:8px; letter-spacing:.16em; }
-    .pp-search { display:flex; height:48px; overflow:hidden; border:1.5px solid var(--navy); border-radius:6px; }
-    .pp-search input { min-width:0; flex:1; border:0; outline:0; padding:0 18px; font:inherit; font-size:14px; }
-    .pp-search button { width:58px; border:0; border-left:1px solid #dce4ef; background:#fff; color:var(--navy); font-size:26px; }
-    .pp-actions { display:flex; justify-content:flex-end; gap:22px; }
-    .pp-action { display:grid; min-width:48px; justify-items:center; gap:6px; color:var(--navy); font-size:11px; font-weight:700; }
-    .pp-action b { display:grid; width:29px; height:29px; place-items:center; border:1.5px solid #4164a2; border-radius:8px; font-size:14px; }
-    .pp-nav { border-top:1px solid #f5f6f8; }
-    .pp-nav .pp-shell { display:flex; min-height:52px; align-items:center; gap:27px; overflow-x:auto; white-space:nowrap; font-size:14px; font-weight:700; }
-    .pp-nav a:first-child,.pp-nav .pp-nav-guide { color:var(--navy); }
-    .pp-nav-guide { margin-left:auto; }
-    .pp-main { padding:34px 0 76px; }
-    .pp-panel { overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff; box-shadow:0 16px 36px rgba(15,42,81,.06); }
-    .pp-panel-head { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:28px 30px 20px; border-bottom:1px solid var(--line); }
-    .pp-panel-head h1 { margin:0; font-size:28px; line-height:1.25; }
-    .pp-panel-head p { margin:7px 0 0; color:var(--muted); font-size:14px; line-height:1.6; }
-    .pp-status { color:var(--navy); font-size:13px; font-weight:700; }
-    .pp-selector { display:flex; flex-wrap:wrap; gap:10px; padding:20px 30px; border-bottom:1px solid var(--line); background:#fbfcfe; }
-    .pp-selector__label { display:flex; align-items:center; margin-right:4px; color:var(--muted); font-size:13px; font-weight:700; }
-    .pp-selector button { min-width:118px; padding:10px 16px; border:1px solid #ccd8e8; border-radius:999px; background:#fff; color:#52657e; font-size:14px; font-weight:700; cursor:pointer; transition:.18s ease; }
-    .pp-selector button:hover,.pp-selector button[aria-pressed="true"] { border-color:var(--navy); background:var(--navy); color:#fff; }
-    .pp-preview { padding:32px 0 34px; background:#f7f9fc; }
-    .pp-hero { overflow:hidden; }
-    .pp-hero-track { display:flex; width:max-content; gap:18px; padding:0 max(0px,calc((100vw - 1320px)/2)); transition:transform .28s ease; }
-    .pp-banner { display:grid; width:800px; height:430px; grid-template-columns:43% 57%; overflow:hidden; border-radius:10px; background:#e8f2ff; box-shadow:0 10px 24px rgba(12,38,75,.08); transition:width .28s ease,height .28s ease; }
-    .pp-banner--warm { background:#fff4d5; }
-    .pp-banner--peach { background:#fff0ea; }
-    .pp-copy { display:flex; flex-direction:column; justify-content:center; padding:40px 30px; }
-    .pp-copy em { align-self:flex-start; margin-bottom:17px; padding:6px 10px; border-radius:4px; background:rgba(255,255,255,.88); color:var(--navy); font-size:12px; font-style:normal; font-weight:700; }
-    .pp-copy h2 { margin:0; font-size:35px; line-height:1.2; letter-spacing:0; }
-    .pp-copy p { margin:18px 0 0; color:#3e557b; font-size:14px; line-height:1.72; }
-    .pp-banner img { width:100%; height:100%; object-fit:cover; }
-    .pp-comparison[data-size="compact"] .pp-banner { width:590px; height:280px; grid-template-columns:44% 56%; }
-    .pp-comparison[data-size="compact"] .pp-copy { padding:25px 22px; }
-    .pp-comparison[data-size="compact"] .pp-copy em { margin-bottom:10px; padding:5px 8px; font-size:10px; }
-    .pp-comparison[data-size="compact"] .pp-copy h2 { font-size:27px; }
-    .pp-comparison[data-size="compact"] .pp-copy p { margin-top:12px; font-size:12px; line-height:1.55; }
-    .pp-controls { display:flex; align-items:center; justify-content:center; gap:10px; padding:20px 24px 0; }
-    .pp-arrow { display:grid; width:40px; height:40px; place-items:center; border:1px solid #d7e0eb; border-radius:7px; background:#fff; color:var(--navy); font-size:25px; cursor:pointer; }
-    .pp-arrow:hover { border-color:#91a9d0; background:#f4f8ff; }
-    .pp-hero-dots { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:min(620px,54vw); }
-    .pp-hero-dots span { padding:10px 16px; border-radius:999px; background:#b7beca; color:#fff; text-align:center; font-size:14px; font-weight:700; }
-    .pp-hero-dots .is-active { background:#252c38; }
-    .pp-icons { padding:34px 30px 30px; }
-    .pp-icons__head { display:flex; align-items:end; justify-content:space-between; gap:20px; }
-    .pp-icons__head h2 { margin:0; font-size:25px; }
-    .pp-icons__head p { margin:7px 0 0; color:var(--muted); font-size:14px; line-height:1.6; }
-    .pp-icon-strip-wrap { position:relative; margin-top:24px; }
-    .pp-icon-strip { display:grid; grid-auto-flow:column; grid-auto-columns:220px; gap:16px; overflow-x:auto; padding:4px 0 12px; scroll-behavior:smooth; scroll-snap-type:x proximity; scrollbar-width:none; }
-    .pp-icon-strip::-webkit-scrollbar { display:none; }
-    .pp-icon-grid { display:none; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; margin-top:24px; }
-    .pp-comparison[data-layout="card"] .pp-icon-strip-wrap { display:none; }
-    .pp-comparison[data-layout="card"] .pp-icon-grid { display:grid; }
-    .pp-real-card { display:flex; min-height:236px; flex-direction:column; align-items:center; justify-content:center; gap:12px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; scroll-snap-align:start; transition:transform .2s ease,border-color .2s ease; }
-    .pp-real-card:hover { border-color:#90a8d0; transform:translateY(-3px); }
-    .pp-real-icon { display:grid; width:166px; height:166px; place-items:center; }
-    .pp-real-icon img { width:150px; height:150px; object-fit:contain; transform:scale(1.3); }
-    .pp-real-icon img[data-kind="ready"] { transform:scale(1.2); }
-    .pp-real-icon img[data-kind="custom"] { transform:scale(1.46); }
-    .pp-real-card strong { position:relative; z-index:1; font-size:15px; }
-    .pp-strip-nav { display:flex; justify-content:flex-end; gap:8px; margin:-52px 0 14px; }
-    .pp-strip-nav button { width:38px; height:38px; border:1px solid #d7e0eb; border-radius:7px; background:#fff; color:var(--navy); font-size:22px; cursor:pointer; }
-    .pp-strip-nav button:hover { border-color:#8fa7cf; background:#f5f8ff; }
-    @media (max-width:980px) { .pp-mainhead { grid-template-columns:150px 1fr; gap:20px; }.pp-actions { display:none; }.pp-icon-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }.pp-hero-track { padding-left:24px; }.pp-banner { width:min(800px,calc(100vw - 48px)); } }
-    @media (max-width:650px) { .pp-shell { width:calc(100% - 28px); }.pp-top { display:none; }.pp-mainhead { grid-template-columns:1fr; gap:14px; min-height:auto; padding:20px 0; }.pp-nav .pp-shell { gap:20px; min-height:46px; }.pp-main { padding:16px 0 42px; }.pp-panel-head { display:block; padding:22px 18px 16px; }.pp-panel-head h1 { font-size:23px; }.pp-status { display:block; margin-top:10px; }.pp-selector { padding:14px 18px; }.pp-selector__label { width:100%; }.pp-selector button { min-width:0; flex:1; padding:9px 10px; font-size:13px; }.pp-preview { padding:20px 0 24px; }.pp-hero-track { gap:12px; padding-left:14px; }.pp-banner,.pp-comparison[data-size="compact"] .pp-banner { width:calc(100vw - 28px); height:260px; grid-template-columns:49% 51%; }.pp-copy,.pp-comparison[data-size="compact"] .pp-copy { padding:20px; }.pp-copy h2,.pp-comparison[data-size="compact"] .pp-copy h2 { font-size:25px; }.pp-copy p,.pp-comparison[data-size="compact"] .pp-copy p { margin-top:12px; font-size:12px; }.pp-copy em,.pp-comparison[data-size="compact"] .pp-copy em { margin-bottom:10px; font-size:10px; }.pp-hero-dots { width:calc(100vw - 134px); }.pp-hero-dots span { padding:9px 6px; font-size:12px; }.pp-icons { padding:24px 14px 18px; }.pp-icons__head { display:block; }.pp-icon-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }.pp-real-card { min-height:190px; }.pp-real-icon { width:126px; height:126px; }.pp-real-icon img { width:118px; height:118px; }.pp-icon-strip { grid-auto-columns:190px; }.pp-strip-nav { margin-top:12px; } }
+    body { margin:0; background:#fff; color:var(--ink); font-family:"Pretendard","Noto Sans KR",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
+    a { color:inherit; text-decoration:none; } button { font:inherit; }
+    .pp-frame { width:min(1480px,calc(100% - 48px)); margin:0 auto; }
+    .pp-top { height:34px; border-bottom:1px solid var(--line); background:#f5f7fa; }
+    .pp-top .pp-frame { display:flex; align-items:center; justify-content:space-between; height:100%; color:#657893; font-size:12px; }
+    .pp-social,.pp-utility { display:flex; gap:10px; }.pp-social span { display:grid; width:19px; height:19px; place-items:center; border:1px solid #dbe2ea; border-radius:50%; background:#fff; font-size:10px; font-weight:700; }
+    .pp-header { border-bottom:1px solid var(--line); background:#fff; }.pp-mainhead { display:grid; grid-template-columns:185px minmax(360px,650px) 1fr; align-items:center; gap:34px; min-height:104px; }
+    .pp-logo { color:var(--navy); font-size:27px; font-weight:800; }.pp-logo small { display:block; margin-top:2px; font-size:8px; letter-spacing:.16em; }
+    .pp-search { display:flex; height:48px; overflow:hidden; border:1.5px solid var(--navy); border-radius:6px; background:#fff; }.pp-search input { min-width:0; flex:1; border:0; outline:0; padding:0 18px; font:inherit; font-size:14px; }.pp-search button { width:58px; border:0; border-left:1px solid #dce4ef; background:#fff; color:var(--navy); font-size:26px; }
+    .pp-actions { display:flex; justify-content:flex-end; gap:22px; }.pp-action { display:grid; min-width:48px; justify-items:center; gap:6px; color:var(--navy); font-size:11px; font-weight:700; }.pp-action b { display:grid; width:29px; height:29px; place-items:center; border:1.5px solid #4164a2; border-radius:8px; font-size:14px; }
+    .pp-nav { border-top:1px solid #f5f6f8; border-bottom:1px solid var(--line); }.pp-nav .pp-frame { display:flex; min-height:52px; align-items:center; gap:27px; overflow-x:auto; white-space:nowrap; font-size:14px; font-weight:700; }.pp-nav a:first-child,.pp-nav .pp-guide { color:var(--navy); }.pp-guide { margin-left:auto; }
+    .pp-tabbar { border-bottom:1px solid var(--line); background:#fff; }.pp-tabbar .pp-frame { display:flex; gap:10px; overflow-x:auto; padding:18px 0; }.pp-tab { flex:0 0 auto; min-width:142px; padding:10px 18px; border:1px solid #cfd9e8; border-radius:999px; background:#fff; color:#536780; font-weight:700; font-size:14px; cursor:pointer; }.pp-tab:hover,.pp-tab[aria-selected="true"] { border-color:var(--navy); background:var(--navy); color:#fff; }
+    .pp-stage { padding:30px 0 0; overflow:hidden; }.pp-hero { overflow:hidden; }.pp-hero-track { display:flex; width:max-content; gap:18px; transition:transform .32s ease; }.pp-banner { display:grid; width:800px; height:430px; grid-template-columns:43% 57%; overflow:hidden; border-radius:9px; background:#e8f2ff; }.pp-banner--warm { background:#fff4d5; }.pp-banner--peach { background:#fff0ea; }.pp-copy { display:flex; flex-direction:column; justify-content:center; padding:40px 30px; }.pp-copy em { align-self:flex-start; margin-bottom:17px; padding:6px 10px; border-radius:4px; background:rgba(255,255,255,.88); color:var(--navy); font-size:12px; font-style:normal; font-weight:700; }.pp-copy h1 { margin:0; font-size:35px; line-height:1.2; }.pp-copy p { margin:18px 0 0; color:#3e557b; font-size:14px; line-height:1.72; }.pp-banner img { width:100%; height:100%; object-fit:cover; }
+    .pp-mode[data-banner="small"] .pp-banner { width:590px; height:280px; grid-template-columns:44% 56%; }.pp-mode[data-banner="small"] .pp-copy { padding:25px 22px; }.pp-mode[data-banner="small"] .pp-copy em { margin-bottom:10px; padding:5px 8px; font-size:10px; }.pp-mode[data-banner="small"] .pp-copy h1 { font-size:27px; }.pp-mode[data-banner="small"] .pp-copy p { margin-top:12px; font-size:12px; line-height:1.55; }
+    .pp-controls { display:flex; align-items:center; justify-content:center; gap:10px; padding:18px 0 28px; }.pp-control { display:grid; width:40px; height:40px; place-items:center; border:1px solid #d7e0eb; border-radius:7px; background:#fff; color:var(--navy); font-size:25px; cursor:pointer; }.pp-progress { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; width:620px; }.pp-progress span { padding:10px 16px; border-radius:999px; background:#b7beca; color:#fff; text-align:center; font-size:14px; font-weight:700; }.pp-progress .is-active { background:#252c38; }
+    .pp-icons { padding:28px 0 42px; border-top:1px solid var(--line); }.pp-icons__title { display:flex; align-items:baseline; justify-content:space-between; gap:18px; margin-bottom:18px; }.pp-icons__title h2 { margin:0; font-size:24px; }.pp-icons__title p { margin:0; color:var(--muted); font-size:14px; }.pp-strip-wrap { position:relative; }.pp-strip { display:grid; grid-auto-flow:column; grid-auto-columns:142px; align-items:start; gap:20px; overflow-x:auto; padding:6px 0 16px; scroll-behavior:smooth; scroll-snap-type:x proximity; scrollbar-width:none; }.pp-strip::-webkit-scrollbar { display:none; }.pp-strip-card { display:grid; min-height:202px; align-content:center; justify-items:center; gap:10px; scroll-snap-align:start; background:#fff; }.pp-strip-card strong { font-size:14px; }.pp-real-icon { display:grid; width:150px; height:150px; place-items:center; }.pp-real-icon img { width:150px; height:150px; object-fit:contain; transform:scale(1.3); }.pp-real-icon img[data-kind="ready"] { transform:scale(1.2); }.pp-real-icon img[data-kind="custom"] { transform:scale(1.46); }.pp-strip-nav { display:flex; justify-content:flex-end; gap:8px; margin:-50px 0 12px; }.pp-strip-nav button { width:38px; height:38px; border:1px solid #d7e0eb; border-radius:7px; background:#fff; color:var(--navy); font-size:22px; cursor:pointer; }
+    .pp-icon-grid { display:none; grid-template-columns:repeat(5,minmax(0,1fr)); gap:16px; }.pp-mode[data-icons="card"] .pp-strip-wrap { display:none; }.pp-mode[data-icons="card"] .pp-icon-grid { display:grid; }.pp-card { display:grid; min-height:226px; align-content:center; justify-items:center; gap:12px; overflow:hidden; border:1px solid var(--line); border-radius:9px; background:#fff; transition:transform .2s ease,border-color .2s ease; }.pp-card:hover { border-color:#90a8d0; transform:translateY(-3px); }.pp-card strong { font-size:15px; }
+    @media (min-width:1600px) { .pp-frame { width:1480px; margin-left:calc((100vw - 1919px) / 2 + 215px); margin-right:auto; } }
+    @media (max-width:980px) { .pp-mainhead { grid-template-columns:150px 1fr; gap:20px; }.pp-actions { display:none; }.pp-icon-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+    @media (max-width:650px) { .pp-frame { width:calc(100% - 28px); margin:0 auto; }.pp-top { display:none; }.pp-mainhead { grid-template-columns:1fr; gap:14px; min-height:auto; padding:20px 0; }.pp-nav .pp-frame { gap:20px; min-height:46px; }.pp-tabbar .pp-frame { padding:12px 0; }.pp-tab { min-width:130px; }.pp-stage { padding-top:18px; }.pp-banner,.pp-mode[data-banner="small"] .pp-banner { width:calc(100vw - 28px); height:260px; grid-template-columns:49% 51%; }.pp-copy,.pp-mode[data-banner="small"] .pp-copy { padding:20px; }.pp-copy h1,.pp-mode[data-banner="small"] .pp-copy h1 { font-size:25px; }.pp-copy p,.pp-mode[data-banner="small"] .pp-copy p { margin-top:12px; font-size:12px; }.pp-copy em,.pp-mode[data-banner="small"] .pp-copy em { margin-bottom:10px; font-size:10px; }.pp-progress { width:calc(100vw - 134px); }.pp-progress span { padding:9px 6px; font-size:12px; }.pp-icons { padding:24px 0 30px; }.pp-icons__title { display:block; }.pp-icons__title p { margin-top:7px; }.pp-icon-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }.pp-card { min-height:190px; }.pp-real-icon { width:126px; height:126px; }.pp-real-icon img { width:118px; height:118px; }.pp-strip { grid-auto-columns:130px; gap:10px; }.pp-strip-card { min-height:176px; }.pp-strip-nav { margin-top:8px; } }
   </style>
 </head>
 <body>
   <header class="pp-header">
-    <div class="pp-top"><div class="pp-shell"><div class="pp-social"><span>◎</span><span>▶</span><span>N</span></div><div class="pp-utility"><a href="#login">로그인</a><a href="#join">회원가입</a><a href="#support">고객센터</a></div></div></div>
-    <div class="pp-shell pp-mainhead">
-      <a class="pp-logo" href="#home">페르패키지<small>PER PACKAGE</small></a>
-      <form class="pp-search" action="#search"><input aria-label="상품 검색" placeholder="선물용 박스"><button aria-label="검색" type="submit">⌕</button></form>
-      <nav class="pp-actions" aria-label="주요 바로가기"><a class="pp-action" href="#all"><b>▤</b>전체상품</a><a class="pp-action" href="#custom"><b>✎</b>맞춤제작</a><a class="pp-action" href="#quote"><b>▧</b>견적문의</a><a class="pp-action" href="#guide"><b>▥</b>제작가이드</a><a class="pp-action" href="#caution"><b>!</b>주의사항</a></nav>
-    </div>
-    <nav class="pp-nav"><div class="pp-shell"><a href="#all">전체보기</a><a href="#box">패키지</a><a href="#rigid">싸바리박스</a><a href="#bag">쇼핑백</a><a href="#banner">현수막/배너</a><a href="#card">명함</a><a href="#envelope">봉투</a><a href="#sticker">스티커·띠부</a><a class="pp-nav-guide" href="#guide">제작가이드</a><a href="#caution">주의사항</a></div></nav>
+    <div class="pp-top"><div class="pp-frame"><div class="pp-social"><span>I</span><span>Y</span><span>N</span></div><div class="pp-utility"><a href="#login" data-t="login"></a><a href="#join" data-t="join"></a><a href="#support" data-t="support"></a></div></div></div>
+    <div class="pp-frame pp-mainhead"><a class="pp-logo" href="#home" data-t="brand"><small>PER PACKAGE</small></a><form class="pp-search"><input aria-label="search" data-ph="search"><button aria-label="search" type="submit">&#x2315;</button></form><nav class="pp-actions" aria-label="quick"><a class="pp-action" href="#all"><b>&#x2637;</b><span data-t="all"></span></a><a class="pp-action" href="#custom"><b>&#x270E;</b><span data-t="custom"></span></a><a class="pp-action" href="#quote"><b>&#x2713;</b><span data-t="quote"></span></a><a class="pp-action" href="#guide"><b>&#x25A4;</b><span data-t="guide"></span></a><a class="pp-action" href="#caution"><b>!</b><span data-t="caution"></span></a></nav></div>
+    <nav class="pp-nav"><div class="pp-frame"><a href="#all" data-t="allview"></a><a href="#box" data-t="package"></a><a href="#rigid" data-t="rigid"></a><a href="#bag" data-t="bag"></a><a href="#banner" data-t="banner"></a><a href="#card" data-t="card"></a><a href="#envelope" data-t="envelope"></a><a href="#sticker" data-t="sticker"></a><a class="pp-guide" href="#guide" data-t="guide"></a><a href="#caution" data-t="caution"></a></div></nav>
   </header>
-
-  <main class="pp-main">
-    <div class="pp-shell pp-comparison" data-comparison data-size="wide" data-layout="strip">
-      <section class="pp-panel" aria-label="메인 배너와 실사 아이콘 비교">
-        <div class="pp-panel-head"><div><h1>메인 배너·실사 아이콘 비교</h1><p>배너 크기와 150px 실사 아이콘 나열 방식을 같은 화면에서 비교할 수 있습니다.</p></div><span class="pp-status" data-status>800 × 430 · 가로형</span></div>
-        <div class="pp-selector" aria-label="비교 설정">
-          <span class="pp-selector__label">배너 크기</span>
-          <button type="button" data-size-button="wide" aria-pressed="true">800 × 430</button>
-          <button type="button" data-size-button="compact" aria-pressed="false">590 × 280</button>
-          <span class="pp-selector__label">아이콘 나열</span>
-          <button type="button" data-layout-button="strip" aria-pressed="true">가로형</button>
-          <button type="button" data-layout-button="card" aria-pressed="false">카드형</button>
-        </div>
-
-        <div class="pp-preview">
-          <section class="pp-hero" aria-label="메인 배너 미리보기"><div class="pp-hero-track">
-            <article class="pp-banner pp-banner--warm"><div class="pp-copy"><em>맞춤 패키지 제작</em><h2>브랜드에 맞는<br>구조를 찾으세요</h2><p>싸바리박스, 내부 트레이, 후가공까지 제품 조건에 맞춰 상담합니다.</p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-premium-package-set.jpg" alt="프리미엄 패키지 구성"></article>
-            <article class="pp-banner"><div class="pp-copy"><em>옵션 선택 후 견적 확인</em><h2>패키지를 더<br>쉽게 고르세요</h2><p>단상자, 쇼핑백, 봉투부터 필요한 상품군을 먼저 확인해보세요.</p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-ready-package.jpg" alt="단상자와 쇼핑백 패키지"></article>
-            <article class="pp-banner pp-banner--peach"><div class="pp-copy"><em>소량·샘플 상담 가능</em><h2>작은 수량부터<br>시작하세요</h2><p>테스트, 샘플, 졸업작품도 목적과 일정에 맞춰 제작 방향을 안내합니다.</p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-small-sample.jpg" alt="소량 샘플 패키지"></article>
-          </div></section>
-          <div class="pp-controls" aria-label="배너 조작 예시"><button class="pp-arrow" type="button" data-hero-prev aria-label="이전 배너">‹</button><div class="pp-hero-dots"><span>기성 패키지</span><span>소량 샘플</span><span class="is-active">맞춤 제작</span></div><button class="pp-arrow" type="button" data-hero-next aria-label="다음 배너">›</button><button class="pp-arrow" type="button" aria-label="일시 정지">Ⅱ</button></div>
-        </div>
-
-        <section class="pp-icons" aria-label="150px 실사 아이콘 비교">
-          <div class="pp-icons__head"><div><h2>실사 아이콘 10종</h2><p>가로형은 좌우로 넘겨 보고, 카드형은 전체 구성을 한 번에 확인합니다.</p></div></div>
-          <div class="pp-icon-strip-wrap"><div class="pp-strip-nav"><button type="button" data-strip-prev aria-label="이전 아이콘 보기">‹</button><button type="button" data-strip-next aria-label="다음 아이콘 보기">›</button></div><nav class="pp-icon-strip" data-strip aria-label="실사 아이콘 가로형"></nav></div>
-          <nav class="pp-icon-grid" data-grid aria-label="실사 아이콘 카드형"></nav>
-        </section>
-      </section>
-    </div>
-  </main>
-
+  <nav class="pp-tabbar" aria-label="preview modes"><div class="pp-frame"><button class="pp-tab" type="button" data-mode="wide-strip" aria-selected="true" data-t="wideStrip"></button><button class="pp-tab" type="button" data-mode="wide-card" aria-selected="false" data-t="wideCard"></button><button class="pp-tab" type="button" data-mode="small-strip" aria-selected="false" data-t="smallStrip"></button><button class="pp-tab" type="button" data-mode="small-card" aria-selected="false" data-t="smallCard"></button></div></nav>
+  <main class="pp-mode" data-mode-view data-banner="wide" data-icons="strip"><section class="pp-stage"><div class="pp-frame"><div class="pp-hero"><div class="pp-hero-track" data-hero-track>
+    <article class="pp-banner pp-banner--warm"><div class="pp-copy"><em data-t="customTag"></em><h1 data-h="hero1"></h1><p data-t="hero1p"></p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-premium-package-set.jpg" alt="premium package"></article>
+    <article class="pp-banner"><div class="pp-copy"><em data-t="readyTag"></em><h1 data-h="hero2"></h1><p data-t="hero2p"></p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-ready-package.jpg" alt="ready package"></article>
+    <article class="pp-banner pp-banner--peach"><div class="pp-copy"><em data-t="sampleTag"></em><h1 data-h="hero3"></h1><p data-t="hero3p"></p></div><img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-small-sample.jpg" alt="small samples"></article>
+  </div></div><div class="pp-controls"><button class="pp-control" type="button" data-hero-prev aria-label="previous">&#x2039;</button><div class="pp-progress"><span data-t="ready"></span><span data-t="sample"></span><span class="is-active" data-t="custom"></span></div><button class="pp-control" type="button" data-hero-next aria-label="next">&#x203A;</button><button class="pp-control" type="button" aria-label="pause">&#x2161;</button></div></div></section>
+  <section class="pp-icons"><div class="pp-frame"><div class="pp-icons__title"><h2 data-t="iconTitle"></h2><p data-t="iconSub"></p></div><div class="pp-strip-wrap"><div class="pp-strip-nav"><button type="button" data-strip-prev aria-label="previous">&#x2039;</button><button type="button" data-strip-next aria-label="next">&#x203A;</button></div><nav class="pp-strip" data-strip aria-label="icon strip"></nav></div><nav class="pp-icon-grid" data-grid aria-label="icon cards"></nav></div></section></main>
   <script>
     (function () {
-      var items = [
-        ['단박스', 'quick-ready-box.svg', 'ready'], ['맞춤제작', 'quick-custom-made.svg', 'custom'], ['싸바리박스', 'quick-rigid-box.svg', ''], ['쇼핑백', 'quick-shopping-bag.svg', ''], ['명함', 'quick-business-card.svg', ''], ['배너', 'quick-banner.svg', ''], ['현수막', 'quick-standing-banner.svg', ''], ['봉투', 'quick-envelope.svg', ''], ['스티커', 'quick-sticker.svg', ''], ['더스트백', 'quick-dust-bag.svg', '']
-      ];
-      var comparison = document.querySelector('[data-comparison]');
-      var strip = document.querySelector('[data-strip]');
-      var grid = document.querySelector('[data-grid]');
-      var status = document.querySelector('[data-status]');
-      var heroTrack = document.querySelector('.pp-hero-track');
-      var heroIndex = 0;
-
-      function makeCards() {
-        return items.map(function (item) {
-          return '<a class="pp-real-card" href="#' + item[1].replace('.svg', '') + '"><span class="pp-real-icon"><img src="cafe24-theme/assets/icons/real/' + item[1] + '" alt="' + item[0] + '"' + (item[2] ? ' data-kind="' + item[2] + '"' : '') + '></span><strong>' + item[0] + '</strong></a>';
-        }).join('');
-      }
-      strip.innerHTML = makeCards();
-      grid.innerHTML = makeCards();
-
-      function updateStatus() {
-        var size = comparison.dataset.size === 'wide' ? '800 × 430' : '590 × 280';
-        var layout = comparison.dataset.layout === 'strip' ? '가로형' : '카드형';
-        status.textContent = size + ' · ' + layout;
-      }
-      document.querySelectorAll('[data-size-button]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          comparison.dataset.size = button.dataset.sizeButton;
-          document.querySelectorAll('[data-size-button]').forEach(function (target) { target.setAttribute('aria-pressed', String(target === button)); });
-          updateStatus();
-        });
-      });
-      document.querySelectorAll('[data-layout-button]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          comparison.dataset.layout = button.dataset.layoutButton;
-          document.querySelectorAll('[data-layout-button]').forEach(function (target) { target.setAttribute('aria-pressed', String(target === button)); });
-          updateStatus();
-        });
-      });
-      document.querySelector('[data-strip-prev]').addEventListener('click', function () { strip.scrollBy({ left: -472, behavior: 'smooth' }); });
-      document.querySelector('[data-strip-next]').addEventListener('click', function () { strip.scrollBy({ left: 472, behavior: 'smooth' }); });
-      function moveHero(direction) {
-        var banner = heroTrack.querySelector('.pp-banner');
-        heroIndex = (heroIndex + direction + 3) % 3;
-        heroTrack.style.transform = 'translateX(-' + ((banner.offsetWidth + 18) * heroIndex) + 'px)';
-      }
-      document.querySelector('[data-hero-prev]').addEventListener('click', function () { moveHero(-1); });
-      document.querySelector('[data-hero-next]').addEventListener('click', function () { moveHero(1); });
-      window.addEventListener('resize', function () { moveHero(0); });
+      var T={brand:'\ud398\ub974\ud328\ud0a4\uc9c0',login:'\ub85c\uadf8\uc778',join:'\ud68c\uc6d0\uac00\uc785',support:'\uace0\uac1d\uc13c\ud130',all:'\uc804\uccb4\uc0c1\ud488',custom:'\ub9de\ucda4\uc81c\uc791',quote:'\uacac\uc801\ubb38\uc758',guide:'\uc81c\uc791\uac00\uc774\ub4dc',caution:'\uc8fc\uc758\uc0ac\ud56d',allview:'\uc804\uccb4\ubcf4\uae30',package:'\ud328\ud0a4\uc9c0',rigid:'\uc2f8\ubc14\ub9ac\ubc15\uc2a4',bag:'\uc1fc\ud551\ubc31',banner:'\ud604\uc218\ub9c9-\ubc30\ub108',card:'\uba85\ud568',envelope:'\ubd09\ud22c',sticker:'\uc2a4\ud2f0\ucee4-\ub760\ubd80',wideStrip:'\ubc30\ub1081 \uac00\ub85c\ud615',wideCard:'\ubc30\ub1081 \uce74\ub4dc\ud615',smallStrip:'\ubc30\ub1082 \uac00\ub85c\ud615',smallCard:'\ubc30\ub1082 \uce74\ub4dc\ud615',customTag:'\ub9de\ucda4 \ud328\ud0a4\uc9c0 \uc81c\uc791',readyTag:'\uc635\uc158 \uc120\ud0dd \ud6c4 \uacac\uc801 \ud655\uc778',sampleTag:'\uc18c\ub7c9\uc0d8\ud50c \uc0c1\ub2f4 \uac00\ub2a5',hero1:'\ube0c\ub79c\ub4dc\uc5d0 \ub9de\ub294<br>\uad6c\uc870\ub97c \ucc3e\uc73c\uc138\uc694',hero1p:'\uc2f8\ubc14\ub9ac\ubc15\uc2a4, \ub0b4\ubd80 \ud2b8\ub808\uc774, \ud6c4\uac00\uacf5\uae4c\uc9c0 \uc81c\ud488 \uc870\uac74\uc5d0 \ub9de\ucdb0 \uc0c1\ub2f4\ud569\ub2c8\ub2e4.',hero2:'\ud328\ud0a4\uc9c0\ub97c \ub354<br>\uc27d\uac8c \uace0\ub974\uc138\uc694',hero2p:'\ub2e8\uc0c1\uc790, \uc1fc\ud551\ubc31, \ubd09\ud22c\ubd80\ud130 \ud544\uc694\ud55c \uc0c1\ud488\uad70\uc744 \uba3c\uc800 \ud655\uc778\ud574\ubcf4\uc138\uc694.',hero3:'\uc791\uc740 \uc218\ub7c9\ubd80\ud130<br>\uc2dc\uc791\ud558\uc138\uc694',hero3p:'\ud14c\uc2a4\ud2b8, \uc0d8\ud50c, \uc878\uc5c5\uc791\ud488\ub3c4 \ubaa9\uc801\uacfc \uc77c\uc815\uc744 \ud655\uc778\ud574 \uc81c\uc791 \ubc29\ud5a5\uc744 \uc548\ub0b4\ud569\ub2c8\ub2e4.',ready:'\uae30\uc131 \ud328\ud0a4\uc9c0',sample:'\uc18c\ub7c9 \uc0d8\ud50c',iconTitle:'\uc5b4\ub5a4 \ud328\ud0a4\uc9c0\uac00 \ud544\uc694\ud558\uc2e0\uac00\uc694?',iconSub:'\uc81c\ud488 \uc6a9\ub3c4\uc640 \uc81c\uc791 \ubc29\uc2dd\uc5d0 \uac00\uae4c\uc6b4 \ubd84\ub958\ubd80\ud130 \ud655\uc778\ud574\ubcf4\uc138\uc694.'};
+      document.querySelectorAll('[data-t]').forEach(function(n){n.textContent=T[n.dataset.t]||'';}); document.querySelectorAll('[data-h]').forEach(function(n){n.innerHTML=T[n.dataset.h]||'';}); document.querySelector('[data-ph]').placeholder='\uc120\ubb3c\uc6a9 \ubc15\uc2a4';
+      var items=[['\ub2e8\ubc15\uc2a4','quick-ready-box.svg','ready'],['\ub9de\ucda4\uc81c\uc791','quick-custom-made.svg','custom'],['\uc2f8\ubc14\ub9ac\ubc15\uc2a4','quick-rigid-box.svg',''],['\uc1fc\ud551\ubc31','quick-shopping-bag.svg',''],['\uba85\ud568','quick-business-card.svg',''],['\ubc30\ub108','quick-banner.svg',''],['\ud604\uc218\ub9c9','quick-standing-banner.svg',''],['\ubd09\ud22c','quick-envelope.svg',''],['\uc2a4\ud2f0\ucee4','quick-sticker.svg',''],['\ub354\uc2a4\ud2b8\ubc31','quick-dust-bag.svg','']];
+      var view=document.querySelector('[data-mode-view]'),strip=document.querySelector('[data-strip]'),grid=document.querySelector('[data-grid]'),track=document.querySelector('[data-hero-track]'),heroIndex=0;
+      function cards(c){return items.map(function(x){return '<a class="'+c+'" href="#'+x[1].replace('.svg','')+'"><span class="pp-real-icon"><img src="cafe24-theme/assets/icons/real/'+x[1]+'" alt="'+x[0]+'"'+(x[2]?' data-kind="'+x[2]+'"':'')+'></span><strong>'+x[0]+'</strong></a>';}).join('');} strip.innerHTML=cards('pp-strip-card');grid.innerHTML=cards('pp-card');
+      document.querySelectorAll('[data-mode]').forEach(function(tab){tab.addEventListener('click',function(){var v=tab.dataset.mode.split('-');view.dataset.banner=v[0]==='wide'?'wide':'small';view.dataset.icons=v[1];document.querySelectorAll('[data-mode]').forEach(function(x){x.setAttribute('aria-selected',String(x===tab));});heroIndex=0;track.style.transform='translateX(0)';});});
+      function move(n){var b=track.querySelector('.pp-banner');heroIndex=(heroIndex+n+3)%3;track.style.transform='translateX(-'+((b.offsetWidth+18)*heroIndex)+'px)';} document.querySelector('[data-hero-prev]').addEventListener('click',function(){move(-1);});document.querySelector('[data-hero-next]').addEventListener('click',function(){move(1);});document.querySelector('[data-strip-prev]').addEventListener('click',function(){strip.scrollBy({left:-480,behavior:'smooth'});});document.querySelector('[data-strip-next]').addEventListener('click',function(){strip.scrollBy({left:480,behavior:'smooth'});});window.addEventListener('resize',function(){move(0);});
     }());
   </script>
 </body>
