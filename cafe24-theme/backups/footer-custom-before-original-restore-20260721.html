@@ -1,0 +1,126 @@
+<footer class="pp-cafe24-footer pp-cafe24-footer--service" module="Layout_footer">
+  <div class="pp-cafe24-shell pp-cafe24-footer__top">
+    <div class="pp-cafe24-footer__brand">
+      <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/brand/perpackage-wordmark.png" alt="페르패키지" loading="lazy">
+      <p>을지로에서 기성 패키지부터 맞춤 패키지까지 제작 방향을 함께 정리합니다.</p>
+    </div>
+    <div class="pp-cafe24-footer__company">
+      <h2>회사정보</h2>
+      <p><span>상호 {$company_name}</span><span>대표 {$president_name}</span></p>
+      <p><span>사업자등록번호 {$company_regno}</span><span>통신판매업 신고 {$network_regno}</span><span>{$biz_no_link}</span></p>
+      <p><span>주소 {$mall_zipcode} {$mall_addr1} {$mall_addr2}</span></p>
+      <p><span>전화 {$phone}</span><span>이메일 <a href="mailto:{$email}">{$email}</a></span></p>
+      <p><span>개인정보관리책임자 {$cpo_name} (<a href="mailto:{$cpo_email}">{$cpo_email}</a>)</span></p>
+    </div>
+    <nav class="pp-cafe24-footer__links" aria-label="하단 메뉴">
+      <h2>이용안내</h2>
+      <a href="/shopinfo/company.html">회사소개</a>
+      <a href="/member/agreement.html">이용약관</a>
+      <a href="/member/privacy.html"><strong>개인정보처리방침</strong></a>
+      <a href="/shopinfo/guide.html">쇼핑몰 이용안내</a>
+      <a href="/board/product/list.html?board_no=6">상품 Q&amp;A</a>
+    </nav>
+  </div>
+
+  <div class="pp-cafe24-shell pp-cafe24-footer__service-grid">
+    <section class="pp-cafe24-footer__service-item">
+      <h2>고객센터안내</h2>
+      <strong class="pp-cafe24-footer__phone">{$phone}</strong>
+      <p>평일 오전 10:00 - 오후 06:00<br>점심 오후 12:00 - 오후 01:00<br>휴무 토/일/공휴일</p>
+      <a class="pp-cafe24-footer__service-link" href="/board/product/list.html?board_no=6">상품문의하기</a>
+      <a class="pp-cafe24-footer__service-link pp-cafe24-footer__service-link--light" href="/board/faq/list.html?board_no=3">자주묻는질문</a>
+    </section>
+    <section class="pp-cafe24-footer__service-item">
+      <h2>입금계좌안내</h2>
+      <strong>국민은행&nbsp;&nbsp;259201-04-471779</strong>
+      <p>예금주 오민규(페르패키지)</p>
+      <a class="pp-cafe24-footer__bank-link" href="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/documents/perpackage-bankbook-copy.png" target="_blank" rel="noopener noreferrer">통장사본 확인하기</a>
+    </section>
+    <section class="pp-cafe24-footer__service-item">
+      <h2>배송안내</h2>
+      <strong>CJ대한통운 (TEL:1588-1255)</strong>
+      <p>배송정보는 해당 택배사를 통해 조회가 가능합니다.<br>배송 및 반품 관련 사항은 고객센터로 문의해 주세요.</p>
+      <a class="pp-cafe24-footer__bank-link" href="/shopinfo/guide.html">배송·반품 안내 보기</a>
+    </section>
+  </div>
+
+  <!-- 기존 스킨의 구매안전서비스 안내를 유지합니다. -->
+  <div class="pp-cafe24-shell pp-cafe24-legacy-escrow">
+    <!--@import(/_wg/import/escrow_info.html)-->
+  </div>
+
+  <div class="pp-cafe24-shell pp-cafe24-footer__bottom">
+    <p>
+      Copyright © <strong>{$mall_name}</strong>. All rights reserved.
+      <a href="http://webgood.co.kr/" target="_blank" rel="noopener noreferrer">Design by WG</a>
+    </p>
+    <p class="pp-cafe24-hosting"><img src="//img.echosting.cafe24.com/skin/base_ko_KR/layout/logo_cafe24.png" alt="hosting by cafe24"></p>
+  </div>
+</footer>
+
+<!-- PG 결제 진행 중 필요한 Cafe24 기본 레이어입니다. -->
+<div id="progressPaybar" style="display:none;">
+  <div id="progressPaybarBackground" class="layerProgress"></div>
+  <div id="progressPaybarView">
+    <p class="graph">현재 결제가 진행 중입니다.</p>
+    <p class="txt">
+      본 결제 창은 결제 완료 후 자동으로 닫힙니다.<br>
+      결제 진행 중에 창을 닫으면 주문이 완료되지 않을 수 있으므로<br>
+      결제가 끝날 때까지 닫지 마세요.
+    </p>
+  </div>
+</div>
+
+<!-- 해외 배송 국가와 언어를 선택하는 Cafe24 기본 레이어입니다. -->
+<div module="Layout_multishopShipping" class="ec-base-layer typeModal">
+  <!--@css(/css/module/layout/multishopShipping.css)-->
+  <!--@js(/js/module/layout/multishopShipping.js)-->
+  <h1>WORLD SHIPPING</h1>
+  <div class="wrap worldshipLayer">
+    <p class="desc">PLEASE SELECT THE DESTINATION COUNTRY AND LANGUAGE :</p>
+    <div class="select">
+      <select module="Layout_multishopShippingCountrylist">
+        <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+        <option value="{$country_code}"{$country_default_selected}>SHIPPING TO : {$country_name}</option>
+      </select>
+    </div>
+    <div class="select">
+      <select module="Layout_multishopShippingLanguagelist">
+        <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+        <option value="{$shop_domain}"{$shop_default_selected}>LANGUAGE : {$shop_language_name}</option>
+      </select>
+    </div>
+  </div>
+  <div class="ec-base-button gFull">
+    <a href="#none" class="btnSubmit">GO</a>
+  </div>
+  <a href="#none" class="btnClose">닫기</a>
+</div>
+
+<!-- AOS가 로드된 스킨에서만 초기화하여 다른 페이지의 오류를 막습니다. -->
+<script>
+  (function () {
+    function initAos() {
+      if (!window.AOS || typeof window.AOS.init !== 'function') return;
+
+      window.AOS.init({
+        offset: 200,
+        delay: 0,
+        duration: 600,
+        once: true,
+        anchorPlacement: 'top-bottom',
+        startEvent: 'load'
+      });
+
+      if (typeof window.AOS.refresh === 'function') {
+        window.AOS.refresh();
+      }
+    }
+
+    if (document.readyState === 'complete') {
+      initAos();
+    } else {
+      window.addEventListener('load', initAos);
+    }
+  }());
+</script>

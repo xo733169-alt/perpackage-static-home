@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>맞춤 패키지 제작 상담 | 페르패키지</title>
+  <meta name="description" content="단상자, 싸바리박스, 쇼핑백 50개·100개 제작과 1,000개 이상 B2B 패키지 제작 상담을 위한 페르패키지 문의 페이지입니다.">
+  <style>
+    :root {
+      --brand: #153d70;
+      --brand-strong: #0c2b52;
+      --green: #216b4a;
+      --ink: #132033;
+      --muted: #5f6d7e;
+      --line: #dfe5eb;
+      --soft: #f4f7fa;
+      --white: #fff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      line-height: 1.6;
+      letter-spacing: 0;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea, select { font: inherit; }
+
+    .lp-shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .lp-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .lp-header {
+      border-bottom: 1px solid var(--line);
+      background: var(--white);
+    }
+    .lp-header__inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+    .lp-logo { width: 174px; flex: 0 0 auto; }
+    .lp-logo img { width: 100%; height: 58px; object-fit: contain; object-position: center; }
+    .lp-hero {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid #2a805d;
+      background: var(--brand-strong);
+    }
+    .lp-hero__inner {
+      min-height: 330px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lp-hero__content {
+      width: 100%;
+      max-width: 860px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 52px 0 56px;
+      color: var(--white);
+      text-align: center;
+    }
+    .lp-eyebrow {
+      margin: 0 0 8px;
+      color: #cce9da;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .lp-hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 4vw, 48px);
+      line-height: 1.25;
+      font-weight: 850;
+    }
+    .lp-hero__lead { max-width: 760px; margin: 15px auto 0; color: #e7edf4; font-size: 17px; }
+    .lp-hero__points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 20px;
+      margin: 20px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 700;
+      justify-content: center;
+    }
+    .lp-hero__points li::before { content: "✓"; margin-right: 7px; color: #8ed1ad; }
+
+    .lp-contact-bar { padding: 42px 0; border-bottom: 1px solid var(--line); background: var(--white); }
+    .lp-contact-bar__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(430px, 1.2fr);
+      align-items: start;
+      gap: 36px;
+    }
+    .lp-contact-bar__copy h2 { margin: 0; font-size: 26px; line-height: 1.35; }
+    .lp-contact-bar__copy p { margin: 10px 0 0; color: var(--muted); font-size: 14px; }
+    .lp-contact-bar .lp-eyebrow { margin-bottom: 7px; color: var(--green); }
+    .lp-contact-bar__actions { margin-top: 22px; }
+    .lp-contact-button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 0 19px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: var(--white);
+      color: #263548;
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .lp-contact-button--kakao { border-color: #f5df00; background: #fee500; color: #191919; }
+    .lp-contact-button__icon {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      object-fit: contain;
+    }
+    .lp-contact-email {
+      margin-top: 15px;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .lp-contact-email a { color: var(--brand); font-weight: 850; text-decoration: underline; text-underline-offset: 3px; }
+    .lp-contact-example {
+      padding: 22px 24px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--soft);
+    }
+    .lp-contact-example__head { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 9px; }
+    .lp-contact-example__head strong { font-size: 16px; }
+    .lp-contact-example p { margin: 0 0 12px; color: var(--muted); font-size: 13px; }
+    .lp-copy-button {
+      min-height: 36px;
+      padding: 0 13px;
+      border: 1px solid var(--brand);
+      border-radius: 4px;
+      color: var(--brand);
+      background: var(--white);
+      font-size: 12px;
+      font-weight: 850;
+      cursor: pointer;
+    }
+    .lp-copy-button:hover, .lp-copy-button:focus-visible { color: var(--white); background: var(--brand); }
+    .lp-contact-example__message {
+      margin: 0;
+      padding: 16px 18px;
+      border-left: 3px solid var(--green);
+      background: var(--white);
+      color: #334258;
+      font-family: inherit;
+      font-size: 13px;
+      line-height: 1.75;
+      white-space: pre-wrap;
+      word-break: keep-all;
+    }
+    .lp-contact-example__note { display: block; margin-top: 10px; color: var(--muted); font-size: 12px; }
+
+    .lp-form-section { padding: 44px 0 48px; background: var(--soft); }
+    .lp-section-head { margin-bottom: 22px; }
+    .lp-section-head h2 { margin: 0; font-size: 30px; line-height: 1.35; }
+    .lp-section-head p { margin: 8px 0 0; color: var(--muted); }
+    .lp-form-layout {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .lp-form-aside {
+      position: sticky;
+      top: 20px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+    }
+    .lp-form-aside h3 { margin: 0 0 14px; font-size: 18px; }
+    .lp-form-aside ol { margin: 0; padding: 0; list-style: none; counter-reset: guide; }
+    .lp-form-aside li {
+      position: relative;
+      padding: 12px 0 12px 36px;
+      border-top: 1px solid #edf0f3;
+      color: #405064;
+      font-size: 14px;
+    }
+    .lp-form-aside li:first-child { border-top: 0; padding-top: 4px; }
+    .lp-form-aside li::before {
+      counter-increment: guide;
+      content: counter(guide);
+      position: absolute;
+      left: 0;
+      top: 12px;
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: var(--green);
+      font-size: 12px;
+      font-weight: 800;
+    }
+    .lp-form-aside li:first-child::before { top: 4px; }
+    .lp-form-aside__note { margin: 14px 0 0; color: var(--muted); font-size: 12px; }
+    .lp-form-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(15, 38, 70, 0.08);
+    }
+    .lp-form-card__bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcfd;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .lp-form-card__bar strong { color: var(--ink); font-size: 15px; }
+    .lp-form-frame { width: 100%; height: 1080px; border: 0; display: block; background: var(--white); }
+    .lp-form-fallback { margin: 0; padding: 14px 18px; border-top: 1px solid var(--line); text-align: center; font-size: 13px; color: var(--muted); }
+    .lp-form-fallback a { color: var(--brand); font-weight: 800; text-decoration: underline; }
+
+    .lp-guide { padding: 52px 0; }
+    .lp-guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+    .lp-guide-item { padding: 22px 24px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .lp-guide-item:first-child { border-left: 1px solid var(--line); }
+    .lp-guide-item span { display: block; color: var(--green); font-size: 12px; font-weight: 850; }
+    .lp-guide-item h3 { margin: 7px 0 5px; font-size: 18px; }
+    .lp-guide-item p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    .lp-prep { padding: 44px 0; background: var(--soft); }
+    .lp-prep-list { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 20px 0 0; padding: 0; list-style: none; }
+    .lp-prep-list li { min-height: 94px; padding: 17px; border: 1px solid var(--line); border-radius: 5px; background: var(--white); }
+    .lp-prep-list strong { display: block; font-size: 15px; }
+    .lp-prep-list span { display: block; margin-top: 4px; color: var(--muted); font-size: 13px; }
+
+    .lp-faq { padding: 48px 0 58px; }
+    .lp-faq details { border-top: 1px solid var(--line); }
+    .lp-faq details:last-of-type { border-bottom: 1px solid var(--line); }
+    .lp-faq summary { padding: 17px 4px; cursor: pointer; font-weight: 800; }
+    .lp-faq details p { margin: -5px 4px 18px; color: var(--muted); font-size: 14px; }
+
+    .lp-footer { padding: 24px 0; color: #dce5ef; background: var(--brand-strong); font-size: 13px; }
+    .lp-footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .lp-footer__contact { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 6px 16px; }
+    .lp-footer__contact a { color: var(--white); font-weight: 750; text-decoration: underline; text-underline-offset: 3px; }
+
+    @media (max-width: 820px) {
+      .lp-shell { width: min(100% - 28px, 1120px); }
+      .lp-header__inner { min-height: 66px; }
+      .lp-logo { width: 145px; }
+      .lp-logo img { height: 48px; }
+      .lp-hero__inner { min-height: 300px; }
+      .lp-hero__content { padding: 42px 0 46px; }
+      .lp-hero__lead { font-size: 15px; }
+      .lp-hero__points { display: grid; gap: 5px; }
+      .lp-contact-bar { padding: 34px 0; }
+      .lp-contact-bar__inner { grid-template-columns: 1fr; gap: 20px; }
+      .lp-contact-button { width: 100%; padding: 0 12px; }
+      .lp-form-section { padding: 34px 0 38px; }
+      .lp-section-head h2 { font-size: 25px; }
+      .lp-form-layout { grid-template-columns: 1fr; gap: 14px; }
+      .lp-form-aside { position: static; }
+      .lp-form-aside ol { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 12px; }
+      .lp-form-frame { height: 1060px; }
+      .lp-guide { padding: 40px 0; }
+      .lp-guide-grid { grid-template-columns: 1fr; }
+      .lp-guide-item, .lp-guide-item:first-child { border-right: 1px solid var(--line); border-left: 1px solid var(--line); }
+      .lp-prep-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .lp-footer__inner { display: grid; gap: 4px; }
+      .lp-footer__contact { display: grid; justify-content: start; gap: 4px; }
+    }
+
+    @media (max-width: 680px) {
+      body { word-break: normal; overflow-wrap: anywhere; }
+      .lp-hero__inner { min-height: 0; }
+      .lp-hero__content { align-items: flex-start; padding: 36px 0 40px; text-align: left; }
+      .lp-hero__lead, .lp-section-head p { max-width: 350px; word-break: normal; }
+      .lp-hero__lead { margin-right: 0; margin-left: 0; }
+      .lp-hero__points { justify-content: flex-start; }
+      .lp-contact-example { padding: 18px; }
+      .lp-contact-example__head { align-items: flex-start; }
+      .lp-form-aside ol { grid-template-columns: 1fr; }
+      .lp-form-frame { display: none; }
+      .lp-form-fallback {
+        display: grid;
+        min-height: 150px;
+        place-items: center;
+        padding: 24px;
+        font-size: 0;
+      }
+      .lp-form-fallback a {
+        width: 100%;
+        min-height: 52px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        color: var(--white);
+        background: var(--brand);
+        font-size: 15px;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .lp-hero h1 { font-size: 31px; }
+      .lp-form-aside { padding: 18px; }
+      .lp-form-card__bar { align-items: flex-start; flex-direction: column; gap: 2px; }
+      .lp-form-frame { height: 1040px; }
+      .lp-prep-list { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="lp-header">
+    <div class="lp-shell lp-header__inner">
+      <a class="lp-logo" href="/" aria-label="페르패키지 홈으로 이동">
+        <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/upload/NNEditor/20250707/d69d0d00dd1b935e92d17d978a47d9db.png" alt="페르패키지">
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="lp-hero" aria-labelledby="landing-title">
+      <div class="lp-shell lp-hero__inner">
+        <div class="lp-hero__content">
+          <p class="lp-eyebrow">Custom package consultation</p>
+          <h1 id="landing-title">제품에 맞는 패키지,<br>제작 상담부터 시작하세요</h1>
+          <p class="lp-hero__lead">단상자, 싸바리박스, 쇼핑백 50개·100개 제작과 1,000개 이상 B2B 제작을 상담합니다.</p>
+          <ul class="lp-hero__points">
+            <li>서울 중구 을지로 상담</li>
+            <li>50개·100개 제작 문의</li>
+            <li>사이즈·수량·후가공 검토</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-form-section" id="inquiry-form" aria-labelledby="form-title">
+      <div class="lp-shell">
+        <div class="lp-section-head">
+          <p class="lp-eyebrow">Quote request</p>
+          <h2 id="form-title">맞춤 패키지 견적문의</h2>
+          <p>알고 있는 내용만 작성해도 괜찮습니다. 확인 후 제작 가능 범위와 필요한 추가 정보를 안내드립니다.</p>
+        </div>
+        <div class="lp-form-layout">
+          <aside class="lp-form-aside" aria-label="폼 작성 순서">
+            <h3>빠른 작성 순서</h3>
+            <ol>
+              <li>연락받을 담당자 정보를 입력합니다.</li>
+              <li>제품 종류와 실측 사이즈를 적습니다.</li>
+              <li>희망 수량과 납품일을 알려주세요.</li>
+              <li>사진·도면·참고 이미지를 첨부합니다.</li>
+            </ol>
+            <p class="lp-form-aside__note">정확한 견적은 구조, 재질, 인쇄, 후가공과 납기 확인 후 확정됩니다.</p>
+          </aside>
+          <div class="lp-form-card">
+            <div class="lp-form-card__bar">
+              <strong>페르패키지 주문제작 문의</strong>
+              <span>필수 항목을 확인해 주세요.</span>
+            </div>
+            <iframe class="lp-form-frame" src="https://www.pluuug.com/form/TrPLMjXdJ1" title="페르패키지 맞춤 패키지 견적문의 폼" loading="eager"></iframe>
+            <p class="lp-form-fallback">폼이 보이지 않으면 <a href="https://www.pluuug.com/form/TrPLMjXdJ1" target="_blank" rel="noopener noreferrer">새 창에서 문의 작성하기</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside class="lp-contact-bar" aria-labelledby="direct-contact-title">
+      <div class="lp-shell lp-contact-bar__inner">
+        <div class="lp-contact-bar__copy">
+          <p class="lp-eyebrow">Direct contact</p>
+          <h2 id="direct-contact-title">카카오톡·이메일로 문의하기</h2>
+          <p>폼 대신 문의하실 때도 오른쪽 양식을 복사해 제작 정보를 함께 보내주세요. 확인해야 할 정보가 갖춰지면 상담과 견적 안내가 빨라집니다.</p>
+          <div class="lp-contact-bar__actions">
+            <a class="lp-contact-button lp-contact-button--kakao" href="https://pf.kakao.com/_chcFxb/chat" target="_blank" rel="noopener noreferrer">
+              <img class="lp-contact-button__icon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/KakaoTalk_logo.svg/250px-KakaoTalk_logo.svg.png" alt="" aria-hidden="true">
+              카카오톡 채널 상담
+            </a>
+          </div>
+          <p class="lp-contact-email">이메일 문의는 <a href="mailto:peerlpackage@peerl.co.kr">peerlpackage@peerl.co.kr</a>로 보내주세요.</p>
+        </div>
+        <div class="lp-contact-example" aria-label="문의 메시지 작성 예시">
+          <div class="lp-contact-example__head">
+            <strong>문의 메시지 양식</strong>
+            <button class="lp-copy-button" type="button" data-copy-template aria-label="문의 메시지 양식 복사">양식 복사</button>
+          </div>
+          <p>아래 항목을 복사해 작성해 주세요. 정확히 모르는 내용은 모름 또는 추천 요청으로 표시해도 됩니다.</p>
+          <pre class="lp-contact-example__message" id="inquiry-message-template">※ 잘 모르는 항목은 "모름" 또는 "추천 요청"으로 작성해 주세요.
+
+▶ 업체명 -
+
+▶ 담당자 성함 -
+
+▶ 연락처 -
+
+▶ 제작하시고자 하는 제품 -
+
+▶ 제작 수량 -
+
+▶ 사이즈 (제품 또는 희망 박스 사이즈) -
+
+▶ 종이 재질 (친환경 종이 / 코팅 종이 / 추천) -
+
+▶ 인쇄 여부 (흑백 / 컬러) -
+
+▶ 후가공 여부 (있음 / 없음, 상세 기재 가능) -
+
+▶ 박스 예시 사진 (캡처본 가능) -</pre>
+          <span class="lp-contact-example__note">제품 사진, 도면, 로고 파일 또는 원하는 패키지 참고 이미지를 함께 보내주시면 좋습니다.</span>
+          <span class="lp-sr-only" data-copy-status aria-live="polite"></span>
+        </div>
+      </div>
+    </aside>
+
+    <section class="lp-guide" aria-labelledby="guide-title">
+      <div class="lp-shell">
+        <div class="lp-section-head">
+          <p class="lp-eyebrow">How to write</p>
+          <h2 id="guide-title">이렇게 작성하면 상담이 빨라집니다</h2>
+        </div>
+        <div class="lp-guide-grid">
+          <article class="lp-guide-item">
+            <span>01</span>
+            <h3>제품과 용도</h3>
+            <p>화장품, 식품, 굿즈처럼 담을 제품과 사용 목적을 적어주세요.</p>
+          </article>
+          <article class="lp-guide-item">
+            <span>02</span>
+            <h3>사이즈와 수량</h3>
+            <p>제품의 가로·세로·높이와 예상 제작 수량을 알려주세요.</p>
+          </article>
+          <article class="lp-guide-item">
+            <span>03</span>
+            <h3>참고 자료</h3>
+            <p>원하는 구조, 로고, 디자인 파일이나 참고 사진을 첨부해 주세요.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lp-prep" aria-labelledby="prep-title">
+      <div class="lp-shell">
+        <div class="lp-section-head">
+          <p class="lp-eyebrow">Before inquiry</p>
+          <h2 id="prep-title">상담 전에 준비하면 좋은 항목</h2>
+        </div>
+        <ul class="lp-prep-list">
+          <li><strong>실측 사이즈</strong><span>가로 × 세로 × 높이</span></li>
+          <li><strong>예상 수량</strong><span>50개·100개 또는 1,000개 이상</span></li>
+          <li><strong>희망 일정</strong><span>교정 확인과 최종 납품 희망일</span></li>
+          <li><strong>참고 이미지</strong><span>구조, 색상, 인쇄 예시</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="lp-faq" aria-labelledby="faq-title">
+      <div class="lp-shell">
+        <div class="lp-section-head">
+          <p class="lp-eyebrow">Quick FAQ</p>
+          <h2 id="faq-title">문의 전 자주 확인하는 내용</h2>
+        </div>
+        <details>
+          <summary>정확한 사이즈를 몰라도 문의할 수 있나요?</summary>
+          <p>가능합니다. 제품 사진과 대략적인 크기를 보내주시면 추가로 필요한 측정 항목을 안내드립니다.</p>
+        </details>
+        <details>
+          <summary>50개 또는 100개 제작도 가능한가요?</summary>
+          <p>품목, 구조, 인쇄와 일정에 따라 가능 범위가 달라집니다. 원하는 수량과 목적을 폼에 남겨주세요.</p>
+        </details>
+        <details>
+          <summary>견적은 바로 확정되나요?</summary>
+          <p>최종 견적은 사이즈, 수량, 재질, 인쇄, 후가공과 납품 조건을 확인한 뒤 안내됩니다.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="lp-footer">
+    <div class="lp-shell lp-footer__inner">
+      <strong>페르패키지</strong>
+      <div class="lp-footer__contact">
+        <span>서울 중구 을지로20길 24-9 2층 페르패키지</span>
+        <span>02-416-1540</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var copyButton = document.querySelector("[data-copy-template]");
+      var template = document.getElementById("inquiry-message-template");
+      var status = document.querySelector("[data-copy-status]");
+
+      if (!copyButton || !template) return;
+
+      function showResult(message) {
+        copyButton.textContent = message;
+        if (status) status.textContent = message;
+        window.setTimeout(function () {
+          copyButton.textContent = "양식 복사";
+        }, 1800);
+      }
+
+      copyButton.addEventListener("click", function () {
+        var text = template.textContent.trim();
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(function () {
+            showResult("복사 완료");
+          }).catch(function () {
+            fallbackCopy(text);
+          });
+          return;
+        }
+
+        fallbackCopy(text);
+      });
+
+      function fallbackCopy(text) {
+        var field = document.createElement("textarea");
+        field.value = text;
+        field.setAttribute("readonly", "");
+        field.style.position = "fixed";
+        field.style.opacity = "0";
+        document.body.appendChild(field);
+        field.select();
+
+        try {
+          document.execCommand("copy");
+          showResult("복사 완료");
+        } catch (error) {
+          showResult("복사 실패");
+        }
+
+        document.body.removeChild(field);
+      }
+    }());
+  </script>
+</body>
+</html>

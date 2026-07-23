@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>맞춤 패키지 제작 상담 | 페르패키지</title>
+  <meta name="description" content="페르패키지 맞춤 패키지 제작 상담 랜딩페이지입니다.">
+  <style>
+    :root {
+      --pp-navy: #2a408c;
+      --pp-ink: #101b2d;
+      --pp-muted: #617086;
+      --pp-line: #e4e9f0;
+      --pp-soft: #f6f8fc;
+      --pp-white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--pp-ink);
+      background: var(--pp-white);
+      font-family: "Pretendard", "Noto Sans KR", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .pp-landing-shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .pp-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .pp-landing-header {
+      border-bottom: 1px solid var(--pp-line);
+      background: var(--pp-white);
+    }
+    .pp-landing-header__inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .pp-landing-header__brand {
+      color: var(--pp-navy);
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+    .pp-landing-header__note {
+      color: var(--pp-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .pp-company-visual {
+      position: relative;
+      overflow: hidden;
+      width: min(100%, 720px);
+      margin: 0 auto;
+      background: var(--pp-white);
+      container-type: inline-size;
+    }
+    .pp-company-visual > img {
+      display: block;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      margin: -25.694% auto 0;
+    }
+
+    /*
+      원본 PNG 크기: 1440 x 19178px
+      제작문의 버튼의 원본 키비주얼 기준 좌표: x=581.5, y=826.5, w=276, h=110px
+    */
+    .pp-company-visual__quote-link {
+      position: absolute;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      left: 40.38%;
+      top: 2.427%;
+      width: 19.17%;
+      aspect-ratio: 276 / 110;
+      border: clamp(1px, 0.28cqw, 2px) solid var(--pp-white);
+      border-radius: 4px;
+      color: var(--pp-white);
+      background: rgba(5, 16, 31, 0.22);
+      font-size: clamp(10px, 2.78cqw, 20px);
+      font-weight: 700;
+      line-height: 1;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .pp-company-visual__quote-link:hover {
+      background: rgba(5, 16, 31, 0.62);
+    }
+    .pp-company-visual__quote-link:focus-visible {
+      outline: 3px solid var(--pp-navy);
+      outline-offset: 5px;
+    }
+
+    .pp-pluuug-form {
+      padding: 84px 0 104px;
+      background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+    }
+    .pp-pluuug-form__header {
+      max-width: 760px;
+      margin: 0 auto 26px;
+      text-align: center;
+    }
+    .pp-pluuug-form__eyebrow {
+      margin: 0 0 8px;
+      color: var(--pp-navy);
+      font-size: 14px;
+      font-weight: 800;
+    }
+    .pp-pluuug-form__header h1 {
+      margin: 0;
+      color: var(--pp-ink);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.22;
+      font-weight: 800;
+    }
+    .pp-pluuug-form__header p:not(.pp-pluuug-form__eyebrow) {
+      margin: 14px auto 0;
+      color: var(--pp-muted);
+      font-size: 16px;
+    }
+    .pp-pluuug-form__notice {
+      max-width: 820px;
+      margin: 0 auto 28px;
+      padding: 15px 20px;
+      border-radius: 14px;
+      color: var(--pp-navy);
+      background: #eaf0ff;
+      font-size: 14px;
+      font-weight: 700;
+      text-align: center;
+    }
+    .pp-pluuug-form__frame {
+      overflow: hidden;
+      width: min(1080px, 100%);
+      margin: 0 auto;
+      border: 1px solid #dbe3ef;
+      border-radius: 22px;
+      background: var(--pp-white);
+      box-shadow: 0 22px 70px rgba(15, 23, 42, 0.12);
+    }
+    .pp-pluuug-form__frame iframe {
+      display: block;
+      width: 100%;
+      height: 1300px;
+      min-height: 1300px;
+      border: 0;
+      background: var(--pp-white);
+    }
+    .pp-pluuug-form__fallback {
+      margin: 18px 0 0;
+      color: var(--pp-muted);
+      font-size: 14px;
+      text-align: center;
+    }
+    .pp-pluuug-form__fallback a {
+      color: var(--pp-navy);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .pp-landing-footer {
+      padding: 28px 0;
+      color: rgba(255, 255, 255, 0.78);
+      background: #0f1a2c;
+      font-size: 13px;
+      text-align: center;
+    }
+    .pp-landing-footer strong { color: var(--pp-white); }
+
+    @media (max-width: 760px) {
+      .pp-landing-shell { width: min(100% - 28px, 1180px); }
+      .pp-landing-header__inner { min-height: 62px; }
+      .pp-landing-header__brand { font-size: 20px; }
+      .pp-landing-header__note { font-size: 12px; }
+      .pp-pluuug-form { padding: 56px 0 76px; }
+      .pp-pluuug-form__header h1 { font-size: 29px; }
+      .pp-pluuug-form__header p:not(.pp-pluuug-form__eyebrow) { font-size: 15px; }
+      .pp-pluuug-form__notice { padding: 14px 16px; font-size: 13px; }
+      .pp-pluuug-form__frame { border-radius: 16px; }
+      .pp-pluuug-form__frame iframe { height: 1500px; min-height: 1500px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="pp-landing-header">
+    <div class="pp-landing-shell pp-landing-header__inner">
+      <a class="pp-landing-header__brand" href="/" aria-label="페르패키지 홈으로 이동">페르패키지</a>
+      <span class="pp-landing-header__note">맞춤 패키지 제작 상담</span>
+    </div>
+  </header>
+
+  <main>
+    <!-- 기존 hero, 추천, 제작 가능 품목, 준비사항 블록을 이 회사용 랜딩 이미지로 교체했습니다. -->
+    <section class="pp-company-visual" id="company-landing-visual" aria-label="페르패키지 회사용 랜딩페이지">
+      <!-- Cafe24 이미지 업로드 후 src만 실제 CDN 주소로 교체하세요. -->
+      <img src="../assets/landing/company-landing-20260716.png" alt="페르패키지 패키지 제작 서비스와 포트폴리오 안내">
+      <a
+        class="pp-company-visual__quote-link"
+        href="https://www.pluuug.com/form/TrPLMjXdJ1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="제작문의 폼을 새 창에서 열기"
+      >
+        제작문의
+      </a>
+    </section>
+
+    <section class="pp-pluuug-form" id="inquiry-form" aria-labelledby="inquiry-title">
+      <div class="pp-landing-shell">
+        <div class="pp-pluuug-form__header">
+          <p class="pp-pluuug-form__eyebrow">견적문의</p>
+          <h1 id="inquiry-title">패키지 제작 문의를 남겨주세요</h1>
+          <p>아래 문의폼을 작성해주시면 확인 후 상담을 도와드리겠습니다.</p>
+        </div>
+
+        <div class="pp-pluuug-form__notice">
+          최종 견적은 사양 확인 후 확정되며, 재고와 납기는 상담 후 안내됩니다.
+        </div>
+
+        <div class="pp-pluuug-form__frame">
+          <iframe
+            src="https://www.pluuug.com/form/TrPLMjXdJ1"
+            title="페르패키지 견적문의 폼"
+            loading="lazy"
+          ></iframe>
+        </div>
+
+        <p class="pp-pluuug-form__fallback">
+          폼이 보이지 않는다면
+          <a href="https://www.pluuug.com/form/TrPLMjXdJ1" target="_blank" rel="noopener noreferrer">새 창에서 견적문의 작성하기</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pp-landing-footer">
+    <div class="pp-landing-shell">
+      <strong>페르패키지</strong><br>
+      맞춤 패키지 제작 상담 · 단상자 · 싸바리박스 · 쇼핑백 · 스티커 · 샘플 제작
+    </div>
+  </footer>
+</body>
+</html>

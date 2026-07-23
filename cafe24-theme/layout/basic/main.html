@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <!-- 메인 전용 레이아웃도 공통 header/footer/quick-menu를 같은 import 파일에서 불러옵니다. -->
+  <!--@css(/css/perpackage/theme.css)-->
+  <!--@js(/js/perpackage/config.js)-->
+  <!--@js(/js/perpackage/common.js)-->
+</head>
+<body class="pp-cafe24-body pp-cafe24-body--main">
+  <div class="pp-cafe24-site" data-pp-site>
+    <a class="pp-cafe24-skip" href="#contents">본문 바로가기</a>
+    <!--@import(/_wg/perpackage/header.html)-->
+
+    <main id="contents" class="pp-cafe24-contents pp-cafe24-contents--main">
+      <!--@contents-->
+    </main>
+
+    <!--@import(/_wg/perpackage/footer.html)-->
+    <!--@import(/_wg/perpackage/quick-menu.html)-->
+  </div>
+</body>
+</html>

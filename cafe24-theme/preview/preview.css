@@ -1,0 +1,122 @@
+.pp-preview-toolbar {
+  position: relative;
+  z-index: 1200;
+  border-bottom: 1px solid #d9dee8;
+  background: #f7f9fc;
+  color: #17233d;
+  font-family: Pretendard, "Noto Sans KR", Arial, sans-serif;
+}
+
+.pp-preview-toolbar__inner {
+  width: min(1360px, calc(100% - 40px));
+  min-height: 58px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.pp-preview-toolbar__title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  min-width: 0;
+}
+
+.pp-preview-toolbar__title strong {
+  font-size: 14px;
+}
+
+.pp-preview-toolbar__title span {
+  color: #667085;
+  font-size: 12px;
+}
+
+.pp-preview-toolbar nav {
+  display: flex;
+  gap: 4px;
+  flex: 0 0 auto;
+}
+
+.pp-preview-toolbar nav a {
+  min-height: 36px;
+  padding: 0 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: #344054;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.pp-preview-toolbar nav a:hover {
+  border-color: #b9c3d3;
+  background: #fff;
+}
+
+.pp-preview-toolbar nav a[aria-current="page"] {
+  border-color: #03a64a;
+  background: #03a64a;
+  color: #fff;
+}
+
+.pp-preview-error {
+  position: relative;
+  z-index: 2000;
+  margin: 0;
+  padding: 14px 20px;
+  color: #842029;
+  background: #f8d7da;
+  font: 700 13px/1.5 Pretendard, "Noto Sans KR", Arial, sans-serif;
+  text-align: center;
+}
+
+.pp-cafe24-paging .is-disabled {
+  color: #a4adb7;
+  background: #f6f7f8;
+}
+
+.pp-cafe24-product-menu__summary a[aria-current="page"],
+.pp-cafe24-subcategories a[aria-current="page"] {
+  color: #173b72;
+  font-weight: 800;
+}
+
+@media (max-width: 640px) {
+  .pp-preview-toolbar__inner {
+    width: calc(100% - 20px);
+    min-height: 58px;
+    gap: 8px;
+  }
+
+  .pp-preview-toolbar__title span,
+  .pp-preview-toolbar__title strong {
+    display: none;
+  }
+
+  .pp-preview-toolbar__title {
+    min-width: 0;
+    flex: 0 1 0;
+  }
+
+  .pp-preview-toolbar nav {
+    width: 100%;
+    justify-content: stretch;
+  }
+
+  .pp-preview-toolbar nav a {
+    flex: 1 1 0;
+    min-height: 40px;
+    padding: 0 10px;
+  }
+}
+
+@media print {
+  .pp-preview-toolbar {
+    display: none !important;
+  }
+}

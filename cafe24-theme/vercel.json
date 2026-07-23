@@ -1,0 +1,51 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/preview/index.html"
+    },
+    {
+      "source": "/index.html",
+      "destination": "/preview/index.html"
+    },
+    {
+      "source": "/category",
+      "destination": "/preview/category.html"
+    },
+    {
+      "source": "/category.html",
+      "destination": "/preview/category.html"
+    },
+    {
+      "source": "/guide-production.html",
+      "destination": "/preview/deploy-content.html"
+    },
+    {
+      "source": "/guide-design.html",
+      "destination": "/preview/deploy-content.html"
+    },
+    {
+      "source": "/guide-caution.html",
+      "destination": "/preview/deploy-content.html"
+    },
+    {
+      "source": "/faq.html",
+      "destination": "/preview/deploy-content.html"
+    },
+    {
+      "source": "/support.html",
+      "destination": "/preview/deploy-content.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
+}

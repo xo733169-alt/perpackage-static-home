@@ -1,0 +1,1085 @@
+<!--@layout(/layout/basic/main.html)-->
+<!--@css(/css/perpackage/main.css)-->
+<script src="/js/perpackage/main.js?ver=20260715-slider-loop2" defer></script>
+<style>
+  .pp-main-slider { --pp-main-banner-width:min(560px,calc(100vw - 96px)); }
+  .pp-main-slider__track { padding-right:max(0px,calc(100% - var(--pp-main-banner-width))); }
+  .pp-main-slider__track.is-resetting { scroll-behavior:auto; }
+  .pp-main-banner { flex-basis:var(--pp-main-banner-width); }
+  .pp-main-banner__media img { will-change:transform,opacity; }
+  .pp-main-banner.is-entering-next .pp-main-banner__media img { animation:pp-main-banner-media-in-next 800ms cubic-bezier(.2,.65,.3,1) both; }
+  .pp-main-banner.is-entering-prev .pp-main-banner__media img { animation:pp-main-banner-media-in-prev 800ms cubic-bezier(.2,.65,.3,1) both; }
+  @keyframes pp-main-banner-media-in-next { from { opacity:.18; transform:translateX(72px) scale(1.035); } to { opacity:1; transform:translateX(0) scale(1); } }
+  @keyframes pp-main-banner-media-in-prev { from { opacity:.18; transform:translateX(-72px) scale(1.035); } to { opacity:1; transform:translateX(0) scale(1); } }
+  @media (max-width:860px) { .pp-main-slider { --pp-main-banner-width:min(520px,calc(100vw - 40px)); } }
+  @media (max-width:560px) { .pp-main-slider { --pp-main-banner-width:calc(100vw - 32px); } }
+  @media (prefers-reduced-motion:reduce) { .pp-main-banner__media img { animation:none !important; transition:none !important; } }
+
+  /* cp525 homepage fit */
+  #contents_main .cp525 { width:100%; margin:0; padding:40px 0; background:#f4f7fa; }
+  #contents_main .cp525 > .-switch { width:calc(100% - 48px); max-width:1120px; margin:0 auto; }
+  #contents_main .cp525 .title { margin-bottom:20px; }
+  @media (max-width:767px) {
+    #contents_main .cp525 { padding:32px 0; }
+    #contents_main .cp525 > .-switch { width:calc(100% - 32px); }
+  }
+
+  /* Banner 1 horizontal: 800 x 430 cards with the confirmed eight-item strip. */
+  .pp-main-hero .pp-main-shell { width:100%; max-width:none; }
+  .pp-main-slider { --pp-main-banner-width:clamp(560px,42vw,800px); }
+  .pp-main-slider__track {
+    gap:16px;
+    padding-left:max(24px,calc((100vw - 1919px) / 2 + 215px));
+    padding-right:max(24px,calc((100vw - 1919px) / 2 + 224px));
+  }
+  .pp-main-banner { aspect-ratio:800 / 430; min-height:0; }
+
+  .pp-main-quick--banner1 {
+    display:grid;
+    grid-template-columns:repeat(8,minmax(0,1fr));
+    gap:14px;
+    width:auto;
+    max-width:1480px;
+    margin-top:26px;
+    margin-right:max(24px,calc((100vw - 1919px) / 2 + 224px));
+    margin-left:max(24px,calc((100vw - 1919px) / 2 + 215px));
+    padding:8px 0 14px;
+    overflow:visible;
+    border-bottom:1px solid #eceff2;
+  }
+  .pp-main-quick--banner1 a {
+    display:grid;
+    grid-template-rows:150px auto;
+    min-width:0;
+    min-height:0;
+    align-items:start;
+    justify-items:center;
+    gap:8px;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:#0b2347;
+    text-align:center;
+  }
+  .pp-main-quick--banner1 a:hover { background:transparent; color:#2a408c; transform:translateY(-2px); }
+  .pp-main-quick--banner1 .pp-main-quick__icon {
+    display:grid;
+    width:150px;
+    height:150px;
+    place-items:center;
+    border:0;
+    border-radius:0;
+    background:transparent;
+  }
+  .pp-main-quick--banner1 .pp-main-quick__real-icon { width:150px; height:150px; object-fit:contain; }
+  .pp-main-quick--banner1 strong { font-size:14px; font-weight:700; white-space:nowrap; }
+  @media (max-width:860px) {
+    .pp-main-slider { --pp-main-banner-width:min(640px,calc(100vw - 48px)); }
+    .pp-main-slider__track { padding-left:24px; padding-right:24px; }
+    .pp-main-quick--banner1 {
+      display:flex;
+      gap:12px;
+      max-width:none;
+      margin-right:24px;
+      margin-left:24px;
+      overflow-x:auto;
+      scroll-snap-type:x proximity;
+      scrollbar-width:thin;
+    }
+    .pp-main-quick--banner1 a { flex:0 0 142px; scroll-snap-align:start; }
+    .pp-main-quick--banner1 .pp-main-quick__icon,
+    .pp-main-quick--banner1 .pp-main-quick__real-icon { width:110px; height:110px; }
+    .pp-main-quick--banner1 a { grid-template-rows:110px auto; }
+  }
+  @media (max-width:560px) {
+    .pp-main-slider { --pp-main-banner-width:calc(100vw - 32px); }
+    .pp-main-slider__track { gap:12px; padding-left:16px; padding-right:16px; }
+    .pp-main-banner { aspect-ratio:auto; }
+  }
+</style>
+
+<div class="pp-cafe24-main" data-pp-main>
+  <h1 class="pp-cafe24-sr-only">페르패키지 기성 패키지·맞춤 패키지 제작</h1>
+  <section class="pp-main-hero" aria-label="페르패키지 주요 안내">
+    <div class="pp-main-shell">
+      <div class="pp-main-slider" data-pp-main-slider>
+        <div class="pp-main-slider__track" data-pp-main-track>
+          <a class="pp-main-banner pp-main-banner--blue" href="/product/list.html?cate_no=44" data-pp-category="box" data-pp-banner-label="기성 패키지">
+            <span class="pp-main-banner__copy">
+              <em>옵션 선택 후 견적 확인</em>
+              <strong>패키지를 더 쉽게 고르세요</strong>
+              <span>단상자, 쇼핑백, 봉투부터 필요한 상품군을 먼저 확인해보세요.</span>
+            </span>
+            <span class="pp-main-banner__media">
+              <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-ready-package.jpg" alt="페르패키지 기성 패키지 구성" decoding="async">
+            </span>
+          </a>
+
+          <a class="pp-main-banner pp-main-banner--coral" href="https://www.pluuug.com/form/TrPLMjXdJ1" data-pp-path="quote" data-pp-banner-label="소량 샘플" target="_blank" rel="noopener noreferrer">
+            <span class="pp-main-banner__copy">
+              <em>소량·샘플 상담 가능</em>
+              <strong>작은 수량부터 시작하세요</strong>
+              <span>테스트, 샘플, 졸업작품도 목적과 일정을 확인해 제작 방향을 안내합니다.</span>
+            </span>
+            <span class="pp-main-banner__media">
+              <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-small-sample.jpg" alt="소량 샘플 패키지" loading="lazy">
+            </span>
+          </a>
+
+          <a class="pp-main-banner pp-main-banner--yellow" href="/product/list.html?cate_no=64" data-pp-category="rigidBox" data-pp-banner-label="맞춤 제작">
+            <span class="pp-main-banner__copy">
+              <em>맞춤 패키지 제작</em>
+              <strong>브랜드에 맞는 구조를 찾으세요</strong>
+              <span>싸바리박스, 내부 트레이, 후가공까지 제품 조건에 맞춰 상담합니다.</span>
+            </span>
+            <span class="pp-main-banner__media">
+              <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/assets/shop-photos/uploaded-premium-package-set.jpg" alt="프리미엄 맞춤 패키지 구성" loading="lazy">
+            </span>
+          </a>
+        </div>
+
+        <div class="pp-main-slider__controls" aria-label="메인 배너 이동">
+          <button type="button" data-pp-main-prev aria-label="이전 배너"><span aria-hidden="true">‹</span></button>
+          <div class="pp-main-slider__tabs" data-pp-main-tabs role="tablist" aria-label="메인 배너 선택"></div>
+          <button type="button" data-pp-main-next aria-label="다음 배너"><span aria-hidden="true">›</span></button>
+          <button type="button" class="pp-main-slider__pause" data-pp-main-pause aria-label="배너 자동 전환 일시정지" aria-pressed="false" title="배너 자동 전환 일시정지"><span aria-hidden="true">Ⅱ</span></button>
+        </div>
+        <!-- Cafe24 최적화 JS 캐시가 갱신되기 전에도 메인 배너 탭 제어를 유지합니다. -->
+        <style type="text/plain">
+          /* Cafe24 CSS optimizer fallback: main layout remains available during cache refresh. */
++Exit code: 0
+Wall time: 1.1 seconds
+Output:
+.pp-cafe24-main {
+  background: #ffffff;
+  color: var(--pp-ink);
+}
+
+.pp-main-shell {
+  width: min(1480px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.pp-cafe24-site .pp-cafe24-main-container,
+.pp-cafe24-site .pp-cafe24-main-content {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  float: none !important;
+}
+
+.pp-main-hero {
+  padding: 28px 0 22px;
+  background: #ffffff;
+}
+
+.pp-main-slider {
+  overflow: hidden;
+}
+
+.pp-main-slider__track {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.pp-main-slider__track::-webkit-scrollbar {
+  display: none;
+}
+
+.pp-main-banner {
+  flex: 0 0 min(560px, calc(100vw - 96px));
+  display: grid;
+  grid-template-columns: minmax(0, .88fr) minmax(250px, 1.12fr);
+  min-width: 0;
+  min-height: 304px;
+  overflow: hidden;
+  border-radius: 8px;
+  color: inherit;
+  background: #eaf4ff;
+  scroll-snap-align: start;
+}
+
+.pp-main-banner--coral {
+  background: #fff1ea;
+}
+
+.pp-main-banner--yellow {
+  background: #fff7dc;
+}
+
+.pp-main-banner__copy {
+  display: grid;
+  align-content: center;
+  gap: 14px;
+  padding: 32px 30px;
+}
+
+.pp-main-banner__copy em {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 24px;
+  align-items: center;
+  padding: 0 9px;
+  border-radius: 4px;
+  color: #31517e;
+  background: rgba(255, 255, 255, .78);
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 750;
+}
+
+.pp-main-banner__copy strong {
+  color: #111827;
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1.27;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.pp-main-banner__copy > span {
+  color: #4d5968;
+  font-size: 14px;
+  font-weight: 550;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.pp-main-banner__media {
+  min-width: 0;
+  min-height: 304px;
+  overflow: hidden;
+}
+
+.pp-main-banner__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 320ms ease;
+}
+
+.pp-main-banner:hover .pp-main-banner__media img {
+  transform: scale(1.035);
+}
+
+.pp-main-slider__controls {
+  display: grid;
+  grid-template-columns: 40px minmax(250px, 620px) 40px 40px;
+  grid-template-areas: "prev tabs next pause";
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.pp-main-slider__controls > button {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid #dfe5eb;
+  border-radius: 6px;
+  color: var(--pp-brand);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.pp-main-slider__controls > [data-pp-main-prev] {
+  grid-area: prev;
+}
+
+.pp-main-slider__controls > [data-pp-main-next] {
+  grid-area: next;
+}
+
+.pp-main-slider__pause {
+  grid-area: pause;
+}
+
+.pp-main-slider__controls > button span {
+  font-size: 27px;
+  line-height: 1;
+  transform: translateY(-1px);
+}
+
+.pp-main-slider__tabs {
+  grid-area: tabs;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.pp-main-slider__tab {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 38px;
+  overflow: hidden;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #afb4bd;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.pp-main-slider__tab::before {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  background: #24272d;
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+}
+
+.pp-main-slider__tab.is-active {
+  background: #b7bbc2;
+}
+
+.pp-main-slider__tab.is-active::before {
+  animation: pp-main-slider-tab-fill 5200ms linear forwards;
+}
+
+.pp-main-slider__tab > span {
+  position: relative;
+  z-index: 1;
+}
+
+.pp-main-slider__tab:hover {
+  background: #8e949f;
+  transform: translateY(-1px);
+}
+
+.pp-main-slider__tab:focus-visible,
+.pp-main-slider__controls > button:focus-visible {
+  outline: 3px solid rgba(42, 64, 140, .28);
+  outline-offset: 3px;
+}
+
+@keyframes pp-main-slider-tab-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.pp-main-quick {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+  padding: 16px 0 14px;
+  border-bottom: 1px solid #eceff2;
+}
+
+.pp-main-quick a {
+  display: flex;
+  min-width: 0;
+  min-height: 84px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 8px;
+  color: #3d4856;
+  font-size: 12px;
+  text-align: center;
+  transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.pp-main-quick a:hover {
+  color: var(--pp-brand);
+  background: #f6f8fa;
+  transform: translateY(-2px);
+}
+
+.pp-main-quick span {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid #e4e9ee;
+  border-radius: 8px;
+  color: var(--pp-brand);
+  background: #f7f8fa;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.pp-main-quick span .pp-cafe24-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.pp-main-quick strong {
+  font-size: 12px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.pp-main-notice {
+  margin: 12px 0 0;
+  color: #707b88;
+  font-size: 12px;
+  text-align: center;
+}
+
+.pp-main-product-section,
+.pp-main-category-section,
+.pp-main-process,
+.pp-main-guide,
+.pp-main-quote {
+  padding: 72px 0;
+}
+
+.pp-main-product-section {
+  background: #f7f9fc;
+}
+
+.pp-main-product-section--white,
+.pp-main-process,
+.pp-main-quote {
+  background: #ffffff;
+}
+
+.pp-main-category-section,
+.pp-main-guide {
+  background: #f5f7f6;
+}
+
+.pp-main-section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.pp-main-section-head h2 {
+  margin: 0;
+  color: #151c25;
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: 0;
+  word-break: keep-all;
+}
+
+.pp-main-section-head p {
+  margin: 8px 0 0;
+  color: #697583;
+  font-size: 14px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.pp-main-section-head > a {
+  flex: 0 0 auto;
+  padding: 6px 0;
+  border-bottom: 1px solid #aeb9c5;
+  color: #38495c;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.pp-main-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.pp-main-category-grid a {
+  display: grid;
+  min-height: 210px;
+  align-content: end;
+  padding: 24px;
+  border: 1px solid #dce5e1;
+  border-radius: 8px;
+  background: #ffffff;
+  transition: border-color 180ms ease, transform 180ms ease;
+}
+
+.pp-main-category-grid a:nth-child(2) {
+  background: #edf3f8;
+}
+
+.pp-main-category-grid a:nth-child(3) {
+  background: #fff4ed;
+}
+
+.pp-main-category-grid a:nth-child(4) {
+  background: #fff8de;
+}
+
+.pp-main-category-grid a:hover {
+  border-color: rgba(23, 59, 114, .32);
+  transform: translateY(-3px);
+}
+
+.pp-main-category-grid span {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 24px;
+  align-items: center;
+  margin-bottom: 12px;
+  padding: 0 8px;
+  border-radius: 4px;
+  color: var(--pp-accent);
+  background: rgba(255, 255, 255, .8);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pp-main-category-grid strong {
+  color: var(--pp-ink);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.pp-main-category-grid p {
+  margin: 8px 0 0;
+  color: var(--pp-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  word-break: keep-all;
+}
+
+.pp-main-process__list {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--pp-line);
+  border-bottom: 1px solid var(--pp-line);
+  list-style: none;
+}
+
+.pp-main-process__list li {
+  position: relative;
+  display: grid;
+  min-height: 200px;
+  align-content: start;
+  gap: 9px;
+  padding: 28px 22px;
+  border-right: 1px solid var(--pp-line);
+}
+
+.pp-main-process__list li:last-child {
+  border-right: 0;
+}
+
+.pp-main-process__list b {
+  color: var(--pp-accent);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.pp-main-process__list strong {
+  color: var(--pp-ink);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.pp-main-process__list span {
+  color: var(--pp-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  word-break: keep-all;
+}
+
+.pp-main-guide__links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid #dce4df;
+  border-bottom: 1px solid #dce4df;
+}
+
+.pp-main-guide__links a {
+  display: grid;
+  min-height: 132px;
+  align-content: center;
+  gap: 7px;
+  padding: 24px 28px;
+  border-right: 1px solid #dce4df;
+}
+
+.pp-main-guide__links a:last-child {
+  border-right: 0;
+}
+
+.pp-main-guide__links strong {
+  color: var(--pp-ink);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.pp-main-guide__links span {
+  color: var(--pp-muted);
+  font-size: 13px;
+}
+
+.pp-main-guide__links a::after {
+  content: "??;
+  margin-top: 6px;
+  color: var(--pp-brand);
+  font-size: 18px;
+}
+
+.pp-main-quote__inner {
+  display: grid;
+  grid-template-columns: minmax(260px, .65fr) minmax(0, 1.35fr);
+  gap: 38px;
+  align-items: start;
+}
+
+.pp-main-quote__head {
+  position: sticky;
+  top: 24px;
+}
+
+.pp-main-quote__head > p {
+  margin: 0 0 9px;
+  color: var(--pp-accent);
+  font-size: 12px;
+  font-weight: 850;
+}
+
+.pp-main-quote__head h2 {
+  margin: 0;
+  color: var(--pp-ink);
+  font-size: 31px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.pp-main-quote__head span {
+  display: block;
+  margin-top: 12px;
+  color: var(--pp-muted);
+  font-size: 14px;
+  line-height: 1.7;
+  word-break: keep-all;
+}
+
+.pp-main-quote__frame {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--pp-line);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.pp-main-quote__frame iframe {
+  display: block;
+  width: 100%;
+  min-height: 820px;
+  border: 0;
+}
+
+@media (max-width: 1180px) {
+  .pp-main-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pp-main-process__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .pp-main-process__list li:nth-child(3) {
+    border-right: 0;
+  }
+
+  .pp-main-process__list li:nth-child(n + 4) {
+    border-top: 1px solid var(--pp-line);
+  }
+}
+
+@media (max-width: 860px) {
+  .pp-main-shell {
+    width: calc(100% - 32px);
+  }
+
+  .pp-main-hero {
+    padding-top: 20px;
+  }
+
+  .pp-main-banner {
+    flex-basis: min(520px, calc(100vw - 40px));
+  }
+
+  .pp-main-quick {
+    grid-auto-columns: 94px;
+    grid-auto-flow: column;
+    grid-template-columns: none;
+    justify-content: start;
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+
+  .pp-main-quick::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pp-main-quick a {
+    scroll-snap-align: start;
+  }
+
+  .pp-main-product-section,
+  .pp-main-category-section,
+  .pp-main-process,
+  .pp-main-guide,
+  .pp-main-quote {
+    padding: 58px 0;
+  }
+
+  .pp-main-section-head h2,
+  .pp-main-quote__head h2 {
+    font-size: 27px;
+  }
+
+  .pp-main-process__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pp-main-process__list li:nth-child(2n) {
+    border-right: 0;
+  }
+
+  .pp-main-process__list li:nth-child(3) {
+    border-right: 1px solid var(--pp-line);
+  }
+
+  .pp-main-process__list li:nth-child(n + 3) {
+    border-top: 1px solid var(--pp-line);
+  }
+
+  .pp-main-quote__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-main-quote__head {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .pp-main-banner {
+    flex-basis: calc(100vw - 32px);
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  .pp-main-banner__media {
+    order: -1;
+    min-height: 0;
+    aspect-ratio: 1.35 / 1;
+  }
+
+  .pp-main-banner__copy {
+    gap: 10px;
+    padding: 22px 20px 24px;
+  }
+
+  .pp-main-banner__copy strong {
+    font-size: 24px;
+  }
+
+  .pp-main-banner__copy > span {
+    font-size: 13px;
+  }
+
+  .pp-main-slider__controls {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    grid-template-areas:
+      "prev tabs next"
+      ". pause .";
+    gap: 10px 8px;
+    margin-top: 12px;
+  }
+
+  .pp-main-slider__controls > button {
+    width: 44px;
+    height: 44px;
+  }
+
+  .pp-main-slider__tabs {
+    gap: 5px;
+  }
+
+  .pp-main-slider__tab {
+    min-height: 34px;
+    padding: 0 7px;
+    font-size: 11px;
+  }
+
+  .pp-main-slider__pause {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .pp-main-slider__pause span {
+    font-size: 18px !important;
+  }
+
+  .pp-main-section-head {
+    display: grid;
+    align-items: start;
+  }
+
+  .pp-main-section-head h2,
+  .pp-main-quote__head h2 {
+    font-size: 25px;
+  }
+
+  .pp-main-category-grid,
+  .pp-main-process__list,
+  .pp-main-guide__links {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-main-category-grid a {
+    min-height: 176px;
+  }
+
+  .pp-main-process__list li,
+  .pp-main-process__list li:nth-child(3),
+  .pp-main-process__list li:nth-child(2n) {
+    min-height: 0;
+    border-right: 0;
+    border-top: 1px solid var(--pp-line);
+  }
+
+  .pp-main-process__list li:first-child {
+    border-top: 0;
+  }
+
+  .pp-main-guide__links a {
+    border-right: 0;
+    border-bottom: 1px solid #dce4df;
+  }
+
+  .pp-main-guide__links a:last-child {
+    border-bottom: 0;
+  }
+
+  .pp-main-quote__frame iframe {
+    min-height: 900px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-main-slider__tab,
+  .pp-main-slider__tab.is-active::before {
+    animation: none;
+    transition: none;
+  }
+}
+
+
+          .pp-main-slider__tabs { display:flex; align-items:center; justify-content:center; gap:8px; min-width:0; }
+          .pp-main-slider__tab { position:relative; overflow:hidden; min-width:0; min-height:38px; padding:0 22px; border:0; border-radius:999px; background:#d6d9de; color:#fff; font:700 14px/1 Pretendard, sans-serif; cursor:pointer; isolation:isolate; }
+          .pp-main-slider__tab span { position:relative; z-index:1; white-space:nowrap; }
+          .pp-main-slider__tab::before { content:""; position:absolute; inset:0; z-index:0; background:#24272d; transform:scaleX(0); transform-origin:left center; }
+          .pp-main-slider__tab.is-active::before { animation:pp-main-banner-tab-fill 5200ms linear forwards; }
+          .pp-main-slider__tab:focus-visible, .pp-main-slider__pause:focus-visible { outline:3px solid rgba(42,64,140,.36); outline-offset:3px; }
+          .pp-main-slider__pause { display:grid; place-items:center; width:38px; height:38px; padding:0; border:1px solid #d8dde5; border-radius:50%; background:#fff; color:#2a408c; cursor:pointer; }
+          @keyframes pp-main-banner-tab-fill { to { transform:scaleX(1); } }
+          @media (max-width:560px) { .pp-main-slider__tabs { gap:5px; } .pp-main-slider__tab { min-height:32px; padding:0 11px; font-size:11px; } .pp-main-slider__pause { width:32px; height:32px; } }
+          @media (prefers-reduced-motion:reduce) { .pp-main-slider__tab.is-active::before { animation:none; transform:scaleX(1); } }
+        </style>
+        <script>
+          (function (window, document) {
+            function initBannerTabs() {
+              var slider = document.querySelector("[data-pp-main-slider]");
+              var track = slider && slider.querySelector("[data-pp-main-track]");
+              var slides = track && track.querySelectorAll(".pp-main-banner");
+              var tabs = slider && slider.querySelector("[data-pp-main-tabs]");
+              var prev = slider && slider.querySelector("[data-pp-main-prev]");
+              var next = slider && slider.querySelector("[data-pp-main-next]");
+              var pause = slider && slider.querySelector("[data-pp-main-pause]");
+              var index = 0, timer = null, settleTimer = null, paused = false, isProgrammaticMove = false;
+              var reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+              if (!slider || !track || !slides || !slides.length || !tabs || tabs.children.length) return;
+
+              function updateTabs() {
+                Array.prototype.forEach.call(tabs.children, function (tab, tabIndex) {
+                  tab.classList.remove("is-active");
+                  tab.setAttribute("aria-selected", "false");
+                  if (tabIndex === index) {
+                    void tab.offsetWidth;
+                    tab.classList.add("is-active");
+                    tab.setAttribute("aria-selected", "true");
+                  }
+                });
+              }
+              function stopTimer() { if (timer) { window.clearTimeout(timer); timer = null; } }
+              function stopSettleTimer() { if (settleTimer) { window.clearTimeout(settleTimer); settleTimer = null; } }
+              function startTimer() {
+                stopTimer();
+                if (paused || reducedMotion || slides.length < 2) return;
+                timer = window.setTimeout(function () { moveTo(index + 1, true); }, 5200);
+              }
+              function animateBanner(slideIndex, direction) {
+                var slide = slides[slideIndex];
+                if (!slide || !direction || reducedMotion) return;
+                Array.prototype.forEach.call(slides, function (item) {
+                  item.classList.remove("is-entering-next", "is-entering-prev");
+                });
+                void slide.offsetWidth;
+                slide.classList.add(direction > 0 ? "is-entering-next" : "is-entering-prev");
+              }
+              function moveTo(nextIndex, restartTimer) {
+                var previousIndex = index;
+                index = (nextIndex + slides.length) % slides.length;
+                var direction = index === previousIndex ? 0 : (index > previousIndex ? 1 : -1);
+                if (Math.abs(index - previousIndex) > slides.length / 2) direction *= -1;
+                var target = slides[index];
+                var left = target.offsetLeft - track.offsetLeft;
+                stopTimer();
+                stopSettleTimer();
+                isProgrammaticMove = true;
+                try { track.scrollTo({ left:left, behavior:"smooth" }); } catch (error) { track.scrollLeft = left; }
+                updateTabs();
+                animateBanner(index, direction);
+                settleTimer = window.setTimeout(function () {
+                  isProgrammaticMove = false;
+                  if (restartTimer) startTimer();
+                }, reducedMotion ? 0 : 460);
+              }
+              Array.prototype.forEach.call(slides, function (slide, slideIndex) {
+                var tab = document.createElement("button");
+                var label = slide.getAttribute("data-pp-banner-label") || "배너 " + (slideIndex + 1);
+                tab.type = "button";
+                tab.className = "pp-main-slider__tab";
+                tab.setAttribute("role", "tab");
+                tab.setAttribute("aria-label", label + " 배너 보기");
+                tab.setAttribute("aria-selected", "false");
+                tab.innerHTML = "<span></span>";
+                tab.firstChild.textContent = label;
+                tab.addEventListener("click", function () { moveTo(slideIndex, true); });
+                tabs.appendChild(tab);
+              });
+              function bindArrow(button, direction) {
+                if (!button) return;
+                button.addEventListener("click", function (event) {
+                  event.preventDefault();
+                  event.stopImmediatePropagation();
+                  moveTo(index + direction, true);
+                }, true);
+              }
+              bindArrow(prev, -1);
+              bindArrow(next, 1);
+              if (pause) pause.addEventListener("click", function () {
+                paused = !paused;
+                pause.setAttribute("aria-pressed", paused ? "true" : "false");
+                pause.setAttribute("aria-label", paused ? "배너 자동 전환 재생" : "배너 자동 전환 일시정지");
+                pause.setAttribute("title", paused ? "배너 자동 전환 재생" : "배너 자동 전환 일시정지");
+                pause.firstChild.textContent = paused ? "▶" : "Ⅱ";
+                if (paused) stopTimer(); else startTimer();
+              });
+              track.addEventListener("scroll", function () {
+                if (isProgrammaticMove) return;
+                stopSettleTimer();
+                settleTimer = window.setTimeout(function () {
+                var nearest = 0, distance = Infinity;
+                Array.prototype.forEach.call(slides, function (slide, slideIndex) {
+                  var currentDistance = Math.abs((slide.offsetLeft - track.offsetLeft) - track.scrollLeft);
+                  if (currentDistance < distance) { distance = currentDistance; nearest = slideIndex; }
+                });
+                if (nearest !== index) { index = nearest; updateTabs(); startTimer(); }
+                }, 120);
+              }, { passive:true });
+              updateTabs();
+              startTimer();
+            }
+            if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", initBannerTabs, { once:true });
+            else initBannerTabs();
+          })(window, document);
+        </script>
+      </div>
+
+      <!-- Banner 1 horizontal: replace the external image URLs after Cafe24 upload. -->
+      <nav class="pp-main-quick pp-main-quick--banner1" aria-label="주요 상품 바로가기">
+        <a href="/product/list.html?cate_no=64" data-pp-category="rigidBox" aria-label="싸바리박스 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-rigid-box.svg" alt="싸바리박스"></span><strong>싸바리박스</strong></a>
+        <a href="/product/list.html?cate_no=45" data-pp-category="shoppingBag" aria-label="쇼핑백 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-shopping-bag.svg" alt="쇼핑백"></span><strong>쇼핑백</strong></a>
+        <a href="/product/list.html?cate_no=65" aria-label="단박스 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-ready-box.svg" alt="단박스"></span><strong>단박스</strong></a>
+        <a href="/product/list.html?cate_no=43" aria-label="명함 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-business-card.svg" alt="명함"></span><strong>명함</strong></a>
+        <a href="/product/list.html" aria-label="현수막 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-standing-banner.svg" alt="현수막"></span><strong>현수막</strong></a>
+        <a href="/product/list.html" aria-label="배너 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-banner.svg" alt="배너"></span><strong>배너</strong></a>
+        <a href="/product/list.html" aria-label="스티커 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-sticker.svg" alt="스티커"></span><strong>스티커</strong></a>
+        <a href="/product/list.html?cate_no=42" aria-label="봉투 상품 보기"><span class="pp-main-quick__icon"><img class="pp-main-quick__real-icon" src="https://perpackage-static-home.vercel.app/cafe24-theme/assets/icons/real/quick-envelope.svg" alt="봉투"></span><strong>봉투</strong></a>
+      </nav>
+    </div>
+  </section>
+<section class="pp-main-category-section" aria-labelledby="pp-main-category-title">
+    <div class="pp-main-shell">
+      <div class="pp-main-section-head">
+        <div>
+          <h2 id="pp-main-category-title">어떤 패키지가 필요하신가요?</h2>
+          <p>제품 용도와 제작 방식에 가까운 분류부터 확인해보세요.</p>
+        </div>
+      </div>
+      <div class="pp-main-category-grid">
+        <a href="/product/list.html?cate_no=44" data-pp-category="box"><span>기성·소량</span><strong>단상자와 기본 패키지</strong><p>제품 크기에 맞는 기본 종이박스를 확인합니다.</p></a>
+        <a href="/product/list.html?cate_no=64" data-pp-category="rigidBox"><span>프리미엄</span><strong>싸바리박스</strong><p>선물세트와 브랜드 제품용 고급 상자를 상담합니다.</p></a>
+        <a href="/product/list.html?cate_no=45" data-pp-category="shoppingBag"><span>매장·행사</span><strong>쇼핑백</strong><p>사이즈, 종이, 손잡이, 로고 인쇄를 확인합니다.</p></a>
+        <a href="/product/list.html?cate_no=87" data-pp-category="cafeSupplies"><span>식품 포장</span><strong>카페용품</strong><p>디저트 박스, 봉투, 스티커 구성을 살펴봅니다.</p></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="pp-main-product-section pp-main-product-section--white" module="product_listmain_1" aria-labelledby="pp-main-best-title">
+    <!--
+      $count = 8
+      $basket_result = /product/add_basket.html
+      $basket_option = /product/basket_option.html
+      $cache = yes
+    -->
+    <div class="pp-main-shell">
+      <div class="pp-main-section-head">
+        <div>
+          <h2 id="pp-main-best-title">많이 찾는 패키지</h2>
+          <p>카페24 관리자 추천상품 진열을 기준으로 표시됩니다.</p>
+        </div>
+      </div>
+      <ul class="pp-cafe24-product-list">
+        <!--@import(/_wg/perpackage/product-card.html)-->
+      </ul>
+    </div>
+  </section>
+
+  <!-- cp525 (Cafe24 상품 DB 연동 상품 진열) -->
+  <!--@import(/_wg/_cPack/cp525/dom.html)-->
+
+  <section class="pp-main-quote" id="quote" aria-labelledby="pp-main-quote-title">
+    <div class="pp-main-shell pp-main-quote__inner">
+      <div class="pp-main-quote__head">
+        <p>QUOTE REQUEST</p>
+        <h2 id="pp-main-quote-title">맞춤 패키지 견적문의</h2>
+        <span>제품 사이즈, 수량, 재질, 인쇄, 후가공, 희망 일정을 남겨주세요.</span>
+      </div>
+      <div class="pp-main-quote__frame">
+        <iframe src="https://www.pluuug.com/form/TrPLMjXdJ1" title="페르패키지 맞춤 패키지 견적문의" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!--@define(cmc_log)-->

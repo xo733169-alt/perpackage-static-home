@@ -1,0 +1,332 @@
+<header class="pp-cafe24-header" data-pp-header>
+  <div class="pp-cafe24-utility">
+    <div class="pp-cafe24-shell pp-cafe24-utility__inner">
+      <nav class="pp-cafe24-utility__social" aria-label="페르패키지 소셜 채널">
+          <a href="#none" data-pp-social="instagram" aria-label="페르패키지 인스타그램">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <rect x="3.5" y="3.5" width="17" height="17" rx="4.5"></rect>
+              <circle cx="12" cy="12" r="3.7"></circle>
+              <circle class="pp-cafe24-social-dot" cx="17.4" cy="6.7" r="1"></circle>
+            </svg>
+          </a>
+          <a href="#none" data-pp-social="youtube" aria-label="페르패키지 유튜브">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M20.2 7.1a2.7 2.7 0 0 0-1.9-1.9C16.6 4.75 12 4.75 12 4.75s-4.6 0-6.3.45A2.7 2.7 0 0 0 3.8 7.1C3.35 8.8 3.35 12 3.35 12s0 3.2.45 4.9a2.7 2.7 0 0 0 1.9 1.9c1.7.45 6.3.45 6.3.45s4.6 0 6.3-.45a2.7 2.7 0 0 0 1.9-1.9c.45-1.7.45-4.9.45-4.9s0-3.2-.45-4.9Z"></path>
+              <path d="m10.15 15.45 4.35-3.45-4.35-3.45v6.9Z" class="pp-cafe24-social-fill"></path>
+            </svg>
+          </a>
+          <a href="#none" data-pp-social="naverBlog" aria-label="페르패키지 네이버 블로그">
+            <span aria-hidden="true">N</span>
+          </a>
+      </nav>
+
+      <div class="pp-cafe24-utility__right">
+        <nav class="pp-cafe24-utility__account" aria-label="회원 메뉴">
+          <span module="Layout_stateLogoff" class="pp-cafe24-account-state">
+            <a href="/member/login.html">로그인</a>
+            <span class="pp-cafe24-account-join">
+              <a href="/member/join.html">회원가입</a>
+              <a class="pp-cafe24-kakao-join" href="/member/join.html" aria-label="카카오 1초가입으로 회원가입 페이지 이동">
+                <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+                  <path d="M10 3.1c-4.08 0-7.4 2.47-7.4 5.52 0 1.97 1.38 3.7 3.46 4.68l-.72 2.67c-.06.23.2.41.4.27l3.2-2.12c.36.04.72.06 1.08.06 4.08 0 7.4-2.47 7.4-5.54S14.08 3.1 10 3.1Z"></path>
+                </svg>
+                <span>카카오 1초가입</span>
+              </a>
+            </span>
+          </span>
+          <span module="Layout_stateLogon" class="pp-cafe24-account-state">
+            <a href="/myshop/index.html">마이페이지</a>
+            <a href="{$action_logout}">로그아웃</a>
+          </span>
+          <a href="/order/basket.html" data-pp-path="basket">장바구니</a>
+          <a href="/custom/support.html" data-pp-path="support">고객센터</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp-cafe24-head-main">
+    <div class="pp-cafe24-shell pp-cafe24-head-main__inner">
+      <a class="pp-cafe24-logo" href="/" aria-label="페르패키지 홈">
+        <img src="https://ecimg.cafe24img.com/pg1853b44513043087/peerl/web/upload/NNEditor/20250707/d69d0d00dd1b935e92d17d978a47d9db.png" alt="페르패키지" decoding="async">
+      </a>
+
+      <div id="pp-cafe24-mobile-search" module="Layout_SearchHeader" class="pp-cafe24-search" data-pp-mobile-search role="search" aria-label="상품 검색">
+        <label class="pp-cafe24-sr-only" for="keyword">상품 검색어</label>
+        {$form.keyword}
+        <button class="pp-cafe24-search__submit" type="button" onclick="{$action_search_submit}" aria-label="검색">
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <nav class="pp-cafe24-head-actions" aria-label="주요 바로가기">
+        <a href="/product/list.html?cate_no=44" data-pp-category="box"><img class="pp-cafe24-icon pp-cafe24-action-icon" data-pp-icon="allProducts" width="32" height="32" alt="" aria-hidden="true"><span>전체상품</span></a>
+        <a href="https://www.pluuug.com/form/TrPLMjXdJ1" data-pp-path="quote" target="_blank" rel="noopener noreferrer"><img class="pp-cafe24-icon pp-cafe24-action-icon" data-pp-icon="customMade" width="32" height="32" alt="" aria-hidden="true"><span>맞춤제작</span></a>
+        <a href="https://www.pluuug.com/form/TrPLMjXdJ1" data-pp-path="quote" target="_blank" rel="noopener noreferrer"><img class="pp-cafe24-icon pp-cafe24-action-icon" data-pp-icon="quote" width="32" height="32" alt="" aria-hidden="true"><span>견적문의</span></a>
+        <a href="/custom/guide-production.html" data-pp-path="guideProduction"><img class="pp-cafe24-icon pp-cafe24-action-icon" data-pp-icon="guide" width="32" height="32" alt="" aria-hidden="true"><span>제작가이드</span></a>
+        <a href="/custom/guide-caution.html" data-pp-path="guideCaution"><img class="pp-cafe24-icon pp-cafe24-action-icon" data-pp-icon="caution" width="32" height="32" alt="" aria-hidden="true"><span>주의사항</span></a>
+      </nav>
+
+      <div class="pp-cafe24-mobile-actions">
+        <button type="button" data-pp-search-toggle aria-expanded="false" aria-controls="pp-cafe24-mobile-search" aria-label="검색 열기">
+          <span class="pp-cafe24-mobile-search-icon" aria-hidden="true"></span>
+        </button>
+        <a href="/myshop/index.html" aria-label="마이페이지"><span class="pp-cafe24-user-icon" aria-hidden="true"></span></a>
+        <a href="/order/basket.html" aria-label="장바구니"><img class="pp-cafe24-icon pp-cafe24-mobile-action-icon" data-pp-icon="cart" width="22" height="22" alt="" aria-hidden="true"></a>
+        <button type="button" data-pp-menu-toggle aria-expanded="false" aria-controls="pp-cafe24-navigation" aria-label="전체 메뉴 열기">
+          <span class="pp-cafe24-menu-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="pp-cafe24-navigation" class="pp-cafe24-navigation" data-pp-navigation>
+    <div class="pp-cafe24-shell pp-cafe24-navigation__inner">
+      <nav class="pp-cafe24-category-nav" aria-label="상품 카테고리">
+        <ul class="pp-cafe24-category-nav__list pp-cafe24-category-nav__list--all">
+          <li class="pp-cafe24-category-nav__item pp-cafe24-category-nav__item--all">
+            <a href="/product/list.html">전체보기</a>
+            <div class="pp-cafe24-mega-menu pp-cafe24-mega-menu--all" aria-label="전체 상품 분류">
+              <div class="pp-cafe24-mega-menu__grid" data-pp-category-all-grid></div>
+            </div>
+          </li>
+        </ul>
+        <div id="pp-cafe24-category-data" class="pp-cafe24-category-nav__module" module="Layout_category">
+          <!--@js(/js/module/layout/category.js)-->
+          <div class="position">
+            <ul class="pp-cafe24-category-nav__list pp-cafe24-category-nav__list--db">
+              <li class="pp-cafe24-category-nav__item"><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+              <li class="pp-cafe24-category-nav__item"><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+              <li class="pp-cafe24-category-nav__item"><a href="/product/list.html{$param}">{$name_or_img_tag}</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    <nav class="pp-cafe24-service-nav" aria-label="서비스 메뉴">
+      <a href="/custom/guide-production.html" data-pp-path="guideProduction">제작가이드</a>
+      <a href="/faq-tabs.html">FAQ</a>
+      <a href="/custom/guide-caution.html" data-pp-path="guideCaution">주의사항</a>
+    </nav>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function buildAllCategoryMenu() {
+        var sourceList = document.querySelector(".pp-cafe24-category-nav__list--db");
+        var targetGrid = document.querySelector("[data-pp-category-all-grid]");
+        var allMenuItem = document.querySelector(".pp-cafe24-category-nav__item--all");
+        var latestChildrenByParent = null;
+        var categoryLoadPromise = null;
+        var categoryLoaded = false;
+
+        if (!sourceList || !targetGrid) return;
+        targetGrid.dataset.ppCafe24CategoryDb = "true";
+
+        function getCategoryNumber(link) {
+          try {
+            return new URL(link.href, window.location.origin).searchParams.get("cate_no");
+          } catch (error) {
+            return null;
+          }
+        }
+
+        function getRootCategories() {
+          var roots = [];
+
+          Array.prototype.forEach.call(sourceList.children, function (item) {
+            var categoryLink = item.querySelector(":scope > a");
+            var categoryNo = categoryLink && getCategoryNumber(categoryLink);
+            if (!categoryLink || !categoryNo) return;
+
+            roots.push({ item: item, link: categoryLink, cateNo: String(categoryNo) });
+          });
+
+          return roots;
+        }
+
+        function makeCategoryUrl(cateNo, fallbackLink) {
+          try {
+            var url = new URL(fallbackLink.href, window.location.origin);
+            url.searchParams.set("cate_no", cateNo);
+            return url.pathname + url.search;
+          } catch (error) {
+            return "/product/list.html?cate_no=" + encodeURIComponent(cateNo);
+          }
+        }
+
+        function makeCategoryLink(category, fallbackLink, depth) {
+          var link = document.createElement("a");
+          link.href = makeCategoryUrl(String(category.cate_no), fallbackLink);
+          link.textContent = category.name;
+          link.dataset.ppCategoryDepth = String(depth || 1);
+          return link;
+        }
+
+        function buildChildMap(categories) {
+          var map = {};
+
+          Array.prototype.forEach.call(categories, function (category) {
+            if (!category || !category.cate_no || !category.parent_cate_no || !category.name) return;
+
+            var parentNo = String(category.parent_cate_no);
+            if (!map[parentNo]) map[parentNo] = [];
+            map[parentNo].push(category);
+          });
+
+          return map;
+        }
+
+        function getCategoryRows(payload) {
+          if (Array.isArray(payload)) return payload;
+          if (!payload || typeof payload !== "object") return [];
+
+          var keys = ["data", "categories", "category", "aCategory", "subCategories", "sub_categories", "list", "result"];
+          for (var index = 0; index < keys.length; index += 1) {
+            if (Array.isArray(payload[keys[index]])) return payload[keys[index]];
+          }
+
+          return [];
+        }
+
+        function normalizeCategoryRows(rows) {
+          return rows.map(function (category) {
+            if (!category || typeof category !== "object") return null;
+
+            return {
+              cate_no: category.cate_no || category.cateNo || category.category_no || category.categoryNo || category.no,
+              parent_cate_no: category.parent_cate_no || category.parentCateNo || category.parent_category_no || category.parentCategoryNo || category.parent_no || category.parentNo,
+              name: category.name || category.category_name || category.categoryName
+            };
+          }).filter(function (category) {
+            return category && category.cate_no && category.parent_cate_no && category.name;
+          });
+        }
+
+        function appendAllChildren(section, parentNo, childrenByParent, fallbackLink, depth) {
+          var children = childrenByParent[String(parentNo)] || [];
+
+          Array.prototype.forEach.call(children, function (child) {
+            section.appendChild(makeCategoryLink(child, fallbackLink, depth));
+            appendAllChildren(section, child.cate_no, childrenByParent, fallbackLink, depth + 1);
+          });
+        }
+
+        function renderAllMenu(roots, childrenByParent) {
+          targetGrid.innerHTML = "";
+
+          Array.prototype.forEach.call(roots, function (root) {
+            var section = document.createElement("section");
+            var heading = document.createElement("h2");
+            heading.appendChild(root.link.cloneNode(true));
+            section.appendChild(heading);
+
+            appendAllChildren(section, root.cateNo, childrenByParent, root.link, 1);
+
+            targetGrid.appendChild(section);
+          });
+        }
+
+        function renderTopCategoryMenus(roots, childrenByParent) {
+          Array.prototype.forEach.call(roots, function (root) {
+            var children = childrenByParent[root.cateNo] || [];
+            var existingGeneratedMenu = root.item.querySelector(".pp-cafe24-generated-sub-category");
+
+            if (existingGeneratedMenu) existingGeneratedMenu.remove();
+            if (!children.length) return;
+
+            var menu = document.createElement("div");
+            var list = document.createElement("ul");
+            menu.className = "sub-category pp-cafe24-generated-sub-category";
+
+            Array.prototype.forEach.call(children, function (child) {
+              var listItem = document.createElement("li");
+              listItem.appendChild(makeCategoryLink(child, root.link, 1));
+              list.appendChild(listItem);
+            });
+
+            menu.appendChild(list);
+            root.item.appendChild(menu);
+          });
+        }
+
+        function readVisibleSubCategories(roots) {
+          var childrenByParent = {};
+
+          Array.prototype.forEach.call(roots, function (root) {
+            var links = root.item.querySelectorAll(".sub-category a");
+            if (!links.length) return;
+
+            childrenByParent[root.cateNo] = Array.prototype.map.call(links, function (link) {
+              return {
+                cate_no: getCategoryNumber(link),
+                parent_cate_no: root.cateNo,
+                name: link.textContent.trim()
+              };
+            }).filter(function (category) {
+              return category.cate_no && category.name;
+            });
+          });
+
+          return childrenByParent;
+        }
+
+        function renderFallback() {
+          var roots = getRootCategories();
+          renderAllMenu(roots, latestChildrenByParent || readVisibleSubCategories(roots));
+        }
+
+        function loadCafe24SubCategories() {
+          if (!window.fetch || categoryLoaded) return categoryLoadPromise;
+          if (categoryLoadPromise) return categoryLoadPromise;
+
+          categoryLoadPromise = window.fetch("/exec/front/Product/SubCategory", { credentials: "same-origin" })
+            .then(function (response) {
+              if (!response.ok) throw new Error("Cafe24 category request failed");
+              return response.json();
+            })
+            .then(function (payload) {
+              var categories = normalizeCategoryRows(getCategoryRows(payload));
+              if (!categories.length) return;
+
+              var roots = getRootCategories();
+              var childrenByParent = buildChildMap(categories);
+              latestChildrenByParent = childrenByParent;
+              renderTopCategoryMenus(roots, childrenByParent);
+              renderAllMenu(roots, childrenByParent);
+              sourceList.dataset.ppAllMenuReady = "true";
+              categoryLoaded = true;
+              categoryLoadPromise = null;
+            })
+            .catch(function () {
+              categoryLoadPromise = null;
+              renderFallback();
+            });
+
+          return categoryLoadPromise;
+        }
+
+        renderFallback();
+        loadCafe24SubCategories();
+
+        if (window.MutationObserver && sourceList.dataset.ppAllMenuObserved !== "true") {
+          sourceList.dataset.ppAllMenuObserved = "true";
+          new MutationObserver(renderFallback).observe(sourceList, { childList: true });
+        }
+
+        if (allMenuItem && allMenuItem.dataset.ppCategoryRefreshBound !== "true") {
+          allMenuItem.dataset.ppCategoryRefreshBound = "true";
+          allMenuItem.addEventListener("mouseenter", loadCafe24SubCategories);
+          allMenuItem.addEventListener("focusin", loadCafe24SubCategories);
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", buildAllCategoryMenu);
+      } else {
+        buildAllCategoryMenu();
+      }
+    }());
+  </script>
+</header>

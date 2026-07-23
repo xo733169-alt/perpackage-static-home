@@ -1,0 +1,32 @@
+/*
+ * APPEND ONLY: paste this block at the end of Cafe24 /_wg/css/additional.css.
+ * Do not replace the existing additional.css file.
+ */
+
+#prdDetail .cont {
+  width: calc(100% - 48px) !important;
+  max-width: 1180px !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+#prdDetail .cont > img,
+#prdDetail .cont > table,
+#prdDetail .cont > div,
+#prdDetail .cont > p,
+#prdDetail .cont table {
+  max-width: 100% !important;
+  margin-right: auto !important;
+  margin-left: auto !important;
+}
+
+#prdDetail .cont img {
+  height: auto !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 560px) {
+  #prdDetail .cont {
+    width: calc(100% - 32px) !important;
+  }
+}

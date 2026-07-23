@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>페르패키지 실사 아이콘 바로가기 미리보기</title>
+  <style>
+    :root {
+      --pp-navy: #173e83;
+      --pp-text: #102342;
+      --pp-line: #e2e7ed;
+      --pp-soft: #f8fafc;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: #ffffff;
+      color: var(--pp-text);
+      font-family: "Pretendard", "Noto Sans KR", system-ui, sans-serif;
+    }
+
+    .pp-preview {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 44px 32px 36px;
+    }
+
+    .pp-preview__title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .pp-preview__copy {
+      margin: 0;
+      color: #62718a;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .pp-main-quick {
+      display: grid;
+      grid-template-columns: repeat(10, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 22px;
+      padding: 16px 0 14px;
+      border-top: 1px solid var(--pp-line);
+      border-bottom: 1px solid var(--pp-line);
+    }
+
+    .pp-main-quick a {
+      display: flex;
+      min-width: 0;
+      min-height: 84px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      color: var(--pp-text);
+      text-decoration: none;
+    }
+
+    .pp-main-quick__icon {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border: 1px solid var(--pp-line);
+      border-radius: 8px;
+      background: var(--pp-soft);
+    }
+
+    .pp-main-quick__icon img {
+      display: block;
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    .pp-main-quick__item--real {
+      min-height: 126px !important;
+      padding: 8px 6px;
+    }
+
+    .pp-main-quick__item--real .pp-main-quick__icon {
+      width: 64px;
+      height: 64px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      margin-bottom: 20px;
+    }
+
+    .pp-main-quick__item--real .pp-main-quick__icon img {
+      width: 60px;
+      height: 60px;
+      transform: scale(1.6);
+      transform-origin: center;
+    }
+
+    /* These source SVGs include their own canvas padding. The scale correction
+       makes the visible product match the surrounding 48px line icons. */
+    .pp-main-quick__real-icon--ready { transform: scale(1.45) !important; }
+    .pp-main-quick__real-icon--custom { transform: scale(1.75) !important; }
+    .pp-main-quick__real-icon--bag { transform: scale(1.6) !important; }
+
+    .pp-main-quick strong {
+      overflow: hidden;
+      max-width: 100%;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.35;
+      text-align: center;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .pp-main-quick a:hover strong { color: var(--pp-navy); }
+    .pp-main-quick a:focus-visible { outline: 2px solid var(--pp-navy); outline-offset: 3px; border-radius: 8px; }
+
+    @media (max-width: 900px) {
+      .pp-preview { padding: 28px 20px; }
+      .pp-main-quick {
+        grid-template-columns: none;
+        grid-auto-columns: 94px;
+        grid-auto-flow: column;
+        overflow-x: auto;
+        justify-content: start;
+        scroll-snap-type: x proximity;
+      }
+      .pp-main-quick a { scroll-snap-align: start; }
+      .pp-main-quick__item--real { min-height: 118px !important; }
+      .pp-main-quick__item--real .pp-main-quick__icon { width: 56px; height: 56px; }
+      .pp-main-quick__item--real .pp-main-quick__icon img { width: 52px; height: 52px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="pp-preview">
+    <h1 class="pp-preview__title">메인 바로가기 실사 아이콘 적용 미리보기</h1>
+    <p class="pp-preview__copy">실사 아이콘 10종을 60px 기준으로 배치한 바로가기 미리보기입니다. 실제 메인 반영 전, 아이콘별 화면상 크기를 비교하기 위한 화면입니다.</p>
+
+    <nav class="pp-main-quick" aria-label="주요 바로가기 미리보기">
+      <a class="pp-main-quick__item--real" href="#ready">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img class="pp-main-quick__real-icon--ready" src="../assets/icons/real/quick-ready-box.svg" alt=""></span>
+        <strong>단박스</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#custom">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img class="pp-main-quick__real-icon--custom" src="../assets/icons/real/quick-custom-made.svg" alt=""></span>
+        <strong>맞춤제작</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#rigid">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-rigid-box.svg" alt=""></span>
+        <strong>싸바리</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#bag">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img class="pp-main-quick__real-icon--bag" src="../assets/icons/real/quick-shopping-bag.svg" alt=""></span>
+        <strong>쇼핑백</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#business-card">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-business-card.svg" alt=""></span>
+        <strong>명함</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#banner">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-banner.svg" alt=""></span>
+        <strong>배너</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#standing-banner">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-standing-banner.svg" alt=""></span>
+        <strong>현수막</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#envelope">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-envelope.svg" alt=""></span>
+        <strong>봉투</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#sticker">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-sticker.svg" alt=""></span>
+        <strong>스티커</strong>
+      </a>
+      <a class="pp-main-quick__item--real" href="#dust-bag">
+        <span class="pp-main-quick__icon" aria-hidden="true"><img src="../assets/icons/real/quick-dust-bag.svg" alt=""></span>
+        <strong>더스트백</strong>
+      </a>
+    </nav>
+  </main>
+</body>
+</html>

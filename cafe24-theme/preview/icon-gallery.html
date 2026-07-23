@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>페르패키지 아이콘 적용 확인</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --brand: #173f72;
+      --accent: #06a64f;
+      --ink: #16202c;
+      --muted: #687384;
+      --line: #dce3ea;
+      --surface: #f5f7f9;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--surface);
+      font-family: Arial, "Noto Sans KR", sans-serif;
+      letter-spacing: 0;
+    }
+
+    .icon-preview {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .icon-preview__head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: var(--brand);
+      font-size: 30px;
+      line-height: 1.25;
+    }
+
+    .icon-preview__head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .icon-preview__count {
+      flex: 0 0 auto;
+      color: var(--brand);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .icon-item {
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .icon-item__visual {
+      display: grid;
+      width: 88px;
+      height: 88px;
+      margin-bottom: 16px;
+      place-items: center;
+      background-image:
+        linear-gradient(45deg, #eef1f4 25%, transparent 25%),
+        linear-gradient(-45deg, #eef1f4 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #eef1f4 75%),
+        linear-gradient(-45deg, transparent 75%, #eef1f4 75%);
+      background-position: 0 0, 0 6px, 6px -6px, -6px 0;
+      background-size: 12px 12px;
+    }
+
+    .icon-item img {
+      display: block;
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+    }
+
+    .icon-item h2 {
+      margin: 0 0 4px;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    .icon-item code {
+      display: block;
+      min-height: 34px;
+      overflow: hidden;
+      color: var(--muted);
+      font-size: 11px;
+      line-height: 1.5;
+      overflow-wrap: anywhere;
+    }
+
+    .icon-item__actions {
+      display: grid;
+      grid-template-columns: 1fr 40px;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    button,
+    .icon-item__open {
+      display: inline-grid;
+      min-height: 40px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      color: var(--brand);
+      background: #fff;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:hover,
+    .icon-item__open:hover {
+      border-color: var(--brand);
+      background: #f2f6fa;
+    }
+
+    button:focus-visible,
+    .icon-item__open:focus-visible {
+      outline: 3px solid rgba(23, 63, 114, .2);
+      outline-offset: 2px;
+    }
+
+    .icon-item.is-error {
+      border-color: #d45b5b;
+    }
+
+    .icon-item.is-error .icon-item__visual::after {
+      color: #a73d3d;
+      content: "로드 실패";
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .icon-item.is-error img { display: none; }
+
+    .copy-status {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      padding: 12px 16px;
+      border-radius: 4px;
+      color: #fff;
+      background: var(--brand);
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(8px);
+      transition: opacity 160ms ease, transform 160ms ease;
+    }
+
+    .copy-status.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      .icon-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      .icon-preview {
+        width: min(100% - 24px, 520px);
+        padding: 28px 0 48px;
+      }
+
+      .icon-preview__head {
+        display: block;
+      }
+
+      .icon-preview__count { margin-top: 12px; }
+      .icon-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .icon-item { padding: 14px; }
+      .icon-item__visual { width: 72px; height: 72px; }
+      .icon-item img { width: 48px; height: 48px; }
+    }
+
+    @media (max-width: 390px) {
+      .icon-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="icon-preview">
+    <header class="icon-preview__head">
+      <div>
+        <h1>아이콘 적용 확인</h1>
+        <p>현재 Cafe24 테마 설정과 동일한 이미지 주소를 불러옵니다. 체크무늬는 투명 배경 확인용입니다.</p>
+      </div>
+      <div class="icon-preview__count" data-icon-count>불러오는 중</div>
+    </header>
+
+    <section class="icon-grid" data-icon-grid aria-label="페르패키지 아이콘 목록"></section>
+  </main>
+
+  <div class="copy-status" data-copy-status role="status" aria-live="polite"></div>
+
+  <script src="../js/perpackage/config.js"></script>
+  <script>
+    (function () {
+      "use strict";
+
+      var labels = {
+        allProducts: "전체상품",
+        smallProducts: "소량상품",
+        sampleRequest: "샘플 요청",
+        customMade: "맞춤제작",
+        bulkInquiry: "대량문의",
+        quote: "견적문의",
+        chat: "채널상담",
+        productQna: "상품문의",
+        guide: "제작가이드",
+        designGuide: "디자인가이드",
+        caution: "주의사항",
+        checklist: "체크리스트",
+        logoPrint: "로고인쇄",
+        productionLine: "제작과정",
+        delivery: "납기안내",
+        cart: "장바구니",
+        businessRegistration: "사업자등록증",
+        bankbook: "통장사본",
+        support: "이용안내",
+        top: "맨 위로"
+      };
+
+      var config = window.PP_CAFE24_CONFIG;
+      var icons = config && config.icons ? config.icons : {};
+      var grid = document.querySelector("[data-icon-grid]");
+      var count = document.querySelector("[data-icon-count]");
+      var status = document.querySelector("[data-copy-status]");
+      var statusTimer;
+
+      function showStatus(message) {
+        window.clearTimeout(statusTimer);
+        status.textContent = message;
+        status.classList.add("is-visible");
+        statusTimer = window.setTimeout(function () {
+          status.classList.remove("is-visible");
+        }, 1800);
+      }
+
+      function fallbackCopy(value) {
+        var area = document.createElement("textarea");
+        area.value = value;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.opacity = "0";
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand("copy");
+        area.remove();
+      }
+
+      function copyUrl(url) {
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(url).then(function () {
+            showStatus("이미지 주소를 복사했습니다.");
+          }).catch(function () {
+            fallbackCopy(url);
+            showStatus("이미지 주소를 복사했습니다.");
+          });
+          return;
+        }
+
+        fallbackCopy(url);
+        showStatus("이미지 주소를 복사했습니다.");
+      }
+
+      Object.keys(icons).forEach(function (key) {
+        var url = icons[key];
+        var item = document.createElement("article");
+        item.className = "icon-item";
+
+        var visual = document.createElement("div");
+        visual.className = "icon-item__visual";
+
+        var image = document.createElement("img");
+        image.src = url;
+        image.alt = labels[key] || key;
+        image.addEventListener("error", function () {
+          item.classList.add("is-error");
+        });
+        visual.appendChild(image);
+
+        var title = document.createElement("h2");
+        title.textContent = labels[key] || key;
+
+        var code = document.createElement("code");
+        code.textContent = key;
+
+        var actions = document.createElement("div");
+        actions.className = "icon-item__actions";
+
+        var copy = document.createElement("button");
+        copy.type = "button";
+        copy.textContent = "주소 복사";
+        copy.setAttribute("aria-label", (labels[key] || key) + " 이미지 주소 복사");
+        copy.addEventListener("click", function () { copyUrl(url); });
+
+        var open = document.createElement("a");
+        open.className = "icon-item__open";
+        open.href = url;
+        open.target = "_blank";
+        open.rel = "noopener noreferrer";
+        open.textContent = "↗";
+        open.setAttribute("aria-label", (labels[key] || key) + " 원본 이미지 새 창에서 열기");
+
+        actions.appendChild(copy);
+        actions.appendChild(open);
+        item.appendChild(visual);
+        item.appendChild(title);
+        item.appendChild(code);
+        item.appendChild(actions);
+        grid.appendChild(item);
+      });
+
+      count.textContent = Object.keys(icons).length + "개 아이콘";
+    })();
+  </script>
+</body>
+</html>
